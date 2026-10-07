@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% from "_macros.html" import email_link %}
+{% block content %}
+<div class="wrap narrow">
+  <h1>Join the lab</h1>
+  <p class="lede">{{ positions.intro }}</p>
+  {% if positions.how_to_apply %}<p>{{ positions.how_to_apply }}</p>{% endif %}
+  {% if positions.contact_email %}<p class="apply-email">{{ email_link(positions.contact_email) }}</p>{% endif %}
+
+  {% if positions.openings %}
+  <h2>Open positions</h2>
+    {% for o in positions.openings %}
+    <article class="opening" aria-labelledby="opening-{{ loop.index }}">
+      <h3 id="opening-{{ loop.index }}">{{ o.title }}</h3>
+      {% if o.summary %}<p>{{ o.summary }}</p>{% endif %}
+      {% if o.details %}<p>{{ o.details }}</p>{% endif %}
+      {% if o.closing_date %}<p class="meta">Closing date: {{ o.closing_date }}</p>{% endif %}
+      {% if o.link %}<p><a href="{{ o.link }}">Full advert and how to apply</a></p>{% endif %}
+    </article>
+    {% endfor %}
+  {% endif %}
+
+  <h2>Research in the lab</h2>
+  <ul class="theme-links">
+    {% for t in themes %}<li><a href="{{ root }}research/#theme-{{ loop.index }}">{{ t.title }}</a></li>{% endfor %}
+  </ul>
+</div>
+{% endblock %}

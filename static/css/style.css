@@ -1,0 +1,285 @@
+/* Bendor Lab website styles.
+   Colours come from the lab logo: the indigo trace and the blue spike ticks. */
+
+@font-face {
+  font-family: "Literata";
+  src: url("../fonts/literata-latin-wght-normal.woff2") format("woff2");
+  font-weight: 200 900; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Literata";
+  src: url("../fonts/literata-latin-wght-italic.woff2") format("woff2");
+  font-weight: 200 900; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: "Instrument Sans";
+  src: url("../fonts/instrument-sans-latin-wght-normal.woff2") format("woff2");
+  font-weight: 400 700; font-style: normal; font-display: swap;
+}
+
+:root {
+  --ink: #1b1c2f;
+  --ink-soft: #3d4158;
+  --indigo: #2f2b86;
+  --blue: #3e6db2;
+  --slate: #5a6078;
+  --paper: #ffffff;
+  --haze: #f2f4f9;
+  --rule: #dde1eb;
+  --quiet-spike: #c9cfdd;
+
+  --serif: "Literata", Georgia, "Times New Roman", serif;
+  --sans: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+
+  --gutter: clamp(1rem, 4vw, 2rem);
+  --measure: 46rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  font-optical-sizing: auto;
+}
+img { max-width: 100%; height: auto; display: block; }
+
+h1, h2, h3 {
+  font-family: var(--sans);
+  color: var(--ink);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+h1 { font-size: clamp(2rem, 1.6rem + 1.6vw, 2.6rem); font-weight: 600; margin: 2.75rem 0 1.25rem; }
+h2 { font-size: 1.5rem; font-weight: 600; margin: 2.5rem 0 1rem; }
+h3 { font-size: 1.1rem; font-weight: 600; margin: 1.75rem 0 0.5rem; }
+p { margin: 0 0 1rem; }
+
+a { color: var(--indigo); text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; border-radius: 2px; }
+
+.wrap { max-width: 1120px; margin-inline: auto; padding-inline: var(--gutter); }
+.narrow > * { max-width: var(--measure); }
+.lede { font-size: 1.2rem; line-height: 1.6; color: var(--ink); }
+.meta { font-family: var(--sans); font-size: 0.95rem; color: var(--slate); }
+
+.skip {
+  position: absolute; left: 0.5rem; top: -3rem; z-index: 10;
+  background: var(--indigo); color: #fff; padding: 0.5rem 0.9rem; font-family: var(--sans);
+}
+.skip:focus { top: 0.5rem; }
+.visually-hidden {
+  position: absolute !important; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+/* Header ------------------------------------------------------------- */
+.site-header { border-bottom: 1px solid var(--rule); background: var(--paper); }
+.header-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1.5rem; padding-block: 0.9rem;
+}
+.brand img { height: 68px; width: auto; }
+.site-nav ul {
+  display: flex; gap: 0.25rem 1.6rem; list-style: none; margin: 0; padding: 0;
+  font-family: var(--sans); font-size: 1rem; font-weight: 500;
+}
+.site-nav a { color: var(--ink); text-decoration: none; padding-block: 0.35rem; display: inline-block; }
+.site-nav a:hover { color: var(--indigo); }
+.site-nav a[aria-current="page"] {
+  color: var(--indigo);
+  text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.45em;
+}
+
+/* Home --------------------------------------------------------------- */
+.hero {
+  display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: center; padding-block: clamp(2rem, 5vw, 3.75rem) 1.5rem;
+}
+.hero h1 {
+  font-size: clamp(2.6rem, 2rem + 3vw, 4.1rem); font-weight: 600; letter-spacing: -0.025em;
+  margin: 0;
+}
+.tagline {
+  font-style: italic; font-size: clamp(1.25rem, 1.1rem + 0.6vw, 1.55rem);
+  color: var(--indigo); margin: 0.2rem 0 1.4rem;
+}
+.hero .lede { max-width: 36em; }
+.affiliation { font-family: var(--sans); color: var(--slate); font-size: 0.98rem; margin: 0; }
+.hero-image { margin: 0; }
+.hero-image img { width: 100%; aspect-ratio: 1024 / 712; object-fit: cover; border-radius: 4px; }
+
+/* The replay raster: the one animated moment on the site */
+.replay { margin-block: 1.5rem 0.5rem; }
+.replay-svg { display: block; width: 100%; height: 170px; }
+.replay .lfp { fill: none; stroke: var(--blue); stroke-width: 1.5; stroke-linejoin: round; }
+.replay .bg-spikes line { stroke: var(--quiet-spike); stroke-width: 1.6; }
+.replay .seq-spikes line {
+  stroke: var(--indigo); stroke-width: 2.4; stroke-linecap: round;
+  animation: spike-in 0.22s ease-out both;
+  animation-delay: calc(var(--i) * 60ms + 400ms);
+}
+@keyframes spike-in { from { opacity: 0; } to { opacity: 1; } }
+.replay figcaption {
+  font-family: var(--sans); font-size: 0.9rem; line-height: 1.5; color: var(--slate);
+  max-width: 44rem; margin-top: 0.6rem;
+}
+
+.home-grid {
+  display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4.5rem); padding-block: 1rem 3.5rem;
+}
+.join { border-top: 2px solid var(--indigo); padding-top: 0.25rem; align-self: start; margin-top: 2.5rem; }
+.join h2 { margin-top: 1rem; }
+.more { font-family: var(--sans); font-weight: 500; }
+
+/* Citations ---------------------------------------------------------- */
+.pub-list { list-style: none; margin: 0; padding: 0; }
+.pub { margin: 0 0 1.25rem; }
+.pub-list.compact .pub { margin-bottom: 1.1rem; }
+.cite-authors, .cite-title, .cite-venue { display: block; }
+.cite-authors { font-size: 0.94rem; color: var(--ink-soft); line-height: 1.5; }
+.cite-authors strong { color: var(--ink); font-weight: 650; }
+.cite-title { font-size: 1.06rem; font-weight: 500; line-height: 1.45; margin-block: 0.12rem; }
+.cite-title a { color: var(--ink); text-decoration-color: var(--rule); }
+.cite-title a:hover { color: var(--indigo); text-decoration-color: currentColor; }
+.cite-venue { font-size: 0.94rem; color: var(--slate); }
+
+/* Publications page */
+.pub-tools { margin-top: 1.75rem; }
+.pub-tools label { display: block; font-family: var(--sans); font-size: 0.95rem; color: var(--slate); margin-bottom: 0.35rem; }
+.pub-tools input {
+  width: 100%; font: inherit; font-size: 1rem; padding: 0.6rem 0.8rem;
+  border: 1px solid var(--rule); border-radius: 4px; background: var(--paper); color: var(--ink);
+}
+.pub-tools input:focus { outline: 2px solid var(--blue); outline-offset: 0; border-color: var(--blue); }
+.pub-count { font-family: var(--sans); font-size: 0.9rem; color: var(--slate); min-height: 1.4em; margin: 0.4rem 0 0; }
+.section-links {
+  display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; margin-top: 1rem;
+  font-family: var(--sans); font-weight: 500;
+}
+.section-links span { color: var(--slate); font-weight: 400; margin-left: 0.15rem; }
+.pub-section h2 { border-top: 1px solid var(--rule); padding-top: 1.5rem; margin-top: 2.5rem; }
+.pub-section .pub { display: grid; grid-template-columns: 3.75rem minmax(0, 1fr); gap: 0 0.75rem; }
+.pub-year {
+  font-family: var(--sans); font-weight: 600; color: var(--indigo);
+  font-variant-numeric: tabular-nums; padding-top: 0.1rem;
+}
+
+/* Research */
+.theme h2 { margin-top: 3rem; }
+.theme .pub-list { margin-top: 1rem; }
+
+/* People ------------------------------------------------------------- */
+.people-grid {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(165px, 1fr)); gap: 2.25rem 1.5rem;
+}
+.person img, .monogram {
+  width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 25%;
+  border-radius: 3px; background: var(--haze);
+}
+.monogram {
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--sans); font-size: 2.6rem; font-weight: 600; color: var(--indigo);
+}
+.person-name { font-family: var(--sans); font-weight: 600; font-size: 1.05rem; margin: 0.75rem 0 0.05rem; line-height: 1.3; }
+.person-role { color: var(--slate); font-size: 0.97rem; margin: 0; }
+
+.alumni { margin-top: 3.5rem; padding-bottom: 1rem; }
+.alumni h2 { border-top: 1px solid var(--rule); padding-top: 1.5rem; }
+.alumni h3 { color: var(--slate); }
+.alumni-list { list-style: none; margin: 0; padding: 0; max-width: 54rem; }
+.alumni-list li {
+  display: grid; grid-template-columns: 7.5rem minmax(0, 1fr) minmax(0, 1.3fr); gap: 1rem;
+  padding: 0.5rem 0; border-bottom: 1px solid var(--rule);
+}
+.alum-years { font-family: var(--sans); font-variant-numeric: tabular-nums; color: var(--slate); font-size: 0.95rem; padding-top: 0.1rem; }
+.alum-now { color: var(--slate); }
+.alumni-compact { list-style: none; margin: 0; padding: 0; columns: 3 15rem; column-gap: 2rem; }
+.alumni-compact li { break-inside: avoid; padding: 0.3rem 0; line-height: 1.45; }
+.alumni-compact .alum-now { display: block; font-size: 0.92rem; }
+
+/* Photos ------------------------------------------------------------- */
+.gallery { list-style: none; margin: 0 0 3rem; padding: 0; columns: 3 260px; column-gap: 1.25rem; }
+.gallery li { break-inside: avoid; margin-bottom: 1.25rem; }
+.gallery figure { margin: 0; }
+.gallery-open { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
+.gallery-open img { width: 100%; border-radius: 3px; }
+.gallery figcaption { font-family: var(--sans); font-size: 0.92rem; color: var(--slate); margin-top: 0.45rem; }
+
+.lightbox {
+  max-width: min(94vw, 1200px); max-height: 94vh; padding: 1rem; border: 0; border-radius: 4px;
+  background: var(--ink); color: #fff;
+}
+.lightbox::backdrop { background: rgba(14, 15, 34, 0.84); }
+.lightbox figure { margin: 0; }
+.lightbox img { max-height: 76vh; width: auto; margin-inline: auto; }
+.lightbox figcaption { font-family: var(--sans); margin-top: 0.6rem; min-height: 1.4em; }
+.lightbox-controls { display: flex; gap: 0.6rem; justify-content: flex-end; margin-top: 0.75rem; }
+.lightbox-controls button {
+  font-family: var(--sans); font-size: 0.95rem; color: #fff; background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.45); border-radius: 4px; padding: 0.4rem 0.95rem; cursor: pointer;
+}
+.lightbox-controls button:hover { border-color: #fff; }
+
+/* Join the lab ------------------------------------------------------- */
+.apply-email { font-family: var(--sans); font-size: 1.15rem; font-weight: 500; }
+.theme-links { padding-left: 1.2rem; }
+.theme-links li { margin-bottom: 0.3rem; }
+.opening h2 { margin-top: 1rem; }
+.topics { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-block: 1.5rem; }
+.topics h3 { margin: 0 0 0.35rem; color: var(--indigo); }
+.topics ul { margin: 0; padding-left: 1.2rem; }
+
+/* Contact ------------------------------------------------------------ */
+.contact { display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: 1.25rem 1.5rem; margin: 0 0 4rem; }
+.contact dt { font-family: var(--sans); font-weight: 600; color: var(--slate); padding-top: 0.1rem; }
+.contact dd { margin: 0; }
+.contact address { font-style: normal; margin-bottom: 0.4rem; }
+
+/* Footer ------------------------------------------------------------- */
+.site-footer { border-top: 1px solid var(--rule); margin-top: 3rem; }
+.footer-inner {
+  display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;
+  gap: 1.5rem; padding-block: 2rem 2.75rem;
+}
+.site-footer address { font-style: normal; font-family: var(--sans); font-size: 0.95rem; color: var(--slate); line-height: 1.6; }
+.site-footer address strong { color: var(--ink); font-weight: 600; }
+.footer-links { list-style: none; display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; margin: 0; padding: 0; font-family: var(--sans); font-size: 0.95rem; }
+
+/* Small screens ------------------------------------------------------ */
+@media (max-width: 860px) {
+  .header-inner { flex-direction: column; align-items: flex-start; gap: 0.5rem; padding-block: 0.75rem 0.25rem; }
+  .brand img { height: 56px; }
+  .site-nav { width: 100%; }
+  .site-nav ul { flex-wrap: wrap; gap: 0 1.15rem; padding-bottom: 0.4rem; }
+  .site-nav a { white-space: nowrap; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-image { order: -1; }
+  .home-grid { grid-template-columns: 1fr; }
+  .join { margin-top: 0; }
+}
+@media (max-width: 560px) {
+  body { font-size: 1rem; }
+  .lede { font-size: 1.1rem; }
+  .replay-svg { height: 130px; }
+  .pub-section .pub { grid-template-columns: 2.9rem minmax(0, 1fr); gap: 0 0.5rem; }
+  .pub-year { font-size: 0.92rem; }
+  .people-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.75rem 1rem; }
+  .alumni-list li { grid-template-columns: 1fr; gap: 0.1rem; }
+  .alum-years:empty { display: none; }
+  .topics { grid-template-columns: 1fr; }
+  .contact { grid-template-columns: 1fr; gap: 0.25rem; }
+  .contact dd { margin-bottom: 1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .replay .seq-spikes line { animation: none; }
+}

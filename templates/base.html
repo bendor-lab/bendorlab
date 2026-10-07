@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page_title %}{{ page_title }} | {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ description or research.intro | truncate(155) }}">
+  <meta property="og:title" content="{% if page_title %}{{ page_title }} | {% endif %}{{ site.title }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ site.url }}/{{ slug and slug ~ '/' or '' }}">
+  <meta property="og:image" content="{{ site.url }}/static/images/hero.webp">
+  <link rel="canonical" href="{{ site.url }}/{{ slug and slug ~ '/' or '' }}">
+  <link rel="icon" href="{{ root }}static/images/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="{{ root }}static/fonts/literata-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ root }}static/fonts/instrument-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="{{ root }}static/css/style.css?v={{ build_id }}">
+</head>
+<body class="page-{{ slug or 'home' }}">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="{{ root or './' }}" aria-label="{{ site.title }} home">
+        <img src="{{ root }}static/images/logo.webp" alt="{{ site.title }}: {{ site.tagline }}" width="430" height="286">
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          {% for key, label in nav %}
+          <li><a href="{{ root }}{{ key }}/"{% if key == slug %} aria-current="page"{% endif %}>{{ label }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <address>
+        <strong>{{ site.title }}</strong><br>
+        {{ site.institute }}<br>
+        {{ site.department }}<br>
+        {{ site.university }}
+      </address>
+      <ul class="footer-links">
+        <li><a href="{{ root }}contact/">Contact</a></li>
+        {% if site.orcid %}<li><a href="https://orcid.org/{{ site.orcid }}">ORCID</a></li>{% endif %}
+        {% if site.google_scholar %}<li><a href="{{ site.google_scholar }}">Google Scholar</a></li>{% endif %}
+        {% if site.ucl_profile %}<li><a href="{{ site.ucl_profile }}">UCL profile</a></li>{% endif %}
+        {% if site.bluesky %}<li><a href="{{ site.bluesky }}">Bluesky</a></li>{% endif %}
+      </ul>
+    </div>
+  </footer>
+  <script src="{{ root }}static/js/site.js?v={{ build_id }}" defer></script>
+</body>
+</html>

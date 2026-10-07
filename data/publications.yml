@@ -1,0 +1,71 @@
+# Publication list settings.
+#
+# The site finds papers automatically every week from three places:
+#   1. your ORCID record (orcid below)
+#   2. Crossref works that carry your ORCID iD
+#   3. a PubMed search (pubmed_query below)
+# Full details for each paper (authors, journal, volume, pages) come from Crossref.
+#
+# "include" guarantees a paper appears and sets which section it goes in.
+# A DOI is enough; any other field you fill in overrides what Crossref says.
+# "exclude" hides a paper even if a database lists it.
+
+orcid: 0000-0001-6621-793X
+pubmed_query: 'Bendor D[Author] AND ("University College London"[Affiliation] OR UCL[Affiliation])'
+
+# Author names to show in bold (as they appear in the list: surname then initials)
+highlight:
+  - Bendor D
+
+# Order of sections on the Publications page
+sections:
+  - Peer-reviewed articles
+  - Preprints
+  - Commentary
+  - Book chapters
+
+include:
+  # Peer-reviewed articles
+  - {doi: 10.1016/j.tins.2025.02.006, section: Peer-reviewed articles}
+  - {doi: 10.7554/eLife.85635, section: Peer-reviewed articles}
+  - {doi: 10.1038/s41467-023-43939-z, section: Peer-reviewed articles}
+  - {doi: 10.1038/s41598-023-40976-y, section: Peer-reviewed articles}
+  - {doi: 10.7554/eLife.86464, section: Peer-reviewed articles}
+  - {doi: 10.1038/s41467-022-33507-2, section: Peer-reviewed articles}
+  - {doi: 10.7554/eLife.79031, section: Peer-reviewed articles}
+  - {doi: 10.1016/j.cub.2022.06.090, section: Peer-reviewed articles}
+  - {doi: 10.7554/eLife.66551, section: Peer-reviewed articles}
+  - {doi: 10.1038/s41598-020-70397-0, section: Peer-reviewed articles}
+  - {doi: 10.1371/journal.pcbi.1007627, section: Peer-reviewed articles}
+  - {doi: 10.1016/j.cub.2019.08.019, section: Peer-reviewed articles}
+  - {doi: 10.1016/j.pneurobio.2019.04.004, section: Peer-reviewed articles}
+  - {doi: 10.1371/journal.pone.0154374, section: Peer-reviewed articles}
+  - {doi: 10.1371/journal.pcbi.1004197, section: Peer-reviewed articles}
+  - {doi: 10.1016/j.brainresbull.2013.12.011, section: Peer-reviewed articles}
+  - {doi: 10.3389/fpsyg.2014.00159, section: Peer-reviewed articles}
+  - {doi: 10.1038/nn.3203, section: Peer-reviewed articles}
+  - {doi: 10.1523/JNEUROSCI.2563-12.2012, section: Peer-reviewed articles}
+  - {doi: 10.1152/jn.00281.2009, section: Peer-reviewed articles}
+  - {doi: 10.1016/j.neuroscience.2008.03.065, section: Peer-reviewed articles}
+  - {doi: 10.1152/jn.00884.2007, section: Peer-reviewed articles}
+  - {doi: 10.1038/nn1888, section: Peer-reviewed articles}
+  - {doi: 10.1016/j.conb.2006.07.001, section: Peer-reviewed articles}
+  - {doi: 10.1038/nature03867, section: Peer-reviewed articles}
+  # Commentary
+  - {doi: 10.1126/science.adv1570, section: Commentary}
+  - {doi: 10.1016/j.neuron.2016.08.006, section: Commentary}
+  - {doi: 10.1016/j.tics.2016.01.003, section: Commentary}
+  - {doi: 10.1016/j.cell.2015.06.011, section: Commentary}
+  - {doi: 10.1126/science.1245966, section: Commentary, title: "Play it again, brain"}
+  - {doi: 10.1152/jn.00804.2011, section: Commentary}
+  - {doi: 10.1523/JNEUROSCI.6077-10.2011, section: Commentary}
+  # Book chapters
+  - {doi: 10.1007/978-3-319-50406-3_5, section: Book chapters}
+  - doi: 10.1093/oxfordhb/9780199233281.013.0007
+    section: Book chapters
+    venue: "In: Palmer A, Rees A (eds), The Oxford Handbook of Auditory Science: The Auditory Brain. Oxford University Press"
+
+exclude:
+  # Errata and corrections for Wang et al. (2008)
+  - {doi: 10.1016/j.neuroscience.2008.06.041}
+  - {doi: 10.1016/j.neuroscience.2008.07.050}

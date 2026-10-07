@@ -1,0 +1,79 @@
+# Current lab members appear in this order on the People page.
+# To add someone: copy a block, change the details, and upload a photo to static/images/people/.
+# To move someone to alumni: delete their block here and add them under alumni below.
+members:
+  - name: Daniel Bendor
+    role: Group leader
+    photo: /static/images/people/daniel-bendor.webp
+    link: ""
+  - name: Prez Jarzebowski
+    role: Research fellow
+    photo: /static/images/people/prez-jarzebowski.webp
+    link: ""
+  - name: Aditi Bishnoi
+    role: Research fellow
+    photo: /static/images/people/aditi-bishnoi.webp
+    link: ""
+  - name: Jo Holeniewska
+    role: Lab manager
+    photo: /static/images/people/jo-holeniewska.webp
+    link: ""
+  - name: Masa Takigawa
+    role: PhD student
+    photo: /static/images/people/masa-takigawa.webp
+    link: ""
+  - name: Ellie Benoit
+    role: PhD student
+    photo: /static/images/people/ellie-benoit.webp
+    link: ""
+  - name: Ben Borthwick
+    role: PhD student
+    photo: /static/images/people/ben-borthwick.webp
+    link: ""
+  - name: Alexandra Narin
+    role: Research assistant
+    photo: /static/images/people/alexandra-narin.webp
+    link: ""
+  - name: Yutong Liu
+    role: Undergraduate researcher
+    photo: ""
+    link: ""
+
+# Alumni are grouped by "group" (shown in this order) and listed in the order given.
+alumni_groups:
+  - Postdoctoral fellows
+  - Research assistants
+  - PhD students
+  - MSc, MRes and visiting students
+
+alumni:
+  - {name: Catherine Perrodin, years: 2015–2021, now: RNID, group: Postdoctoral fellows}
+  - {name: Sophie Renaudineau, years: 2015–2021, now: Senior Lecturer at London Metropolitan University, group: Postdoctoral fellows}
+  - {name: James Cooke, years: 2015–2022, now: "Interspace Institute, author", group: Postdoctoral fellows}
+  - {name: Lilia Kukovska, years: 2017–2019, now: "PhD student, University of Cambridge", group: Research assistants}
+  - {name: Julieta Campi, years: 2016–2017, now: "Assistant Lecturer, Universidad de San Andrés", group: Research assistants}
+  - {name: Katrina Portelli, years: 2021–2025, now: Postdoc at UCL, group: PhD students}
+  - {name: Margot Tirole, years: 2017–2021, now: Postdoc at NIH, group: PhD students}
+  - {name: Marta Huelin, years: 2016–2021, now: "Data scientist, Green Energy Options", group: PhD students}
+  - {name: Soraya Dunn, years: 2014–2018, now: Postdoc at UCLA, group: PhD students}
+  - {name: Fiona Yang, years: "", now: "", group: "MSc, MRes and visiting students"}
+  - {name: Oliver Millar, years: "", now: "", group: "MSc, MRes and visiting students"}
+  - {name: Abbi Major, years: "", now: "", group: "MSc, MRes and visiting students"}
+  - {name: Charlotte Burdon, years: "", now: "", group: "MSc, MRes and visiting students"}
+  - {name: Pierre Varichon, years: "", now: "", group: "MSc, MRes and visiting students"}
+  - {name: Shaurya Goyal, years: "", now: "", group: "MSc, MRes and visiting students"}
+  - {name: Gaelle Malihos, years: "", now: "", group: "MSc, MRes and visiting students"}
+  - {name: Caroline Mailot, years: "", now: "", group: "MSc, MRes and visiting students"}
+  - {name: Qinbo Qiao, years: "", now: "PhD student, University of Oxford", group: "MSc, MRes and visiting students"}
+  - {name: Leah McCauley, years: "", now: "", group: "MSc, MRes and visiting students"}
+  - {name: Masahiro Takigawa, years: "", now: "PhD student, UCL-Birkbeck MRC DTP", group: "MSc, MRes and visiting students"}
+  - {name: Yu Qian, years: "", now: "PhD student, UT Austin", group: "MSc, MRes and visiting students"}
+  - {name: Raphael Brito, years: "", now: "PhD student, Collège de France", group: "MSc, MRes and visiting students"}
+  - {name: Shanice Bailey, years: "", now: "PhD student, Sainsbury Wellcome Centre", group: "MSc, MRes and visiting students"}
+  - {name: Jules Lebert, years: "", now: "PhD student, UCL", group: "MSc, MRes and visiting students"}
+  - {name: Irene Echeverria Altuna, years: "", now: "PhD student, University of Oxford", group: "MSc, MRes and visiting students"}
+  - {name: Stefania Vietti-Michelina, years: "", now: "PhD student, University of Oxford", group: "MSc, MRes and visiting students"}
+  - {name: John Lee, years: "", now: "PhD student, Johns Hopkins", group: "MSc, MRes and visiting students"}
+  - {name: Margaux Silvestre, years: "", now: "PhD student, Francis Crick Institute", group: "MSc, MRes and visiting students"}
+  - {name: Vittoria Pavoncello, years: "", now: "", group: "MSc, MRes and visiting students"}
+  - {name: Maria Negreskul, years: "", now: "", group: "MSc, MRes and visiting students"}

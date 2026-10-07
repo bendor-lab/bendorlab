@@ -1,0 +1,106 @@
+# Builds the website and publishes it with GitHub Pages.
+# Runs whenever anything is saved to the main branch, every Monday morning
+# (to pick up new publications), and on demand from the Actions tab.
+# When the publication list changes, or the weekly refresh fails, it opens a
+# GitHub issue, which GitHub emails to the repository owner.
+name: Build and publish website
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "23 5 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write   # save the refreshed publication list and optimised photos
+  pages: write
+  id-token: write
+  issues: write     # open an issue to report new papers or problems
+  actions: write    # keep the scheduled jobs switched on
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install build tools
+        run: pip install -r requirements.txt
+
+      - name: Refresh the publication list
+        id: pubs
+        run: python scripts/fetch_publications.py
+        continue-on-error: true
+
+      - name: Shrink new photos and remove their location data
+        run: python scripts/optimise_images.py
+
+      - name: Save changes back to the repository
+        continue-on-error: true
+        run: |
+          git add data/publications.json static/images
+          if ! git diff --cached --quiet; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "Update publication list and optimise photos"
+            git push
+          fi
+
+      - name: Report new or removed papers
+        continue-on-error: true
+        run: |
+          if [ -s data/.changes.md ]; then
+            gh issue create --title "Publication list updated $(date +%Y-%m-%d)" --body-file data/.changes.md
+          fi
+
+      - name: Report a failed publication refresh
+        if: steps.pubs.outcome == 'failure' && github.event_name == 'schedule'
+        continue-on-error: true
+        run: |
+          [ -s data/.problems.md ] || echo "The publication refresh failed; see the Actions log." > data/.problems.md
+          open=$(gh issue list --state open --search "in:title Publication refresh problem" --json number --jq '.[0].number')
+          if [ -n "$open" ]; then
+            gh issue comment "$open" --body-file data/.problems.md
+          else
+            gh issue create --title "Publication refresh problem" --body-file data/.problems.md
+          fi
+
+      - name: Build the site
+        run: python build.py
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      # GitHub pauses scheduled jobs in repositories with no activity for 60 days.
+      - name: Keep the scheduled jobs switched on
+        if: github.event_name == 'schedule'
+        continue-on-error: true
+        run: |
+          for wf in deploy.yml yearly-reminder.yml; do
+            gh api -X PUT "repos/${{ github.repository }}/actions/workflows/$wf/enable"
+          done
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

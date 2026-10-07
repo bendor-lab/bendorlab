@@ -1,0 +1,718 @@
+{
+ "updated": "2026-10-07",
+ "items": [
+  {
+   "doi": "10.64898/2026.06.26.734797",
+   "type": "posted-content",
+   "title": "Temporal Gating by Chandelier Cells Encodes Signed Prediction Errors",
+   "authors": [
+    "Jarzebowski P",
+    "Bendor D"
+   ],
+   "venue": "bioRxiv",
+   "volume": "",
+   "issue": "",
+   "pages": "",
+   "year": 2026,
+   "date": "2026-06-28",
+   "published_as": [],
+   "section": "Preprints",
+   "pmid": ""
+  },
+  {
+   "doi": "10.64898/2026.06.10.731494",
+   "type": "posted-content",
+   "title": "Time, but not reward, shapes replay-based episodic prioritization",
+   "authors": [
+    "Tirole M",
+    "Duvelle É",
+    "Bendor D"
+   ],
+   "venue": "bioRxiv",
+   "volume": "",
+   "issue": "",
+   "pages": "",
+   "year": 2026,
+   "date": "2026-06-12",
+   "published_as": [],
+   "section": "Preprints",
+   "pmid": ""
+  },
+  {
+   "doi": "10.64898/2026.06.12.731367",
+   "type": "posted-content",
+   "title": "Interplay of sleep neural oscillations enhances coordinated memory reactivation between cortex and hippocampus",
+   "authors": [
+    "Takigawa M",
+    "Tong D",
+    "Horrocks EAB",
+    "Saleem AB",
+    "Bendor D"
+   ],
+   "venue": "bioRxiv",
+   "volume": "",
+   "issue": "",
+   "pages": "",
+   "year": 2026,
+   "date": "2026-06-12",
+   "published_as": [],
+   "section": "Preprints",
+   "pmid": ""
+  },
+  {
+   "doi": "10.1016/j.tins.2025.02.006",
+   "type": "journal-article",
+   "title": "Awake replay: off the clock but on the job",
+   "authors": [
+    "van der Meer MAA",
+    "Bendor D"
+   ],
+   "venue": "Trends in Neurosciences",
+   "volume": "48",
+   "issue": "4",
+   "pages": "257–267",
+   "year": 2025,
+   "date": "2025-04-01",
+   "published_as": [],
+   "section": "Peer-reviewed articles",
+   "pmid": "40121166"
+  },
+  {
+   "doi": "10.1126/science.adv1570",
+   "type": "journal-article",
+   "title": "Replaying off the beaten path",
+   "authors": [
+    "Takigawa M",
+    "Bendor D"
+   ],
+   "venue": "Science",
+   "volume": "387",
+   "issue": "6733",
+   "pages": "476–477",
+   "year": 2025,
+   "date": "2025-01-31",
+   "published_as": [],
+   "section": "Commentary",
+   "pmid": "39883785"
+  },
+  {
+   "doi": "10.7554/elife.85635",
+   "type": "journal-article",
+   "title": "Evaluating hippocampal replay without a ground truth",
+   "authors": [
+    "Takigawa M",
+    "Huelin Gorriz M",
+    "Tirole M",
+    "Bendor D"
+   ],
+   "venue": "eLife",
+   "volume": "13",
+   "issue": "",
+   "pages": "e85635",
+   "year": 2024,
+   "date": "2024-11-28",
+   "published_as": [],
+   "section": "Peer-reviewed articles",
+   "pmid": "39606951"
+  },
+  {
+   "doi": "10.7554/elife.86464",
+   "type": "journal-article",
+   "title": "Courtship behaviour reveals temporal regularity is a critical social cue in mouse communication",
+   "authors": [
+    "Perrodin C",
+    "Verzat C",
+    "Bendor D"
+   ],
+   "venue": "eLife",
+   "volume": "12",
+   "issue": "",
+   "pages": "RP86464",
+   "year": 2023,
+   "date": "2023-12-27",
+   "published_as": [],
+   "section": "Peer-reviewed articles",
+   "pmid": "38149925"
+  },
+  {
+   "doi": "10.1038/s41467-023-43939-z",
+   "type": "journal-article",
+   "title": "The role of experience in prioritizing hippocampal replay",
+   "authors": [
+    "Huelin Gorriz M",
+    "Takigawa M",
+    "Bendor D"
+   ],
+   "venue": "Nature Communications",
+   "volume": "14",
+   "issue": "1",
+   "pages": "8157",
+   "year": 2023,
+   "date": "2023-12-09",
+   "published_as": [],
+   "section": "Peer-reviewed articles",
+   "pmid": "38071221"
+  },
+  {
+   "doi": "10.1038/s41598-023-40976-y",
+   "type": "journal-article",
+   "title": "Memory capacity and prioritization in female mice",
+   "authors": [
+    "Qiao Q",
+    "Mairlot C",
+    "Bendor D"
+   ],
+   "venue": "Scientific Reports",
+   "volume": "13",
+   "issue": "1",
+   "pages": "14073",
+   "year": 2023,
+   "date": "2023-08-28",
+   "published_as": [],
+   "section": "Peer-reviewed articles",
+   "pmid": "37640740"
+  },
+  {
+   "doi": "10.1038/s41467-022-33507-2",
+   "type": "journal-article",
+   "title": "Behaviourally modulated hippocampal theta oscillations in the ferret persist during both locomotion and immobility",
+   "authors": [
+    "Dunn SLS",
+    "Town SM",
+    "Bizley JK",
+    "Bendor D"
+   ],
+   "venue": "Nature Communications",
+   "volume": "13",
+   "issue": "1",
+   "pages": "5905",
+   "year": 2022,
+   "date": "2022-10-07",
+   "published_as": [],
+   "section": "Peer-reviewed articles",
+   "pmid": "36207304"
+  },
+  {
+   "doi": "10.1016/j.cub.2022.06.090",
+   "type": "journal-article",
+   "title": "Predictive maps in rats and humans for spatial navigation",
+   "authors": [
+    "de Cothi W",
+    "Nyberg N",
+    "Griesbauer EM",
+    "Ghanamé C",
+    "Zisch F",
+    "Lefort JM",
+    "Fletcher L",
+    "Newton C",
+    "Renaudineau S",
+    "Bendor D",
+    "Grieves R",
+    "Duvelle É",
+    "Barry C",
+    "Spiers HJ"
+   ],
+   "venue": "Current Biology",
+   "volume": "32",
+   "issue": "17",
+   "pages": "3676–3689.e5",
+   "year": 2022,
+   "date": "2022-09-01",
+   "published_as": [],
+   "section": "Peer-reviewed articles",
+   "pmid": "35863351"
+  },
+  {
+   "doi": "10.7554/elife.79031",
+   "type": "journal-article",
+   "title": "Experience-driven rate modulation is reinstated during hippocampal replay",
+   "authors": [
+    "Tirole M",
+    "Huelin Gorriz M",
+    "Takigawa M",
+    "Kukovska L",
+    "Bendor D"
+   ],
+   "venue": "eLife",
+   "volume": "11",
+   "issue": "",
+   "pages": "e79031",
+   "year": 2022,
+   "date": "2022-08-22",
+   "published_as": [],
+   "section": "Peer-reviewed articles",
+   "pmid": "35993533"
+  },
+  {
+   "doi": "10.7554/elife.66551",
+   "type": "journal-article",
+   "title": "Interpreting wide-band neural activity using convolutional neural networks",
+   "authors": [
+    "Frey M",
+    "Tanni S",
+    "Perrodin C",
+    "O'Leary A",
+    "Nau M",
+    "Kelly J",
+    "Banino A",
+    "Bendor D",
+    "Lefort J",
+    "Doeller CF",
+    "Barry C"
+   ],
+   "venue": "eLife",
+   "volume": "10",
+   "issue": "",
+   "pages": "e66551",
+   "year": 2021,
+   "date": "2021-08-02",
+   "published_as": [],
+   "section": "Peer-reviewed articles",
+   "pmid": "34338632"
+  },
+  {
+   "doi": "10.1038/s41598-020-70397-0",
+   "type": "journal-article",
+   "title": "Post-stimulatory activity in primate auditory cortex evoked by sensory stimulation during passive listening",
+   "authors": [
+    "Cooke JE",
+    "Lee JJ",
+    "Bartlett EL",
+    "Wang X",
+    "Bendor D"
+   ],
+   "venue": "Scientific Reports",
+   "volume": "10",
+   "issue": "1",
+   "pages": "13885",
+   "year": 2020,
+   "date": "2020-08-17",
+   "published_as": [],
+   "section": "Peer-reviewed articles",
+   "pmid": "32807854"
+  },
+  {
+   "doi": "10.1371/journal.pcbi.1007627",
+   "type": "journal-article",
+   "title": "The role of adaptation in generating monotonic rate codes in auditory cortex",
+   "authors": [
+    "Lee JH",
+    "Wang X",
+    "Bendor D"
+   ],
+   "venue": "PLOS Computational Biology",
+   "volume": "16",
+   "issue": "2",
+   "pages": "e1007627",
+   "year": 2020,
+   "date": "2020-02-18",
+   "published_as": [],
+   "section": "Peer-reviewed articles",
+   "pmid": "32069272"
+  },
+  {
+   "doi": "10.1016/j.cub.2019.08.019",
+   "type": "journal-article",
+   "title": "How Targeted Memory Reactivation Promotes the Selective Strengthening of Memories in Sleep",
+   "authors": [
+    "Lewis PA",
+    "Bendor D"
+   ],
+   "venue": "Current Biology",
+   "volume": "29",
+   "issue": "18",
+   "pages": "R906–R912",
+   "year": 2019,
+   "date": "2019-09-01",
+   "published_as": [],
+   "section": "Peer-reviewed articles",
+   "pmid": "31550479"
+  },
+  {
+   "doi": "10.1016/j.pneurobio.2019.04.004",
+   "type": "journal-article",
+   "title": "A review of neurobiological factors underlying the selective enhancement of memory at encoding, consolidation, and retrieval",
+   "authors": [
+    "Crowley R",
+    "Bendor D",
+    "Javadi AH"
+   ],
+   "venue": "Progress in Neurobiology",
+   "volume": "179",
+   "issue": "",
+   "pages": "101615",
+   "year": 2019,
+   "date": "2019-08-01",
+   "published_as": [],
+   "section": "Peer-reviewed articles",
+   "pmid": "31054931"
+  },
+  {
+   "doi": "10.1007/978-3-319-50406-3_5",
+   "type": "book-chapter",
+   "title": "Manipulating Hippocampus-Dependent Memories: To Enhance, Delete or Incept?",
+   "authors": [
+    "Spiers HJ",
+    "de Cothi W",
+    "Bendor D"
+   ],
+   "venue": "The Hippocampus from Cells to Systems",
+   "volume": "",
+   "issue": "",
+   "pages": "123–137",
+   "year": 2017,
+   "date": "2017-01-01",
+   "published_as": [],
+   "section": "Book chapters",
+   "pmid": ""
+  },
+  {
+   "doi": "10.1016/j.neuron.2016.08.006",
+   "type": "journal-article",
+   "title": "Neuronal Mechanisms and Transformations Encoding Time-Varying Signals",
+   "authors": [
+    "Petkov CI",
+    "Bendor D"
+   ],
+   "venue": "Neuron",
+   "volume": "91",
+   "issue": "4",
+   "pages": "718–721",
+   "year": 2016,
+   "date": "2016-08-01",
+   "published_as": [],
+   "section": "Commentary",
+   "pmid": "27537481"
+  },
+  {
+   "doi": "10.1371/journal.pone.0154374",
+   "type": "journal-article",
+   "title": "Tracking the Time-Dependent Role of the Hippocampus in Memory Recall Using DREADDs",
+   "authors": [
+    "Varela C",
+    "Weiss S",
+    "Meyer R",
+    "Halassa M",
+    "Biedenkapp J",
+    "Wilson MA",
+    "Goosens KA",
+    "Bendor D"
+   ],
+   "venue": "PLOS ONE",
+   "volume": "11",
+   "issue": "5",
+   "pages": "e0154374",
+   "year": 2016,
+   "date": "2016-05-04",
+   "published_as": [],
+   "section": "Peer-reviewed articles",
+   "pmid": "27145133"
+  },
+  {
+   "doi": "10.1016/j.tics.2016.01.003",
+   "type": "journal-article",
+   "title": "Does the Hippocampus Map Out the Future?",
+   "authors": [
+    "Bendor D",
+    "Spiers HJ"
+   ],
+   "venue": "Trends in Cognitive Sciences",
+   "volume": "20",
+   "issue": "3",
+   "pages": "167–169",
+   "year": 2016,
+   "date": "2016-03-01",
+   "published_as": [],
+   "section": "Commentary",
+   "pmid": "26830730"
+  },
+  {
+   "doi": "10.1016/j.cell.2015.06.011",
+   "type": "journal-article",
+   "title": "Flies Sleep on It, or Fuhgeddaboudit!",
+   "authors": [
+    "Rihel J",
+    "Bendor D"
+   ],
+   "venue": "Cell",
+   "volume": "161",
+   "issue": "7",
+   "pages": "1498–1500",
+   "year": 2015,
+   "date": "2015-06-01",
+   "published_as": [],
+   "section": "Commentary",
+   "pmid": "26091032"
+  },
+  {
+   "doi": "10.1371/journal.pcbi.1004197",
+   "type": "journal-article",
+   "title": "The Role of Inhibition in a Computational Model of an Auditory Cortical Neuron during the Encoding of Temporal Information",
+   "authors": [
+    "Bendor D"
+   ],
+   "venue": "PLOS Computational Biology",
+   "volume": "11",
+   "issue": "4",
+   "pages": "e1004197",
+   "year": 2015,
+   "date": "2015-04-16",
+   "published_as": [],
+   "section": "Peer-reviewed articles",
+   "pmid": "25879843"
+  },
+  {
+   "doi": "10.1016/j.brainresbull.2013.12.011",
+   "type": "journal-article",
+   "title": "Enhance, delete, incept: Manipulating hippocampus-dependent memories",
+   "authors": [
+    "Spiers HJ",
+    "Bendor D"
+   ],
+   "venue": "Brain Research Bulletin",
+   "volume": "105",
+   "issue": "",
+   "pages": "2–7",
+   "year": 2014,
+   "date": "2014-06-01",
+   "published_as": [],
+   "section": "Peer-reviewed articles",
+   "pmid": "24397964"
+  },
+  {
+   "doi": "10.3389/fpsyg.2014.00159",
+   "type": "journal-article",
+   "title": "Global timing: a conceptual framework to investigate the neural basis of rhythm perception in humans and non-human species",
+   "authors": [
+    "Geiser E",
+    "Walker KMM",
+    "Bendor D"
+   ],
+   "venue": "Frontiers in Psychology",
+   "volume": "5",
+   "issue": "",
+   "pages": "",
+   "year": 2014,
+   "date": "2014-01-01",
+   "published_as": [],
+   "section": "Peer-reviewed articles",
+   "pmid": "24624101"
+  },
+  {
+   "doi": "10.1126/science.1245966",
+   "type": "journal-article",
+   "title": "Play it again, brain",
+   "authors": [
+    "Bendor D"
+   ],
+   "venue": "Science",
+   "volume": "342",
+   "issue": "6158",
+   "pages": "574",
+   "year": 2013,
+   "date": "2013-11-01",
+   "published_as": [],
+   "section": "Commentary",
+   "pmid": "24179215"
+  },
+  {
+   "doi": "10.1523/jneurosci.2563-12.2012",
+   "type": "journal-article",
+   "title": "Dual-Pitch Processing Mechanisms in Primate Auditory Cortex",
+   "authors": [
+    "Bendor D",
+    "Osmanski MS",
+    "Wang X"
+   ],
+   "venue": "The Journal of Neuroscience",
+   "volume": "32",
+   "issue": "46",
+   "pages": "16149–16161",
+   "year": 2012,
+   "date": "2012-11-14",
+   "published_as": [],
+   "section": "Peer-reviewed articles",
+   "pmid": ""
+  },
+  {
+   "doi": "10.1038/nn.3203",
+   "type": "journal-article",
+   "title": "Biasing the content of hippocampal replay during sleep",
+   "authors": [
+    "Bendor D",
+    "Wilson MA"
+   ],
+   "venue": "Nature Neuroscience",
+   "volume": "15",
+   "issue": "10",
+   "pages": "1439–1444",
+   "year": 2012,
+   "date": "2012-10-01",
+   "published_as": [],
+   "section": "Peer-reviewed articles",
+   "pmid": ""
+  },
+  {
+   "doi": "10.1152/jn.00804.2011",
+   "type": "journal-article",
+   "title": "Does a pitch center exist in auditory cortex?",
+   "authors": [
+    "Bendor D"
+   ],
+   "venue": "Journal of Neurophysiology",
+   "volume": "107",
+   "issue": "3",
+   "pages": "743–746",
+   "year": 2012,
+   "date": "2012-02-01",
+   "published_as": [],
+   "section": "Commentary",
+   "pmid": ""
+  },
+  {
+   "doi": "10.1523/jneurosci.6077-10.2011",
+   "type": "journal-article",
+   "title": "Understanding How Neural Circuits Measure Pitch",
+   "authors": [
+    "Bendor D"
+   ],
+   "venue": "The Journal of Neuroscience",
+   "volume": "31",
+   "issue": "9",
+   "pages": "3141–3142",
+   "year": 2011,
+   "date": "2011-03-02",
+   "published_as": [],
+   "section": "Commentary",
+   "pmid": ""
+  },
+  {
+   "doi": "10.1152/jn.00281.2009",
+   "type": "journal-article",
+   "title": "Neural Coding of Periodicity in Marmoset Auditory Cortex",
+   "authors": [
+    "Bendor D",
+    "Wang X"
+   ],
+   "venue": "Journal of Neurophysiology",
+   "volume": "103",
+   "issue": "4",
+   "pages": "1809–1822",
+   "year": 2010,
+   "date": "2010-04-01",
+   "published_as": [],
+   "section": "Peer-reviewed articles",
+   "pmid": ""
+  },
+  {
+   "doi": "10.1093/oxfordhb/9780199233281.013.0007",
+   "type": "book",
+   "title": "Pitch",
+   "authors": [
+    "Wang X",
+    "Bendor D"
+   ],
+   "venue": "In: Palmer A, Rees A (eds), The Oxford Handbook of Auditory Science: The Auditory Brain. Oxford University Press",
+   "volume": "",
+   "issue": "",
+   "pages": "",
+   "year": 2010,
+   "date": "2010-01-21",
+   "published_as": [],
+   "section": "Book chapters",
+   "pmid": ""
+  },
+  {
+   "doi": "10.1152/jn.00884.2007",
+   "type": "journal-article",
+   "title": "Neural Response Properties of Primary, Rostral, and Rostrotemporal Core Fields in the Auditory Cortex of Marmoset Monkeys",
+   "authors": [
+    "Bendor D",
+    "Wang X"
+   ],
+   "venue": "Journal of Neurophysiology",
+   "volume": "100",
+   "issue": "2",
+   "pages": "888–906",
+   "year": 2008,
+   "date": "2008-08-01",
+   "published_as": [],
+   "section": "Peer-reviewed articles",
+   "pmid": ""
+  },
+  {
+   "doi": "10.1016/j.neuroscience.2008.03.065",
+   "type": "journal-article",
+   "title": "Neural coding of temporal information in auditory thalamus and cortex",
+   "authors": [
+    "Wang X",
+    "Lu T",
+    "Bendor D",
+    "Bartlett E"
+   ],
+   "venue": "Neuroscience",
+   "volume": "154",
+   "issue": "1",
+   "pages": "294–303",
+   "year": 2008,
+   "date": "2008-06-01",
+   "published_as": [],
+   "section": "Peer-reviewed articles",
+   "pmid": ""
+  },
+  {
+   "doi": "10.1038/nn1888",
+   "type": "journal-article",
+   "title": "Differential neural coding of acoustic flutter within primate auditory cortex",
+   "authors": [
+    "Bendor D",
+    "Wang X"
+   ],
+   "venue": "Nature Neuroscience",
+   "volume": "10",
+   "issue": "6",
+   "pages": "763–771",
+   "year": 2007,
+   "date": "2007-06-01",
+   "published_as": [],
+   "section": "Peer-reviewed articles",
+   "pmid": ""
+  },
+  {
+   "doi": "10.1016/j.conb.2006.07.001",
+   "type": "journal-article",
+   "title": "Cortical representations of pitch in monkeys and humans",
+   "authors": [
+    "Bendor D",
+    "Wang X"
+   ],
+   "venue": "Current Opinion in Neurobiology",
+   "volume": "16",
+   "issue": "4",
+   "pages": "391–399",
+   "year": 2006,
+   "date": "2006-08-01",
+   "published_as": [],
+   "section": "Peer-reviewed articles",
+   "pmid": ""
+  },
+  {
+   "doi": "10.1038/nature03867",
+   "type": "journal-article",
+   "title": "The neuronal representation of pitch in primate auditory cortex",
+   "authors": [
+    "Bendor D",
+    "Wang X"
+   ],
+   "venue": "Nature",
+   "volume": "436",
+   "issue": "7054",
+   "pages": "1161–1165",
+   "year": 2005,
+   "date": "2005-08-01",
+   "published_as": [],
+   "section": "Peer-reviewed articles",
+   "pmid": ""
+  }
+ ]
+}

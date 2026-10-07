@@ -1,0 +1,10 @@
+{% macro citation(p, show_year=True) -%}
+<span class="cite-authors">{{ p.authors_html }}</span>
+<span class="cite-title">{% if p.url %}<a href="{{ p.url }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</span>
+<span class="cite-venue"><em>{{ p.venue }}</em>{% if p.section == 'Preprints' %} preprint{% endif %}{% if p.volume %}, {{ p.volume }}{% if p.issue %}({{ p.issue }}){% endif %}{% endif %}{% if p.pages %}{% if p.volume %}:{% else %}, {% endif %}{{ p.pages }}{% endif %}{% if show_year %} ({{ p.year }}){% endif %}</span>
+{%- endmacro %}
+
+{% macro email_link(address, label=None) -%}
+{%- set parts = address.split('@') -%}
+<a class="email" href="#" data-u="{{ parts[0] }}" data-d="{{ parts[1] }}">{{ label or (parts[0] ~ ' at ' ~ parts[1]) }}</a>
+{%- endmacro %}

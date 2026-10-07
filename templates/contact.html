@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% from "_macros.html" import email_link %}
+{% block content %}
+<div class="wrap narrow">
+  <h1>Contact</h1>
+  <dl class="contact">
+    <dt>Email</dt>
+    <dd>{{ email_link(site.email) }}</dd>
+    <dt>Address</dt>
+    <dd>
+      <address>{% for line in site.address %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}</address>
+      <a href="https://www.openstreetmap.org/search?query={{ site.address | join(', ') | urlencode }}">Open in a map</a>
+    </dd>
+  </dl>
+</div>
+{% endblock %}

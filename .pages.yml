@@ -1,0 +1,185 @@
+# Pages CMS configuration: gives the website's content an editing form at https://app.pagescms.org
+# Each save is committed to the repository and the site rebuilds itself within a couple of minutes.
+
+media:
+  input: static/images
+  output: /static/images
+  extensions: [jpg, jpeg, png, webp]
+
+content:
+  - name: people
+    label: People
+    type: file
+    path: data/people.yml
+    format: yaml
+    fields:
+      - name: members
+        label: Current lab members
+        description: Shown in this order. Drag to reorder.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{name}, {role}"
+        fields:
+          - { name: name, label: Name, type: string, required: true }
+          - { name: role, label: Role, type: string, description: "For example: PhD student, Research fellow" }
+          - name: photo
+            label: Photo
+            description: A portrait photo works best (it is cropped to 4:5). Leave empty to show initials.
+            type: image
+            options: { path: static/images/people }
+          - { name: link, label: Personal web page (optional), type: string }
+      - name: alumni_groups
+        label: Alumni headings (in the order shown)
+        type: string
+        list: true
+      - name: alumni
+        label: Lab alumni
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{name} ({group})"
+        fields:
+          - { name: name, label: Name, type: string, required: true }
+          - { name: years, label: Years in the lab, type: string, description: "For example: 2017–2021" }
+          - { name: now, label: Where they are now, type: string }
+          - name: group
+            label: Heading
+            type: select
+            options:
+              values: [Postdoctoral fellows, Research assistants, PhD students, "MSc, MRes and visiting students"]
+
+  - name: publications
+    label: Publications
+    type: file
+    path: data/publications.yml
+    format: yaml
+    fields:
+      - name: include
+        label: Papers to always list
+        description: A DOI is enough. Any other field you fill in replaces what Crossref says.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{doi}{title} ({section})"
+        fields:
+          - { name: doi, label: DOI, type: string, description: "For example: 10.1038/nn.3203" }
+          - name: section
+            label: Section
+            type: select
+            options:
+              values: [Peer-reviewed articles, Preprints, Commentary, Book chapters]
+          - { name: title, label: Title (optional override), type: string }
+          - { name: authors, label: "Authors (optional override, e.g. Bendor D, Wilson MA)", type: string }
+          - { name: venue, label: Journal or book (optional override), type: string }
+          - { name: year, label: Year (needed only if there is no DOI), type: number }
+      - name: exclude
+        label: Papers to hide
+        description: Hide anything the databases list that should not appear.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{doi}"
+        fields:
+          - { name: doi, label: DOI, type: string }
+      - name: highlight
+        label: Names shown in bold
+        description: As they appear in the list, surname then initials.
+        type: string
+        list: true
+      - name: sections
+        label: Section order
+        type: string
+        list: true
+      - { name: orcid, label: ORCID iD, type: string }
+      - { name: pubmed_query, label: PubMed search, type: string }
+
+  - name: research
+    label: Research
+    type: file
+    path: data/research.yml
+    format: yaml
+    fields:
+      - { name: intro, label: Introduction (also shown on the home page), type: text }
+      - name: themes
+        label: Research themes
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - { name: title, label: Theme, type: string, required: true }
+          - { name: summary, label: Short description (optional), type: text }
+          - name: papers
+            label: Selected papers (DOIs)
+            description: Each DOI must also be in the publication list; the full citation is filled in automatically.
+            type: string
+            list: true
+
+  - name: positions
+    label: Join the lab
+    type: file
+    path: data/positions.yml
+    format: yaml
+    fields:
+      - { name: intro, label: Introduction (also shown on the home page), type: text }
+      - { name: how_to_apply, label: How to get in touch, type: text }
+      - { name: contact_email, label: Contact email, type: string }
+      - name: openings
+        label: Funded vacancies
+        description: Leave empty when there are none.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - { name: title, label: Title, type: string, required: true }
+          - { name: summary, label: Summary, type: text }
+          - { name: details, label: Details (optional), type: text }
+          - { name: closing_date, label: Closing date (optional), type: string }
+          - { name: link, label: Link to full advert (optional), type: string }
+
+  - name: photos
+    label: Photos
+    type: file
+    path: data/photos.yml
+    format: yaml
+    fields:
+      - name: photos
+        label: Lab photos (newest first)
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{caption}"
+        fields:
+          - name: image
+            label: Photo
+            type: image
+            options: { path: static/images/photos }
+          - { name: caption, label: Caption, type: string }
+
+  - name: site
+    label: Site settings
+    type: file
+    path: data/site.yml
+    format: yaml
+    fields:
+      - { name: title, label: Lab name, type: string }
+      - { name: url, label: Website address, type: string }
+      - { name: tagline, label: Tagline, type: string }
+      - { name: institute, label: Institute, type: string }
+      - { name: department, label: Department, type: string }
+      - { name: university, label: University, type: string }
+      - { name: email, label: Contact email, type: string }
+      - { name: address, label: Postal address (one line each), type: string, list: true }
+      - { name: orcid, label: ORCID iD, type: string }
+      - { name: google_scholar, label: Google Scholar link (optional), type: string }
+      - { name: ucl_profile, label: UCL profile link (optional), type: string }
+      - { name: bluesky, label: Bluesky link (optional), type: string }

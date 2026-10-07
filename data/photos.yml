@@ -1,0 +1,11 @@
+# Lab photos, newest first. Upload images to static/images/photos/.
+photos:
+  - {image: /static/images/photos/lab-2025-a.webp, caption: Bendor Lab 2025}
+  - {image: /static/images/photos/lab-2025-b.webp, caption: Bendor Lab 2025}
+  - {image: /static/images/photos/sfn-2023.webp, caption: SfN 2023}
+  - {image: /static/images/photos/secret-cinema-2022.webp, caption: Secret Cinema 2022}
+  - {image: /static/images/photos/christmas-2021.webp, caption: Christmas 2021}
+  - {image: /static/images/photos/lab-2021-a.webp, caption: Bendor Lab 2021}
+  - {image: /static/images/photos/lab-2021-b.webp, caption: Bendor Lab 2021}
+  - {image: /static/images/photos/lab-misc.webp, caption: ""}
+  - {image: /static/images/photos/lab-2017.webp, caption: Bendor Lab 2017}

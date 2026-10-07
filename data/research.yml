@@ -1,0 +1,39 @@
+intro: >-
+  We use behavioural, computational, electrophysiological, and molecular-genetic
+  tools to study how the neocortex and hippocampus encode information and
+  communicate with each other, with a goal to understand the neural mechanisms
+  responsible for memory, perception, predictive coding and more broadly the
+  functional role of sleep.
+
+# Research themes. "papers" lists DOIs from the publication list; their full
+# citations are filled in automatically. "summary" is optional.
+themes:
+  - title: Hippocampal replay
+    summary: ""
+    papers:
+      - 10.64898/2026.06.12.731367
+      - 10.1016/j.tins.2025.02.006
+      - 10.7554/elife.85635
+      - 10.7554/elife.79031
+      - 10.1038/nn.3203
+  - title: Memory triage
+    summary: ""
+    papers:
+      - 10.64898/2026.06.10.731494
+      - 10.1038/s41467-023-43939-z
+      - 10.1038/s41598-023-40976-y
+      - 10.1016/j.cub.2019.08.019
+  - title: Predictive coding
+    summary: ""
+    papers:
+      - 10.64898/2026.06.26.734797
+      - 10.1016/j.cub.2022.06.090
+      - 10.1016/j.tics.2016.01.003
+  - title: Auditory cortex and the coding of time and pitch
+    summary: ""
+    papers:
+      - 10.7554/elife.86464
+      - 10.1371/journal.pcbi.1007627
+      - 10.1371/journal.pcbi.1004197
+      - 10.1038/nn1888
+      - 10.1038/nature03867

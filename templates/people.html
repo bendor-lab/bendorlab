@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="wrap">
+  <h1>People</h1>
+
+  <section aria-labelledby="members-h">
+    <h2 id="members-h" class="visually-hidden">Current lab members</h2>
+    <ul class="people-grid">
+      {% for m in people.members %}
+      <li class="person">
+        {% if m.photo %}
+        <img src="{{ asset(m.photo) }}" alt="" loading="lazy" width="300" height="375">
+        {% else %}
+        <span class="monogram" aria-hidden="true">{{ m.initials }}</span>
+        {% endif %}
+        <p class="person-name">{% if m.link %}<a href="{{ m.link }}">{{ m.name }}</a>{% else %}{{ m.name }}{% endif %}</p>
+        <p class="person-role">{{ m.role or "" }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section class="alumni" aria-labelledby="alumni-h">
+    <h2 id="alumni-h">Lab alumni</h2>
+    {% for group, rows in alumni %}
+    <h3>{{ group }}</h3>
+    {% if rows | selectattr('years') | list %}
+    <ul class="alumni-list">
+      {% for a in rows %}
+      <li>
+        <span class="alum-years">{{ a.years or "" }}</span>
+        <span class="alum-name">{{ a.name }}</span>
+        <span class="alum-now">{{ a.now or "" }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <ul class="alumni-compact">
+      {% for a in rows %}<li><span class="alum-name">{{ a.name }}</span>{% if a.now %} <span class="alum-now">{{ a.now }}</span>{% endif %}</li>{% endfor %}
+    </ul>
+    {% endif %}
+    {% endfor %}
+  </section>
+</div>
+{% endblock %}

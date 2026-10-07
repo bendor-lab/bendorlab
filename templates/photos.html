@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="wrap">
+  <h1>Photos</h1>
+  <ul class="gallery">
+    {% for ph in photos.photos %}
+    <li>
+      <figure>
+        <button type="button" class="gallery-open" data-index="{{ loop.index0 }}" aria-label="Enlarge photo{% if ph.caption %}: {{ ph.caption }}{% endif %}">
+          <img src="{{ asset(ph.image) }}" alt="{{ ph.caption or 'Bendor Lab photo' }}" loading="lazy">
+        </button>
+        {% if ph.caption %}<figcaption>{{ ph.caption }}</figcaption>{% endif %}
+      </figure>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+<dialog class="lightbox" aria-label="Photo viewer">
+  <figure>
+    <img src="" alt="">
+    <figcaption></figcaption>
+  </figure>
+  <div class="lightbox-controls">
+    <button type="button" data-step="-1">Previous</button>
+    <button type="button" data-step="1">Next</button>
+    <button type="button" class="lightbox-close">Close</button>
+  </div>
+</dialog>
+{% endblock %}

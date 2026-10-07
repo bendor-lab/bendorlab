@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% from "_macros.html" import citation %}
+{% block content %}
+<div class="wrap narrow">
+  <h1>Research</h1>
+  <p class="lede">{{ research.intro }}</p>
+
+  {% for theme in themes %}
+  <section class="theme" aria-labelledby="theme-{{ loop.index }}">
+    <h2 id="theme-{{ loop.index }}">{{ theme.title }}</h2>
+    {% if theme.summary %}<p>{{ theme.summary }}</p>{% endif %}
+    {% if theme.pubs %}
+    <ol class="pub-list compact">
+      {% for p in theme.pubs %}<li class="pub">{{ citation(p) }}</li>{% endfor %}
+    </ol>
+    {% endif %}
+  </section>
+  {% endfor %}
+</div>
+{% endblock %}

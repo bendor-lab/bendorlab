@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% from "_macros.html" import citation %}
+{% block content %}
+<section class="hero wrap">
+  <div class="hero-text">
+    <h1>{{ site.title }}</h1>
+    <p class="tagline">{{ site.tagline }}</p>
+    <p class="lede">{{ research.intro }}</p>
+    <p class="affiliation">{{ site.institute }}, {{ site.university }}</p>
+  </div>
+  <figure class="hero-image">
+    <img src="{{ root }}static/images/hero.webp" alt="A rat asleep on a small pillow in straw" width="1024" height="712">
+  </figure>
+</section>
+
+<figure class="replay wrap" aria-labelledby="replay-caption">
+  {{ replay_svg }}
+  <figcaption id="replay-caption">Illustration of a replay event: during a sharp-wave ripple (top trace), place cells fire in the order they did during a run, compressed into a fraction of a second.</figcaption>
+</figure>
+
+<div class="wrap home-grid">
+  <section class="recent" aria-labelledby="recent-h">
+    <h2 id="recent-h">Recent papers</h2>
+    <ol class="pub-list compact">
+      {% for p in recent %}
+      <li class="pub">{{ citation(p) }}</li>
+      {% endfor %}
+    </ol>
+    <p><a class="more" href="{{ root }}publications/">All publications</a></p>
+  </section>
+  <aside class="join" aria-labelledby="join-h">
+    <h2 id="join-h">Join the lab</h2>
+    {% if positions.openings %}
+      <p>{% for o in positions.openings %}<strong>{{ o.title }}</strong>{% if not loop.last %}; {% endif %}{% endfor %}</p>
+    {% endif %}
+    <p>{{ positions.intro }}</p>
+    <p><a class="more" href="{{ root }}positions/">How to get in touch</a></p>
+  </aside>
+</div>
+{% endblock %}

@@ -1,0 +1,6 @@
+_site/
+data/.last_checked
+data/.changes.md
+data/.problems.md
+__pycache__/
+.DS_Store

@@ -1,0 +1,13 @@
+# The "Join the lab" page.
+# "intro" and "how_to_apply" are always shown. Funded vacancies go under "openings";
+# leave it empty when there are none.
+intro: >-
+  We do not have funded positions at the moment, but we are always happy to hear
+  from people interested in joining the lab as a PhD student or postdoctoral
+  researcher.
+how_to_apply: >-
+  Please email Dan Bendor with your CV and a short description of your research
+  interests.
+contact_email: d.bendor@ucl.ac.uk
+
+openings: []

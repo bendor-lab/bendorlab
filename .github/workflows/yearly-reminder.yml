@@ -1,0 +1,34 @@
+# Opens a checklist issue at the start of each academic year (1 October),
+# when people join and leave the lab. GitHub emails it to the repository owner.
+name: Yearly website check
+
+on:
+  schedule:
+    - cron: "41 7 1 10 *"
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+jobs:
+  remind:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Open the checklist
+        run: |
+          cat > body.md <<'EOF'
+          A new academic year has started. A few minutes in Pages CMS (https://app.pagescms.org) keeps the website current:
+
+          - [ ] **People**: add new members with a photo; update roles that changed (for example PhD student to postdoc)
+          - [ ] **People**: move leavers to alumni, with their years in the lab and where they went
+          - [ ] **Join the lab**: check the text still describes what you can offer this year
+          - [ ] **Research**: add recent papers to the themes, or add a new theme
+          - [ ] **Photos**: add this year's lab photo
+          - [ ] **Publications**: check the list for missing papers (add their DOI under Papers to always list)
+          - [ ] **Domain**: check the bendorlab.com renewal is on auto-renew with a card that has not expired
+
+          Close this issue when done.
+          EOF
+          gh issue create --repo "${{ github.repository }}" --title "Yearly website check $(date +%Y)" --body-file body.md

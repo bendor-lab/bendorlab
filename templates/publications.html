@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% from "_macros.html" import citation %}
+{% block content %}
+<div class="wrap narrow">
+  <h1>Publications</h1>
+  <p class="meta">Updated automatically each week from ORCID, Crossref and PubMed. Last checked {{ pubs_updated }}.</p>
+
+  <div class="pub-tools">
+    <label for="pub-filter">Search by title, author, journal or year</label>
+    <input id="pub-filter" type="search" autocomplete="off" spellcheck="false">
+    <p class="pub-count" aria-live="polite"></p>
+  </div>
+
+  <nav class="section-links" aria-label="Publication sections">
+    {% for name, items in pub_sections %}<a href="#{{ name | slugify }}">{{ name }} <span>{{ items | length }}</span></a>{% endfor %}
+  </nav>
+
+  {% for name, items in pub_sections %}
+  <section class="pub-section" id="{{ name | slugify }}" aria-labelledby="{{ name | slugify }}-h">
+    <h2 id="{{ name | slugify }}-h">{{ name }}</h2>
+    <ol class="pub-list">
+      {% for p in items %}
+      <li class="pub" data-year="{{ p.year }}">
+        <span class="pub-year"{% if not p.first_of_year %} aria-hidden="true"{% endif %}>{% if p.first_of_year %}{{ p.year }}{% endif %}</span>
+        <span class="pub-body">{{ citation(p, show_year=False) }}</span>
+      </li>
+      {% endfor %}
+    </ol>
+  </section>
+  {% endfor %}
+  <p class="pub-empty" hidden>No publications match that search.</p>
+</div>
+{% endblock %}
