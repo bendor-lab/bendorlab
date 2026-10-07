@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% from "_macros.html" import citation %}
+{% from "_macros.html" import citation, email_link %}
 {% block content %}
 <section class="hero wrap">
   <div class="hero-text">
@@ -34,7 +34,7 @@
       <p>{% for o in positions.openings %}<strong>{{ o.title }}</strong>{% if not loop.last %}; {% endif %}{% endfor %}</p>
     {% endif %}
     <p>{{ positions.intro }}</p>
-    <p><a class="more" href="{{ root }}positions/">How to get in touch</a></p>
+    {% if positions.contact_email %}<p class="more">{{ email_link(positions.contact_email) }}</p>{% endif %}
   </aside>
 </div>
 {% endblock %}

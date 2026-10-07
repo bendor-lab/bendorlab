@@ -14,24 +14,20 @@ members:
     role: Research fellow
     photo: /static/images/people/aditi-bishnoi.webp
     link: ""
+  - name: Masa Takigawa
+    role: Research fellow
+    photo: /static/images/people/masa-takigawa.webp
+    link: ""
   - name: Jo Holeniewska
     role: Lab manager
     photo: /static/images/people/jo-holeniewska.webp
-    link: ""
-  - name: Masa Takigawa
-    role: PhD student
-    photo: /static/images/people/masa-takigawa.webp
     link: ""
   - name: Ellie Benoit
     role: PhD student
     photo: /static/images/people/ellie-benoit.webp
     link: ""
-  - name: Ben Borthwick
-    role: PhD student
-    photo: /static/images/people/ben-borthwick.webp
-    link: ""
   - name: Alexandra Narin
-    role: Research assistant
+    role: PhD student
     photo: /static/images/people/alexandra-narin.webp
     link: ""
   - name: Yutong Liu
@@ -52,6 +48,7 @@ alumni:
   - {name: James Cooke, years: 2015–2022, now: "Interspace Institute, author", group: Postdoctoral fellows}
   - {name: Lilia Kukovska, years: 2017–2019, now: "PhD student, University of Cambridge", group: Research assistants}
   - {name: Julieta Campi, years: 2016–2017, now: "Assistant Lecturer, Universidad de San Andrés", group: Research assistants}
+  - {name: Ben Borthwick, years: "", now: "", group: PhD students}
   - {name: Katrina Portelli, years: 2021–2025, now: Postdoc at UCL, group: PhD students}
   - {name: Margot Tirole, years: 2017–2021, now: Postdoc at NIH, group: PhD students}
   - {name: Marta Huelin, years: 2016–2021, now: "Data scientist, Green Energy Options", group: PhD students}
@@ -66,7 +63,7 @@ alumni:
   - {name: Caroline Mailot, years: "", now: "", group: "MSc, MRes and visiting students"}
   - {name: Qinbo Qiao, years: "", now: "PhD student, University of Oxford", group: "MSc, MRes and visiting students"}
   - {name: Leah McCauley, years: "", now: "", group: "MSc, MRes and visiting students"}
-  - {name: Masahiro Takigawa, years: "", now: "PhD student, UCL-Birkbeck MRC DTP", group: "MSc, MRes and visiting students"}
+  - {name: Masahiro Takigawa, years: "", now: "Research fellow, Bendor Lab", group: "MSc, MRes and visiting students"}
   - {name: Yu Qian, years: "", now: "PhD student, UT Austin", group: "MSc, MRes and visiting students"}
   - {name: Raphael Brito, years: "", now: "PhD student, Collège de France", group: "MSc, MRes and visiting students"}
   - {name: Shanice Bailey, years: "", now: "PhD student, Sainsbury Wellcome Centre", group: "MSc, MRes and visiting students"}
