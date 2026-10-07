@@ -43,12 +43,12 @@ alumni_groups:
   - MSc, MRes and visiting students
 
 alumni:
-  - {name: Catherine Perrodin, years: 2015–2021, now: RNID, group: Postdoctoral fellows}
+  - {name: Catherine Perrodin, years: 2015–2021, now: "Senior Business and Innovation Manager, UCL", group: Postdoctoral fellows}
   - {name: Sophie Renaudineau, years: 2015–2021, now: Senior Lecturer at London Metropolitan University, group: Postdoctoral fellows}
   - {name: James Cooke, years: 2015–2022, now: "Interspace Institute, author", group: Postdoctoral fellows}
   - {name: Lilia Kukovska, years: 2017–2019, now: "PhD student, University of Cambridge", group: Research assistants}
   - {name: Julieta Campi, years: 2016–2017, now: "Assistant Lecturer, Universidad de San Andrés", group: Research assistants}
-  - {name: Ben Borthwick, years: "", now: "", group: PhD students}
+  - {name: Ben Borthwick, years: 2022–2026, now: "", group: PhD students}
   - {name: Katrina Portelli, years: 2021–2025, now: Postdoc at UCL, group: PhD students}
   - {name: Margot Tirole, years: 2017–2021, now: Postdoc at NIH, group: PhD students}
   - {name: Marta Huelin, years: 2016–2021, now: "Data scientist, Green Energy Options", group: PhD students}
