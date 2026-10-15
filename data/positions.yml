@@ -5,4 +5,14 @@ intro: If you would be interested in joining the lab, please email us.
 how_to_apply: ""
 contact_email: d.bendor@ucl.ac.uk
 
+# Ways into the lab, shown as links
+routes_intro: Students usually join the lab through one of these UCL programmes.
+routes:
+  - label: Neuroscience MSc
+    note: includes a research project, which students can carry out in the lab
+    url: https://www.ucl.ac.uk/prospective-students/graduate/taught-degrees/neuroscience-msc
+  - label: Experimental Psychology MPhil/PhD
+    note: funding routes are listed on the programme page
+    url: https://www.ucl.ac.uk/prospective-students/graduate/research-degrees/experimental-psychology-mphil-phd
+
 openings: []

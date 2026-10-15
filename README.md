@@ -8,6 +8,9 @@ What runs by itself:
 - **You get an email** (as a GitHub issue) when papers are added to or dropped from the list, so you can veto anything wrong, and when the weekly refresh fails.
 - **Photos** uploaded from a phone are rotated upright, shrunk to web size, and stripped of hidden metadata such as GPS location.
 - **Every 1 October** a checklist issue reminds you to update people, alumni and photos for the new academic year.
+- **Lab members are shown in bold** in every author list, matched automatically against the People page (current members and alumni).
+- **Free full-text links** appear under each paper when a legal free copy exists, found through Unpaywall.
+- **New public repositories** in the bendor-lab GitHub organisation appear on the Code and data page automatically.
 
 ## What lives where
 
@@ -15,10 +18,11 @@ What runs by itself:
 |---|---|
 | Lab members and alumni | `data/people.yml` |
 | Publication settings (always include, hide, section) | `data/publications.yml` |
-| Research text and themes (also the home page introduction) | `data/research.yml` |
+| Research text, themes, figures and the home page figure | `data/research.yml` and images in `static/images/research/` |
+| Code and data page | `data/code.yml` |
 | Join the lab page (and any funded vacancies) | `data/positions.yml` |
 | Lab photos | `data/photos.yml` and images in `static/images/photos/` |
-| Name, address, email, footer links | `data/site.yml` |
+| Name, address, email, home page photo, footer links | `data/site.yml` |
 | Page layouts (HTML) | `templates/*.html` |
 | Colours, fonts, spacing | `static/css/style.css` |
 
@@ -111,6 +115,18 @@ Full details for each paper come from Crossref. Anything found automatically mus
 Keeping your ORCID record current improves the automatic list. In ORCID, granting Crossref permission to update your record lets new papers appear without any action.
 
 GitHub pauses scheduled jobs in repositories with no activity for 60 days. The workflow re-enables itself each week; if GitHub ever emails to say the schedule was disabled, open the Actions tab and click **Enable workflow**.
+
+## Figures from papers
+
+The Research page and home page use figures from the lab's papers published under a CC BY licence (eLife, Nature Communications, Scientific Reports, Current Biology and PLOS papers in the list). CC BY allows reuse with credit, so keep each figure's credit line. Papers under other licences, including bioRxiv preprints marked "no derivatives", should not be cropped or reused without permission.
+
+## Getting found on Google
+
+1. Go to search.google.com/search-console and sign in with a Google account.
+2. Add a **URL prefix** property for `https://www.bendorlab.com/`.
+3. Choose the **HTML tag** method. Copy only the value inside `content="..."`.
+4. In Pages CMS, open **Site settings**, paste it into **Google Search Console code**, and save. Wait two minutes for the site to rebuild, then click **Verify**.
+5. In Search Console, open **Sitemaps** and submit `sitemap.xml`.
 
 ## Keeping it running long term
 

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% from "_macros.html" import citation %}
+{% block content %}
+<div class="wrap narrow">
+  <h1>Code and data</h1>
+  {% if code.intro %}<p class="lede">{{ code.intro }}</p>{% endif %}
+
+  <ol class="code-list">
+    {% for e in code_entries %}
+    <li class="code-entry">
+      {% if e.paper %}<div class="pub">{{ citation(e.paper) }}</div>{% elif e.title %}<p class="cite-title">{{ e.title }}</p>{% endif %}
+      {% if e.links %}
+      <ul class="code-links">
+        {% for l in e.links %}<li><a href="{{ l.url }}">{{ l.label }}</a></li>{% endfor %}
+      </ul>
+      {% endif %}
+      {% if e.note %}<p class="code-note">{{ e.note }}</p>{% endif %}
+    </li>
+    {% endfor %}
+  </ol>
+
+  {% if extra_repos %}
+  <h2>Other lab repositories</h2>
+  <ul class="repo-list">
+    {% for r in extra_repos %}
+    <li><a href="{{ r.html_url }}">{{ r.name }}</a>{% if r.description %}<span class="repo-desc">{{ r.description }}</span>{% endif %}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
+  {% if code.github_org %}
+  <p class="meta">All lab repositories are on <a href="https://github.com/{{ code.github_org }}">GitHub</a>.</p>
+  {% endif %}
+</div>
+{% endblock %}

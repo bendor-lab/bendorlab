@@ -20,6 +20,16 @@
     {% endfor %}
   {% endif %}
 
+  {% if positions.routes %}
+  <h2>Routes into the lab</h2>
+  {% if positions.routes_intro %}<p>{{ positions.routes_intro }}</p>{% endif %}
+  <ul class="routes">
+    {% for r in positions.routes %}
+    <li><a href="{{ r.url }}">{{ r.label }}</a>{% if r.note %}<span class="route-note">{{ r.note }}</span>{% endif %}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
   <h2>Research in the lab</h2>
   <ul class="theme-links">
     {% for t in themes %}<li><a href="{{ root }}research/#theme-{{ loop.index }}">{{ t.title }}</a></li>{% endfor %}

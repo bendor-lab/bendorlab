@@ -115,21 +115,21 @@ a:hover { text-decoration-thickness: 2px; }
 .hero-image { margin: 0; }
 .hero-image img { width: 100%; aspect-ratio: 1024 / 712; object-fit: cover; border-radius: 4px; }
 
-/* The replay raster: the one animated moment on the site */
-.replay { margin-block: 1.5rem 0.5rem; }
-.replay-svg { display: block; width: 100%; height: 170px; }
-.replay .lfp { fill: none; stroke: var(--blue); stroke-width: 1.5; stroke-linejoin: round; }
-.replay .bg-spikes line { stroke: var(--quiet-spike); stroke-width: 1.6; }
-.replay .seq-spikes line {
-  stroke: var(--indigo); stroke-width: 2.4; stroke-linecap: round;
-  animation: spike-in 0.22s ease-out both;
-  animation-delay: calc(var(--i) * 60ms + 400ms);
+/* Figures from the lab's papers */
+.home-figure { margin-block: 2.25rem 0.5rem; }
+.home-figure img, .theme-figure img {
+  width: 100%; height: auto; background: #fff; border: 1px solid var(--rule); border-radius: 3px;
 }
-@keyframes spike-in { from { opacity: 0; } to { opacity: 1; } }
-.replay figcaption {
+.home-figure img { max-width: 980px; }
+.home-figure figcaption, .theme-figure figcaption {
   font-family: var(--sans); font-size: 0.9rem; line-height: 1.5; color: var(--slate);
-  max-width: 44rem; margin-top: 0.6rem;
+  max-width: 46rem; margin-top: 0.6rem;
 }
+.credit { display: block; font-size: 0.82rem; margin-top: 0.25rem; }
+.credit a { color: var(--slate); }
+.theme-figure { margin: 1.5rem 0; }
+.theme-figure img { max-height: 560px; width: auto; max-width: 100%; }
+.theme-papers { color: var(--slate); font-size: 1rem; margin-top: 1.75rem; }
 
 .home-grid {
   display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
@@ -150,6 +150,8 @@ a:hover { text-decoration-thickness: 2px; }
 .cite-title a { color: var(--ink); text-decoration-color: var(--rule); }
 .cite-title a:hover { color: var(--indigo); text-decoration-color: currentColor; }
 .cite-venue { font-size: 0.94rem; color: var(--slate); }
+.cite-oa { display: block; font-family: var(--sans); font-size: 0.85rem; color: var(--slate); margin-top: 0.15rem; }
+.cite-oa a { font-weight: 500; }
 
 /* Publications page */
 .pub-tools { margin-top: 1.75rem; }
@@ -191,6 +193,8 @@ a:hover { text-decoration-thickness: 2px; }
 }
 .person-name { font-family: var(--sans); font-weight: 600; font-size: 1.05rem; margin: 0.75rem 0 0.05rem; line-height: 1.3; }
 .person-role { color: var(--slate); font-size: 0.97rem; margin: 0; }
+.person-interests { font-size: 0.92rem; line-height: 1.45; margin: 0.35rem 0 0; }
+.person-links { display: flex; gap: 0.9rem; font-family: var(--sans); font-size: 0.88rem; margin: 0.35rem 0 0; }
 
 .alumni { margin-top: 3.5rem; padding-bottom: 1rem; }
 .alumni h2 { border-top: 1px solid var(--rule); padding-top: 1.5rem; }
@@ -238,6 +242,20 @@ a:hover { text-decoration-thickness: 2px; }
 .topics h3 { margin: 0 0 0.35rem; color: var(--indigo); }
 .topics ul { margin: 0; padding-left: 1.2rem; }
 
+.routes { padding-left: 1.2rem; }
+.routes li { margin-bottom: 0.5rem; }
+.route-note { display: block; color: var(--slate); font-size: 0.95rem; }
+
+/* Code and data ------------------------------------------------------ */
+.code-list { list-style: none; margin: 1.5rem 0 2rem; padding: 0; }
+.code-entry { padding: 1.1rem 0; border-bottom: 1px solid var(--rule); }
+.code-entry .pub { margin: 0; }
+.code-links { list-style: none; display: flex; flex-wrap: wrap; gap: 0.3rem 1.3rem; margin: 0.5rem 0 0; padding: 0;
+  font-family: var(--sans); font-size: 0.95rem; font-weight: 500; }
+.code-note { font-size: 0.92rem; color: var(--slate); margin: 0.4rem 0 0; }
+.repo-list { padding-left: 1.2rem; }
+.repo-desc { display: block; color: var(--slate); font-size: 0.95rem; }
+
 /* Contact ------------------------------------------------------------ */
 .contact { display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: 1.25rem 1.5rem; margin: 0 0 4rem; }
 .contact dt { font-family: var(--sans); font-weight: 600; color: var(--slate); padding-top: 0.1rem; }
@@ -269,7 +287,6 @@ a:hover { text-decoration-thickness: 2px; }
 @media (max-width: 560px) {
   body { font-size: 1rem; }
   .lede { font-size: 1.1rem; }
-  .replay-svg { height: 130px; }
   .pub-section .pub { grid-template-columns: 2.9rem minmax(0, 1fr); gap: 0 0.5rem; }
   .pub-year { font-size: 0.92rem; }
   .people-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.75rem 1rem; }
@@ -280,6 +297,3 @@ a:hover { text-decoration-thickness: 2px; }
   .contact dd { margin-bottom: 1rem; }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .replay .seq-spikes line { animation: none; }
-}

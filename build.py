@@ -9,9 +9,8 @@ Content lives in data/*.yml, page layouts in templates/, styles and images in st
 import datetime as dt
 import html
 import json
-import math
-import random
 import re
+import unicodedata
 import shutil
 import sys
 from pathlib import Path
@@ -29,11 +28,12 @@ NAV = [
     ("people", "People"),
     ("publications", "Publications"),
     ("photos", "Photos"),
+    ("code", "Code and data"),
     ("positions", "Join the lab"),
     ("contact", "Contact"),
 ]
 PAGE_TITLES = {"research": "Research", "people": "People", "publications": "Publications",
-               "photos": "Photos", "positions": "Join the lab", "contact": "Contact"}
+               "photos": "Photos", "code": "Code and data", "positions": "Join the lab", "contact": "Contact"}
 
 
 def load(name):
@@ -56,7 +56,46 @@ def long_date(iso):
 
 # --------------------------------------------------------------------------- publications
 
-def prepare_publications(settings):
+def _norm(text):
+    text = unicodedata.normalize("NFKD", str(text or "")).encode("ascii", "ignore").decode()
+    return re.sub(r"[^a-z ]+", " ", text.lower().replace("-", " ")).split()
+
+
+def lab_people(people):
+    """(first name, surname tokens) for everyone listed on the People page."""
+    out = []
+    for person in (people.get("members") or []) + (people.get("alumni") or []):
+        tokens = _norm(person.get("name"))
+        if len(tokens) >= 2:
+            out.append((tokens[0], tokens[1:]))
+    return out
+
+
+def is_lab_member(family, given, lab):
+    """Match an author to a lab member by surname and the start of the first name.
+
+    The first two letters must agree when both names are spelled out, which copes with
+    short forms (Masa, Masahiro; Prez, Przemyslaw) but keeps apart, for example, John and
+    Julie with the same surname. Surnames match when the lab name is the start of the
+    published one (Huelin; Huelin Gorriz).
+    """
+    fam = _norm(family)
+    giv = _norm(given)
+    if not fam:
+        return False
+    for first, surname in lab:
+        if fam[:len(surname)] != surname:
+            continue
+        g = giv[0] if giv else ""
+        if len(g) >= 2 and len(first) >= 2:
+            if g[:2] == first[:2]:
+                return True
+        elif g[:1] == first[:1]:
+            return True
+    return False
+
+
+def prepare_publications(settings, lab):
     raw = json.loads((DATA / "publications.json").read_text(encoding="utf-8"))
     highlight = set(settings.get("highlight") or [])
     items = []
@@ -65,9 +104,22 @@ def prepare_publications(settings):
         authors = p.get("authors") or []
         if isinstance(authors, str):
             authors = [a.strip() for a in authors.split(",") if a.strip()]
-        parts = [f"<strong>{html.escape(a)}</strong>" if a in highlight else html.escape(a) for a in authors]
+        details = p.get("author_details") or []
+        if len(details) != len(authors):
+            # no full names available: split "Huelin Gorriz M" into surname and initials
+            details = [{"family": " ".join(a.split()[:-1]) or a, "given": a.split()[-1] if len(a.split()) > 1 else ""}
+                       for a in authors]
+        parts = []
+        for name, det in zip(authors, details):
+            bold = name in highlight or is_lab_member(det.get("family"), det.get("given"), lab)
+            parts.append(f"<strong>{html.escape(name)}</strong>" if bold else html.escape(name))
         p["authors_html"] = Markup(", ".join(parts))
         p["url"] = f"https://doi.org/{p['doi']}" if p.get("doi") else p.get("url", "")
+        oa = (p.get("oa_url") or "").strip()
+        same_as_doi = bool(p.get("doi")) and oa.lower().rstrip("/").endswith(p["doi"].lower())
+        p["oa_link"] = "" if (not oa or same_as_doi) else oa
+        p["oa_label"] = "Free PDF" if p.get("oa_pdf") else "Free full text"
+        p["open_access"] = bool(oa)
         items.append(p)
     items.sort(key=lambda p: (p.get("date") or "", p["title"]), reverse=True)
 
@@ -90,56 +142,6 @@ def prepare_publications(settings):
     return items, sections, by_doi, long_date(last)
 
 
-# --------------------------------------------------------------------------- replay figure
-
-def replay_svg():
-    """Raster of place-cell spikes with one time-compressed replay sequence under a ripple.
-
-    Generated with a fixed seed so the figure is identical on every build.
-    """
-    rng = random.Random(7)
-    W, H = 1000, 170
-    n_cells = 16
-    top, row_h = 52, 7.2
-    ev_start, ev_step = 412, 11.5          # replay sequence: one cell after another
-    ev_end = ev_start + ev_step * n_cells
-    centre = (ev_start + ev_end) / 2
-
-    # LFP trace with a ripple oscillation centred on the replay event
-    pts = []
-    for x in range(0, W + 1, 2):
-        base = 4 * math.sin(x / 37.0) + 2.2 * math.sin(x / 11.3 + 1.2) + rng.uniform(-1.4, 1.4)
-        env = math.exp(-((x - centre) / 62.0) ** 2)
-        ripple = 15 * env * math.sin(x / 2.15)
-        sharp = -11 * env
-        pts.append(f"{x},{24 + base + ripple + sharp:.1f}")
-    trace = f'<polyline class="lfp" points="{" ".join(pts)}"/>'
-
-    background, sequence = [], []
-    for i in range(n_cells):
-        y = top + i * row_h
-        # sparse background firing, kept clear of the replay window
-        x = rng.uniform(0, 40)
-        while x < W:
-            if not (ev_start - 30 < x < ev_end + 30):
-                background.append(f'<line x1="{x:.1f}" x2="{x:.1f}" y1="{y:.1f}" y2="{y + row_h - 2:.1f}"/>')
-            x += rng.expovariate(1 / 120.0)
-        # each cell's burst during the replay event, in sequence
-        t0 = ev_start + i * ev_step + rng.uniform(-2, 2)
-        for k in range(rng.choice((1, 2, 2, 3))):
-            sx = t0 + k * 3.2
-            sequence.append(
-                f'<line style="--i:{i}" x1="{sx:.1f}" x2="{sx:.1f}" y1="{y:.1f}" y2="{y + row_h - 2:.1f}"/>'
-            )
-    svg = (
-        f'<svg class="replay-svg" viewBox="0 0 {W} {H}" preserveAspectRatio="xMidYMid slice" '
-        f'role="img" aria-label="Spike raster of {n_cells} cells firing in sequence during a ripple">'
-        f'{trace}<g class="bg-spikes">{"".join(background)}</g>'
-        f'<g class="seq-spikes">{"".join(sequence)}</g></svg>'
-    )
-    return Markup(svg)
-
-
 # --------------------------------------------------------------------------- build
 
 def build():
@@ -149,7 +151,8 @@ def build():
     positions = load("positions")
     research = load("research")
     pub_settings = load("publications")
-    items, sections, by_doi, updated = prepare_publications(pub_settings)
+    code = load("code")
+    items, sections, by_doi, updated = prepare_publications(pub_settings, lab_people(people))
 
     for m in people.get("members", []):
         m["initials"] = initials(m.get("name") or "")
@@ -174,6 +177,28 @@ def build():
 
     recent = [p for p in items if p["section"] != "Book chapters"][:4]
 
+    # Code and data: entries from data/code.yml, each tied to a paper by DOI, plus any other
+    # public repositories in the lab's GitHub organisation (data/repos.json, written by the
+    # weekly workflow).
+    code_entries = []
+    listed = set()
+    for e in code.get("entries") or []:
+        paper = by_doi.get(str(e.get("doi") or "").lower())
+        links = [l for l in (e.get("links") or []) if l and l.get("url")]
+        listed.update(l["url"].rstrip("/").lower() for l in links)
+        code_entries.append({**e, "paper": paper, "links": links})
+    code_entries.sort(key=lambda e: (e["paper"] or {}).get("date", ""), reverse=True)
+    extra_repos = []
+    repos_file = DATA / "repos.json"
+    if repos_file.exists():
+        skip = {str(x).lower() for x in (code.get("hide_repositories") or [])}
+        for r in json.loads(repos_file.read_text(encoding="utf-8")):
+            url = (r.get("html_url") or "").rstrip("/")
+            if (not url or r.get("fork") or r.get("archived") or r.get("private")
+                    or url.lower() in listed or r.get("name", "").lower() in skip):
+                continue
+            extra_repos.append(r)
+
     env = Environment(loader=FileSystemLoader(ROOT / "templates"), autoescape=select_autoescape(["html"]))
     env.filters["slugify"] = slugify
     common = dict(site=site, people=people, photos=photos, positions=positions, research=research,
@@ -184,7 +209,7 @@ def build():
     OUT.mkdir()
     shutil.copytree(ROOT / "static", OUT / "static")
 
-    pages = [("index.html", "", {"recent": recent, "replay_svg": replay_svg()})] + [
+    pages = [("index.html", "", {"recent": recent})] + [
         (f"{slug}.html", slug, {}) for slug, _ in NAV
     ] + [("404.html", "404", {})]
 
@@ -201,7 +226,8 @@ def build():
 
         ctx = dict(common, root=root, slug=slug if slug != "404" else "", asset=asset,
                    page_title=PAGE_TITLES.get(slug, "Page not found" if slug == "404" else ""),
-                   pub_sections=sections, pubs_updated=updated, themes=themes, alumni=alumni, **extra)
+                   pub_sections=sections, pubs_updated=updated, themes=themes, alumni=alumni,
+                   code=code, code_entries=code_entries, extra_repos=extra_repos, **extra)
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_text(env.get_template(template).render(**ctx), encoding="utf-8")
 

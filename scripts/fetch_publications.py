@@ -27,7 +27,8 @@ OUTPUT = ROOT / "data" / "publications.json"
 LAST_CHECKED = ROOT / "data" / ".last_checked"  # not saved in the repository
 CHANGES = ROOT / "data" / ".changes.md"         # read by the workflow to open a GitHub issue
 PROBLEMS = ROOT / "data" / ".problems.md"       # likewise, when the refresh did not work
-UA = "bendorlab-website/1.0 (https://www.bendorlab.com; mailto:d.bendor@ucl.ac.uk)"
+CONTACT_EMAIL = "d.bendor@ucl.ac.uk"   # the lab's public contact; Crossref and Unpaywall ask for one
+UA = f"bendorlab-website/1.0 (https://www.bendorlab.com; mailto:{CONTACT_EMAIL})"
 
 PREPRINT_SECTION = "Preprints"
 ARTICLE_SECTION = "Peer-reviewed articles"
@@ -168,6 +169,9 @@ def crossref_record(doi):
         "type": ctype,
         "title": clean_title((msg.get("title") or [""])[0]),
         "authors": [format_author(a) for a in msg.get("author", []) if format_author(a)],
+        # full names, used to recognise lab members in author lists
+        "author_details": [{"family": a.get("family", ""), "given": a.get("given", "")}
+                           for a in msg.get("author", []) if format_author(a)],
         "venue": html.unescape(venue),
         "volume": msg.get("volume", ""),
         "issue": msg.get("issue", ""),
@@ -176,6 +180,16 @@ def crossref_record(doi):
         "date": f"{date_parts[0]:04d}-{date_parts[1]:02d}-{date_parts[2]:02d}",
         "published_as": [d for d in published_as if d],
     }
+
+
+def unpaywall(doi):
+    """Where a free, legal copy of the paper can be read (Unpaywall database)."""
+    msg = get_json("https://api.unpaywall.org/v2/" + urllib.parse.quote(doi) + "?email=" + CONTACT_EMAIL)
+    loc = msg.get("best_oa_location") or {}
+    if not msg.get("is_oa") or not loc:
+        return {"oa_url": "", "oa_pdf": False}
+    url = loc.get("url_for_pdf") or loc.get("url") or ""
+    return {"oa_url": url, "oa_pdf": bool(loc.get("url_for_pdf"))}
 
 
 # --------------------------------------------------------------------------- reports
@@ -265,6 +279,13 @@ def main():
                 problems.append(f"Could not get details for https://doi.org/{d} from Crossref: {e}")
                 continue
         time.sleep(0.15)
+        if d:
+            try:
+                rec.update(unpaywall(d))
+            except Exception as e:  # noqa: BLE001
+                log(f"  Unpaywall failed for {d}; keeping previous link ({e})")
+                prev = previous.get(d, {})
+                rec.update({"oa_url": prev.get("oa_url", ""), "oa_pdf": prev.get("oa_pdf", False)})
         info = discovered.get(d, {})
         if d not in include:
             if rec["type"] in SKIP_TYPES or SKIP_TITLE.search(rec["title"]):
@@ -289,6 +310,7 @@ def main():
                     rec[k] = clean_title(v) if k == "title" else v
             if isinstance(rec.get("authors"), str):
                 rec["authors"] = [a.strip() for a in rec["authors"].split(",") if a.strip()]
+                rec.pop("author_details", None)
         rec["pmid"] = info.get("pmid", rec.get("pmid", ""))
         items.append(rec)
 

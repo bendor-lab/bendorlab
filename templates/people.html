@@ -13,8 +13,16 @@
         {% else %}
         <span class="monogram" aria-hidden="true">{{ m.initials }}</span>
         {% endif %}
-        <p class="person-name">{% if m.link %}<a href="{{ m.link }}">{{ m.name }}</a>{% else %}{{ m.name }}{% endif %}</p>
+        <p class="person-name">{{ m.name }}</p>
         <p class="person-role">{{ m.role or "" }}</p>
+        {% if m.interests %}<p class="person-interests">{{ m.interests }}</p>{% endif %}
+        {% if m.orcid or m.scholar or m.link %}
+        <p class="person-links">
+          {% if m.orcid %}<a href="https://orcid.org/{{ m.orcid }}">ORCID</a>{% endif %}
+          {% if m.scholar %}<a href="{{ m.scholar }}">Scholar</a>{% endif %}
+          {% if m.link %}<a href="{{ m.link }}">Website</a>{% endif %}
+        </p>
+        {% endif %}
       </li>
       {% endfor %}
     </ul>

@@ -1,10 +1,15 @@
 # Current lab members appear in this order on the People page.
 # To add someone: copy a block, change the details, and upload a photo to static/images/people/.
 # To move someone to alumni: delete their block here and add them under alumni below.
+# Optional for each person: interests (one line), orcid (the iD only), scholar (full link),
+# link (personal website).
 members:
   - name: Daniel Bendor
     role: Group leader
     photo: /static/images/people/daniel-bendor.webp
+    interests: Hippocampal replay, memory consolidation and predictive coding
+    orcid: 0000-0001-6621-793X
+    scholar: ""
     link: ""
   - name: Prez Jarzebowski
     role: Research fellow
@@ -61,7 +66,7 @@ alumni:
   - {name: Pierre Varichon, years: "", now: "", group: "MSc, MRes and visiting students"}
   - {name: Shaurya Goyal, years: "", now: "", group: "MSc, MRes and visiting students"}
   - {name: Gaelle Malihos, years: "", now: "", group: "MSc, MRes and visiting students"}
-  - {name: Caroline Mailot, years: "", now: "", group: "MSc, MRes and visiting students"}
+  - {name: Caroline Mairlot, years: "", now: "", group: "MSc, MRes and visiting students"}
   - {name: Qinbo Qiao, years: "", now: "PhD student, University of Oxford", group: "MSc, MRes and visiting students"}
   - {name: Leah McCauley, years: "", now: "", group: "MSc, MRes and visiting students"}
   - {name: Masahiro Takigawa, years: "", now: Postdoc at UCL, group: "MSc, MRes and visiting students"}

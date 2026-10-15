@@ -5,32 +5,118 @@ intro: >-
   responsible for memory, perception, predictive coding and more broadly the
   functional role of sleep.
 
+# The figure shown on the home page, below the introduction.
+home_figure:
+  image: /static/images/research/replay-events-tirole-2022.webp
+  alt: >-
+    Spike rasters and decoded position for hippocampal place cells while a rat runs
+    two tracks, and two replay events during rest afterwards.
+  caption: >-
+    Place cells recorded while a rat ran laps on two tracks, and two replay events
+    during rest afterwards. In each event the cells fire in the order they did on
+    one track, compressed into about 200 ms.
+  credit: Adapted from Tirole, Huelin Gorriz et al. (2022), eLife 11:e79031, CC BY 4.0
+  credit_url: https://doi.org/10.7554/eLife.79031
+
 # Research themes. "papers" lists DOIs from the publication list; their full
-# citations are filled in automatically. "summary" is optional.
+# citations are filled in automatically. Figures should come from papers with a
+# CC BY licence, credited as shown.
 themes:
   - title: Hippocampal replay
-    summary: ""
+    summary: >-
+      During rest and sleep, the hippocampus replays recent experience as brief,
+      time-compressed sequences of place cell activity. We study what these events
+      carry and how reliably they can be identified. Replay reinstates not only the
+      order in which place cells fired but also the firing-rate differences they
+      expressed between two environments. Because replay has no ground truth, we
+      developed a framework that uses two-track experiments to evaluate replay
+      detection methods. Recording from hippocampus and visual cortex together, we
+      find that sleep oscillations coordinate which memory is reactivated in both
+      regions at once.
+    image: /static/images/research/replay-detection-takigawa-2024.webp
+    image_alt: >-
+      Schematic of place cells ordered by their positions on two tracks, with decoded
+      position forming a sequence for track 1 and scattered for track 2.
+    caption: >-
+      Detecting replay on two tracks. A replay event of track 1 produces an ordered
+      sequence of decoded positions on track 1 and none on track 2.
+    credit: Adapted from Takigawa et al. (2024), eLife 13:e85635, CC BY 4.0
+    credit_url: https://doi.org/10.7554/eLife.85635
     papers:
       - 10.64898/2026.06.12.731367
       - 10.1016/j.tins.2025.02.006
       - 10.7554/elife.85635
       - 10.7554/elife.79031
       - 10.1038/nn.3203
+
   - title: Memory triage
-    summary: ""
+    summary: >-
+      We cannot remember everything we experience, so the brain must select which
+      memories to keep, a process often called memory triage. We study how replay
+      carries out this selection. In rats, the more laps an animal runs on a track,
+      the more that track is replayed during later sleep, and greater familiarity
+      reduces it. The number of awake replay events during an experience predicts
+      which memories sleep replay favours. Reward value does not set sleep replay;
+      recency does. To study triage in behaviour, we developed a serial novel object
+      recognition task that measures memory capacity and prioritisation in mice.
+    image: /static/images/research/memory-triage-huelin-gorriz-2023.webp
+    image_alt: >-
+      Experimental timeline with rest sessions before and after rats run 16 laps on
+      one track and 1 to 8 laps on another, followed by re-exposure to both tracks.
+    caption: >-
+      Rats ran 16 laps on one novel track and between 1 and 8 laps on another, with
+      rest sessions before and after, then explored both tracks again.
+    credit: Adapted from Huelin Gorriz et al. (2023), Nature Communications 14:8157, CC BY 4.0
+    credit_url: https://doi.org/10.1038/s41467-023-43939-z
     papers:
       - 10.64898/2026.06.10.731494
       - 10.1038/s41467-023-43939-z
       - 10.1038/s41598-023-40976-y
       - 10.1016/j.cub.2019.08.019
+
   - title: Predictive coding
-    summary: ""
+    summary: >-
+      Perception depends on comparing what reaches the senses with what the brain
+      expects. We study how cortical circuits compute the difference and, in
+      particular, its sign: whether something unexpected occurred, or something
+      expected failed to occur. In our Signed Error by Timing Asymmetry (SETA)
+      model, chandelier cells control when layer 2/3 neurons fire, so that positive
+      and negative errors reach their layer 5 targets in opposite windows for
+      synaptic plasticity. We test its predictions with recordings from mouse visual
+      cortex. A related line of work asks how prediction guides navigation: humans
+      and rats searching for a hidden goal in a changing maze behaved most like
+      learning agents that use a predictive map.
+    image: /static/images/research/predictive-maps-de-cothi-2022.webp
+    image_alt: >-
+      The Tartarus maze drawn three times, for a rat, a human and a learning agent,
+      during training and after parts of the maze were removed.
+    caption: >-
+      The Tartarus maze. Rats, humans in virtual reality and reinforcement learning
+      agents learned to reach a hidden goal (A), then found it again after parts of
+      the maze were removed (B).
+    credit: Adapted from de Cothi et al. (2022), Current Biology 32:3676, CC BY 4.0
+    credit_url: https://doi.org/10.1016/j.cub.2022.06.090
     papers:
       - 10.64898/2026.06.26.734797
       - 10.1016/j.cub.2022.06.090
       - 10.1016/j.tics.2016.01.003
+
   - title: Auditory cortex and the coding of time and pitch
-    summary: ""
+    summary: >-
+      Sounds unfold in time, and the auditory cortex must represent both when
+      acoustic events occur and the pitch they produce. In marmosets, we identified
+      pitch-selective neurons near the anterolateral border of primary auditory
+      cortex. The timing of repeated sounds is carried by two complementary codes:
+      one locked to each event and one based on firing rate. Computational models
+      trace these codes to the timing and balance of excitation and inhibition, and
+      to short-term synaptic depression. More recently, we found that female mice
+      are sensitive to the temporal regularity of male courtship songs, but not to
+      changes in syllable order or syllable structure.
+    image: /static/images/research/mouse-song-perrodin-2023.webp
+    image_alt: Spectrogram of a male mouse courtship song, with syllables between 50 and 110 kHz.
+    caption: Spectrogram of a male mouse courtship song.
+    credit: Adapted from Perrodin et al. (2023), eLife 12:RP86464, CC BY 4.0
+    credit_url: https://doi.org/10.7554/eLife.86464
     papers:
       - 10.7554/elife.86464
       - 10.1371/journal.pcbi.1007627

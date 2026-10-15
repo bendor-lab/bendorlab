@@ -10,7 +10,14 @@ address:
   - 26 Bedford Way
   - London WC1H 0AP
 orcid: 0000-0001-6621-793X
-# Optional links. Leave blank to hide.
+# Large photo on the home page
+hero_image: /static/images/photos/lab-2025-a.webp
+hero_alt: Members of the Bendor Lab at lunch by a lake, 2025
+# Optional links in the footer. Leave blank to hide.
+institute_page: https://www.ibn.ucl.ac.uk/bendor-lab
+github: https://github.com/bendor-lab
 google_scholar: ""
-bluesky: ""
 ucl_profile: ""
+bluesky: ""
+# Google Search Console: paste the "content" value of the HTML tag here to verify the site
+google_site_verification: ""

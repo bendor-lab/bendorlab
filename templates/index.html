@@ -8,15 +8,23 @@
     <p class="lede">{{ research.intro }}</p>
     <p class="affiliation">{{ site.institute }}, {{ site.university }}</p>
   </div>
+  {% if site.hero_image %}
   <figure class="hero-image">
-    <img src="{{ root }}static/images/hero.webp" alt="A rat asleep on a small pillow in straw" width="1024" height="712">
+    <img src="{{ asset(site.hero_image) }}" alt="{{ site.hero_alt or '' }}">
   </figure>
+  {% endif %}
 </section>
 
-<figure class="replay wrap" aria-labelledby="replay-caption">
-  {{ replay_svg }}
-  <figcaption id="replay-caption">Illustration of a replay event: during a sharp-wave ripple (top trace), place cells fire in the order they did during a run, compressed into a fraction of a second.</figcaption>
+{% set f = research.home_figure %}
+{% if f and f.image %}
+<figure class="home-figure wrap">
+  <img src="{{ asset(f.image) }}" alt="{{ f.alt or '' }}" loading="lazy">
+  <figcaption>
+    {{ f.caption }}
+    {% if f.credit %}<span class="credit">{% if f.credit_url %}<a href="{{ f.credit_url }}">{{ f.credit }}</a>{% else %}{{ f.credit }}{% endif %}</span>{% endif %}
+  </figcaption>
 </figure>
+{% endif %}
 
 <div class="wrap home-grid">
   <section class="recent" aria-labelledby="recent-h">

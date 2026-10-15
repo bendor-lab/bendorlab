@@ -8,7 +8,8 @@
   <meta property="og:title" content="{% if page_title %}{{ page_title }} | {% endif %}{{ site.title }}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ site.url }}/{{ slug and slug ~ '/' or '' }}">
-  <meta property="og:image" content="{{ site.url }}/static/images/hero.webp">
+  <meta property="og:image" content="{{ site.url }}{{ site.hero_image or '/static/images/logo.webp' }}">
+  {% if site.google_site_verification %}<meta name="google-site-verification" content="{{ site.google_site_verification }}">{% endif %}
   <link rel="canonical" href="{{ site.url }}/{{ slug and slug ~ '/' or '' }}">
   <link rel="icon" href="{{ root }}static/images/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="{{ root }}static/fonts/literata-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -48,6 +49,8 @@
         <li><a href="{{ root }}contact/">Contact</a></li>
         {% if site.orcid %}<li><a href="https://orcid.org/{{ site.orcid }}">ORCID</a></li>{% endif %}
         {% if site.google_scholar %}<li><a href="{{ site.google_scholar }}">Google Scholar</a></li>{% endif %}
+        {% if site.institute_page %}<li><a href="{{ site.institute_page }}">Institute page</a></li>{% endif %}
+        {% if site.github %}<li><a href="{{ site.github }}">GitHub</a></li>{% endif %}
         {% if site.ucl_profile %}<li><a href="{{ site.ucl_profile }}">UCL profile</a></li>{% endif %}
         {% if site.bluesky %}<li><a href="{{ site.bluesky }}">Bluesky</a></li>{% endif %}
       </ul>

@@ -2,6 +2,7 @@
 <span class="cite-authors">{{ p.authors_html }}</span>
 <span class="cite-title">{% if p.url %}<a href="{{ p.url }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</span>
 <span class="cite-venue"><em>{{ p.venue }}</em>{% if p.section == 'Preprints' %} preprint{% endif %}{% if p.volume %}, {{ p.volume }}{% if p.issue %}({{ p.issue }}){% endif %}{% endif %}{% if p.pages %}{% if p.volume %}:{% else %}, {% endif %}{{ p.pages }}{% endif %}{% if show_year %} ({{ p.year }}){% endif %}</span>
+{%- if p.oa_link %}<span class="cite-oa"><a href="{{ p.oa_link }}">{{ p.oa_label }}</a></span>{% elif p.open_access %}<span class="cite-oa">Free to read</span>{% endif %}
 {%- endmacro %}
 
 {% macro email_link(address, label=None) -%}

@@ -77,6 +77,10 @@ jobs:
             gh issue create --title "Publication refresh problem" --body-file data/.problems.md
           fi
 
+      - name: List the lab's GitHub repositories
+        run: python scripts/fetch_repos.py
+        continue-on-error: true
+
       - name: Build the site
         run: python build.py
 

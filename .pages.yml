@@ -29,6 +29,9 @@ content:
             description: A portrait photo works best (it is cropped to 4:5). Leave empty to show initials.
             type: image
             options: { path: static/images/people }
+          - { name: interests, label: Research interests (one line, optional), type: string }
+          - { name: orcid, label: "ORCID iD (optional, e.g. 0000-0001-6621-793X)", type: string }
+          - { name: scholar, label: Google Scholar link (optional), type: string }
           - { name: link, label: Personal web page (optional), type: string }
       - name: alumni_groups
         label: Alumni headings (in the order shown)
@@ -105,6 +108,19 @@ content:
     format: yaml
     fields:
       - { name: intro, label: Introduction (also shown on the home page), type: text }
+      - name: home_figure
+        label: Home page figure
+        description: Use figures from papers with a CC BY licence and keep the credit line.
+        type: object
+        fields:
+          - name: image
+            label: Image
+            type: image
+            options: { path: static/images/research }
+          - { name: alt, label: Description for screen readers, type: text }
+          - { name: caption, label: Caption, type: text }
+          - { name: credit, label: Credit line, type: string }
+          - { name: credit_url, label: Credit link (DOI), type: string }
       - name: themes
         label: Research themes
         type: object
@@ -115,6 +131,14 @@ content:
         fields:
           - { name: title, label: Theme, type: string, required: true }
           - { name: summary, label: Short description (optional), type: text }
+          - name: image
+            label: Figure (optional)
+            type: image
+            options: { path: static/images/research }
+          - { name: image_alt, label: Figure description for screen readers, type: text }
+          - { name: caption, label: Figure caption, type: text }
+          - { name: credit, label: Figure credit line, type: string }
+          - { name: credit_url, label: Figure credit link (DOI), type: string }
           - name: papers
             label: Selected papers (DOIs)
             description: Each DOI must also be in the publication list; the full citation is filled in automatically.
@@ -130,6 +154,18 @@ content:
       - { name: intro, label: Introduction (also shown on the home page), type: text }
       - { name: how_to_apply, label: How to get in touch, type: text }
       - { name: contact_email, label: Contact email, type: string }
+      - { name: routes_intro, label: Routes into the lab (introduction), type: text }
+      - name: routes
+        label: Routes into the lab
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+        fields:
+          - { name: label, label: Programme, type: string }
+          - { name: note, label: Note, type: string }
+          - { name: url, label: Link, type: string }
       - name: openings
         label: Funded vacancies
         description: Leave empty when there are none.
@@ -144,6 +180,34 @@ content:
           - { name: details, label: Details (optional), type: text }
           - { name: closing_date, label: Closing date (optional), type: string }
           - { name: link, label: Link to full advert (optional), type: string }
+
+  - name: code
+    label: Code and data
+    type: file
+    path: data/code.yml
+    format: yaml
+    fields:
+      - { name: intro, label: Introduction, type: text }
+      - { name: github_org, label: GitHub organisation, type: string }
+      - { name: hide_repositories, label: Repositories not to list automatically, type: string, list: true }
+      - name: entries
+        label: Papers with code or data
+        description: One entry per paper; the DOI must be in the publication list.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{doi}"
+        fields:
+          - { name: doi, label: DOI of the paper, type: string }
+          - name: links
+            label: Links
+            type: object
+            list: true
+            fields:
+              - { name: label, label: "Label (e.g. Analysis code, Data (Dryad))", type: string }
+              - { name: url, label: Link, type: string }
+          - { name: note, label: Note (optional), type: text }
 
   - name: photos
     label: Photos
@@ -180,6 +244,17 @@ content:
       - { name: email, label: Contact email, type: string }
       - { name: address, label: Postal address (one line each), type: string, list: true }
       - { name: orcid, label: ORCID iD, type: string }
+      - name: hero_image
+        label: Home page photo
+        type: image
+        options: { path: static/images/photos }
+      - { name: hero_alt, label: Home page photo description, type: string }
+      - { name: institute_page, label: Institute page link (optional), type: string }
+      - { name: github, label: GitHub link (optional), type: string }
       - { name: google_scholar, label: Google Scholar link (optional), type: string }
       - { name: ucl_profile, label: UCL profile link (optional), type: string }
       - { name: bluesky, label: Bluesky link (optional), type: string }
+      - name: google_site_verification
+        label: Google Search Console code (optional)
+        description: The content value of the HTML tag that Search Console gives you.
+        type: string

@@ -1,0 +1,50 @@
+intro: >-
+  Code and data from our papers, as listed in each paper's data and code
+  availability statement.
+
+# Lab GitHub organisation. Public repositories there that are not listed below
+# are added to the page automatically each week.
+github_org: bendor-lab
+hide_repositories: [bendorlab]
+
+# One entry per paper. "doi" links the entry to the publication list.
+entries:
+  - doi: 10.7554/elife.85635
+    links:
+      - {label: Analysis code, url: "https://github.com/bendor-lab/replay_detection_cross_validation"}
+      - {label: Data (Dryad), url: "https://doi.org/10.5061/dryad.ksn02v76h"}
+  - doi: 10.1038/s41467-023-43939-z
+    links:
+      - {label: Analysis code (Zenodo), url: "https://doi.org/10.5281/zenodo.10085294"}
+    note: Data are available from the corresponding author on reasonable request.
+  - doi: 10.7554/elife.86464
+    links:
+      - {label: Analysis code, url: "https://github.com/bendor-lab/Perrodin-et-al-eLife"}
+      - {label: Data (figshare), url: "https://doi.org/10.6084/m9.figshare.24474760"}
+  - doi: 10.1038/s41598-023-40976-y
+    links:
+      - {label: Video data (figshare), url: "https://doi.org/10.6084/m9.figshare.22820450.v1"}
+  - doi: 10.1038/s41467-022-33507-2
+    links:
+      - {label: Analysis code, url: "https://github.com/slsdunn/theta-paper-code"}
+  - doi: 10.1016/j.cub.2022.06.090
+    links:
+      - {label: Code (Zenodo), url: "https://doi.org/10.5281/zenodo.6734981"}
+  - doi: 10.7554/elife.79031
+    links:
+      - {label: Analysis code, url: "https://github.com/bendor-lab/Elife_Tirole_Huelin_Gorriz_2022"}
+      - {label: Data (Dryad), url: "https://doi.org/10.5061/dryad.ksn02v76h"}
+  - doi: 10.7554/elife.66551
+    links:
+      - {label: Code (DeepInsight), url: "https://github.com/CYHSM/DeepInsight"}
+      - {label: Data (figshare), url: "https://figshare.com/collections/DeepInsight_-_Data_sharing/5486703"}
+  - doi: 10.1371/journal.pcbi.1007627
+    links:
+      - {label: Model code, url: "https://github.com/dbendor/Bendor-Lab"}
+      - {label: Data (figshare), url: "https://doi.org/10.6084/m9.figshare.11356307.v1"}
+  - doi: 10.1371/journal.pone.0154374
+    links:
+      - {label: Data (figshare), url: "https://figshare.com/s/e8c9fd732e9d66024293"}
+  - doi: 10.1371/journal.pcbi.1004197
+    links:
+      - {label: Model code, url: "https://github.com/dbendor/Bendor-Lab"}

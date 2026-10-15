@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-07",
+ "updated": "2026-10-15",
  "items": [
   {
    "doi": "10.64898/2026.06.26.734797",
@@ -9,6 +9,16 @@
     "Jarzebowski P",
     "Bendor D"
    ],
+   "author_details": [
+    {
+     "family": "Jarzebowski",
+     "given": "Przemyslaw"
+    },
+    {
+     "family": "Bendor",
+     "given": "Daniel"
+    }
+   ],
    "venue": "bioRxiv",
    "volume": "",
    "issue": "",
@@ -16,6 +26,8 @@
    "year": 2026,
    "date": "2026-06-28",
    "published_as": [],
+   "oa_url": "https://doi.org/10.64898/2026.06.26.734797",
+   "oa_pdf": false,
    "section": "Preprints",
    "pmid": ""
   },
@@ -28,6 +40,20 @@
     "Duvelle É",
     "Bendor D"
    ],
+   "author_details": [
+    {
+     "family": "Tirole",
+     "given": "M"
+    },
+    {
+     "family": "Duvelle",
+     "given": "É"
+    },
+    {
+     "family": "Bendor",
+     "given": "D"
+    }
+   ],
    "venue": "bioRxiv",
    "volume": "",
    "issue": "",
@@ -35,6 +61,8 @@
    "year": 2026,
    "date": "2026-06-12",
    "published_as": [],
+   "oa_url": "https://www.biorxiv.org/content/biorxiv/early/2026/06/12/2026.06.10.731494.full.pdf",
+   "oa_pdf": true,
    "section": "Preprints",
    "pmid": ""
   },
@@ -49,6 +77,28 @@
     "Saleem AB",
     "Bendor D"
    ],
+   "author_details": [
+    {
+     "family": "Takigawa",
+     "given": "Masahiro"
+    },
+    {
+     "family": "Tong",
+     "given": "Diao"
+    },
+    {
+     "family": "Horrocks",
+     "given": "Edward A.B."
+    },
+    {
+     "family": "Saleem",
+     "given": "Aman B."
+    },
+    {
+     "family": "Bendor",
+     "given": "Daniel"
+    }
+   ],
    "venue": "bioRxiv",
    "volume": "",
    "issue": "",
@@ -56,6 +106,8 @@
    "year": 2026,
    "date": "2026-06-12",
    "published_as": [],
+   "oa_url": "https://doi.org/10.64898/2026.06.12.731367",
+   "oa_pdf": false,
    "section": "Preprints",
    "pmid": ""
   },
@@ -67,6 +119,16 @@
     "van der Meer MAA",
     "Bendor D"
    ],
+   "author_details": [
+    {
+     "family": "van der Meer",
+     "given": "Matthijs A.A."
+    },
+    {
+     "family": "Bendor",
+     "given": "Daniel"
+    }
+   ],
    "venue": "Trends in Neurosciences",
    "volume": "48",
    "issue": "4",
@@ -74,6 +136,8 @@
    "year": 2025,
    "date": "2025-04-01",
    "published_as": [],
+   "oa_url": "https://www.cell.com/trends/neurosciences/pdf/S0166-2236(25)00037-2.pdf",
+   "oa_pdf": true,
    "section": "Peer-reviewed articles",
    "pmid": "40121166"
   },
@@ -85,6 +149,16 @@
     "Takigawa M",
     "Bendor D"
    ],
+   "author_details": [
+    {
+     "family": "Takigawa",
+     "given": "Masahiro"
+    },
+    {
+     "family": "Bendor",
+     "given": "Daniel"
+    }
+   ],
    "venue": "Science",
    "volume": "387",
    "issue": "6733",
@@ -92,6 +166,8 @@
    "year": 2025,
    "date": "2025-01-31",
    "published_as": [],
+   "oa_url": "",
+   "oa_pdf": false,
    "section": "Commentary",
    "pmid": "39883785"
   },
@@ -105,6 +181,24 @@
     "Tirole M",
     "Bendor D"
    ],
+   "author_details": [
+    {
+     "family": "Takigawa",
+     "given": "Masahiro"
+    },
+    {
+     "family": "Huelin Gorriz",
+     "given": "Marta"
+    },
+    {
+     "family": "Tirole",
+     "given": "Margot"
+    },
+    {
+     "family": "Bendor",
+     "given": "Daniel"
+    }
+   ],
    "venue": "eLife",
    "volume": "13",
    "issue": "",
@@ -112,6 +206,8 @@
    "year": 2024,
    "date": "2024-11-28",
    "published_as": [],
+   "oa_url": "https://doi.org/10.7554/elife.85635",
+   "oa_pdf": false,
    "section": "Peer-reviewed articles",
    "pmid": "39606951"
   },
@@ -124,6 +220,20 @@
     "Verzat C",
     "Bendor D"
    ],
+   "author_details": [
+    {
+     "family": "Perrodin",
+     "given": "Catherine"
+    },
+    {
+     "family": "Verzat",
+     "given": "Colombine"
+    },
+    {
+     "family": "Bendor",
+     "given": "Daniel"
+    }
+   ],
    "venue": "eLife",
    "volume": "12",
    "issue": "",
@@ -131,6 +241,8 @@
    "year": 2023,
    "date": "2023-12-27",
    "published_as": [],
+   "oa_url": "https://doi.org/10.7554/elife.86464",
+   "oa_pdf": false,
    "section": "Peer-reviewed articles",
    "pmid": "38149925"
   },
@@ -143,6 +255,20 @@
     "Takigawa M",
     "Bendor D"
    ],
+   "author_details": [
+    {
+     "family": "Huelin Gorriz",
+     "given": "Marta"
+    },
+    {
+     "family": "Takigawa",
+     "given": "Masahiro"
+    },
+    {
+     "family": "Bendor",
+     "given": "Daniel"
+    }
+   ],
    "venue": "Nature Communications",
    "volume": "14",
    "issue": "1",
@@ -150,6 +276,8 @@
    "year": 2023,
    "date": "2023-12-09",
    "published_as": [],
+   "oa_url": "https://www.nature.com/articles/s41467-023-43939-z.pdf",
+   "oa_pdf": true,
    "section": "Peer-reviewed articles",
    "pmid": "38071221"
   },
@@ -162,6 +290,20 @@
     "Mairlot C",
     "Bendor D"
    ],
+   "author_details": [
+    {
+     "family": "Qiao",
+     "given": "Qinbo"
+    },
+    {
+     "family": "Mairlot",
+     "given": "Caroline"
+    },
+    {
+     "family": "Bendor",
+     "given": "Daniel"
+    }
+   ],
    "venue": "Scientific Reports",
    "volume": "13",
    "issue": "1",
@@ -169,6 +311,8 @@
    "year": 2023,
    "date": "2023-08-28",
    "published_as": [],
+   "oa_url": "https://www.nature.com/articles/s41598-023-40976-y.pdf",
+   "oa_pdf": true,
    "section": "Peer-reviewed articles",
    "pmid": "37640740"
   },
@@ -182,6 +326,24 @@
     "Bizley JK",
     "Bendor D"
    ],
+   "author_details": [
+    {
+     "family": "Dunn",
+     "given": "Soraya L. S."
+    },
+    {
+     "family": "Town",
+     "given": "Stephen M."
+    },
+    {
+     "family": "Bizley",
+     "given": "Jennifer K."
+    },
+    {
+     "family": "Bendor",
+     "given": "Daniel"
+    }
+   ],
    "venue": "Nature Communications",
    "volume": "13",
    "issue": "1",
@@ -189,6 +351,8 @@
    "year": 2022,
    "date": "2022-10-07",
    "published_as": [],
+   "oa_url": "https://www.nature.com/articles/s41467-022-33507-2.pdf",
+   "oa_pdf": true,
    "section": "Peer-reviewed articles",
    "pmid": "36207304"
   },
@@ -212,6 +376,64 @@
     "Barry C",
     "Spiers HJ"
    ],
+   "author_details": [
+    {
+     "family": "de Cothi",
+     "given": "William"
+    },
+    {
+     "family": "Nyberg",
+     "given": "Nils"
+    },
+    {
+     "family": "Griesbauer",
+     "given": "Eva-Maria"
+    },
+    {
+     "family": "Ghanamé",
+     "given": "Carole"
+    },
+    {
+     "family": "Zisch",
+     "given": "Fiona"
+    },
+    {
+     "family": "Lefort",
+     "given": "Julie M."
+    },
+    {
+     "family": "Fletcher",
+     "given": "Lydia"
+    },
+    {
+     "family": "Newton",
+     "given": "Coco"
+    },
+    {
+     "family": "Renaudineau",
+     "given": "Sophie"
+    },
+    {
+     "family": "Bendor",
+     "given": "Daniel"
+    },
+    {
+     "family": "Grieves",
+     "given": "Roddy"
+    },
+    {
+     "family": "Duvelle",
+     "given": "Éléonore"
+    },
+    {
+     "family": "Barry",
+     "given": "Caswell"
+    },
+    {
+     "family": "Spiers",
+     "given": "Hugo J."
+    }
+   ],
    "venue": "Current Biology",
    "volume": "32",
    "issue": "17",
@@ -219,6 +441,8 @@
    "year": 2022,
    "date": "2022-09-01",
    "published_as": [],
+   "oa_url": "https://doi.org/10.1016/j.cub.2022.06.090",
+   "oa_pdf": false,
    "section": "Peer-reviewed articles",
    "pmid": "35863351"
   },
@@ -233,6 +457,28 @@
     "Kukovska L",
     "Bendor D"
    ],
+   "author_details": [
+    {
+     "family": "Tirole",
+     "given": "Margot"
+    },
+    {
+     "family": "Huelin Gorriz",
+     "given": "Marta"
+    },
+    {
+     "family": "Takigawa",
+     "given": "Masahiro"
+    },
+    {
+     "family": "Kukovska",
+     "given": "Lilia"
+    },
+    {
+     "family": "Bendor",
+     "given": "Daniel"
+    }
+   ],
    "venue": "eLife",
    "volume": "11",
    "issue": "",
@@ -240,6 +486,8 @@
    "year": 2022,
    "date": "2022-08-22",
    "published_as": [],
+   "oa_url": "https://doi.org/10.7554/elife.79031",
+   "oa_pdf": false,
    "section": "Peer-reviewed articles",
    "pmid": "35993533"
   },
@@ -260,6 +508,52 @@
     "Doeller CF",
     "Barry C"
    ],
+   "author_details": [
+    {
+     "family": "Frey",
+     "given": "Markus"
+    },
+    {
+     "family": "Tanni",
+     "given": "Sander"
+    },
+    {
+     "family": "Perrodin",
+     "given": "Catherine"
+    },
+    {
+     "family": "O'Leary",
+     "given": "Alice"
+    },
+    {
+     "family": "Nau",
+     "given": "Matthias"
+    },
+    {
+     "family": "Kelly",
+     "given": "Jack"
+    },
+    {
+     "family": "Banino",
+     "given": "Andrea"
+    },
+    {
+     "family": "Bendor",
+     "given": "Daniel"
+    },
+    {
+     "family": "Lefort",
+     "given": "Julie"
+    },
+    {
+     "family": "Doeller",
+     "given": "Christian F"
+    },
+    {
+     "family": "Barry",
+     "given": "Caswell"
+    }
+   ],
    "venue": "eLife",
    "volume": "10",
    "issue": "",
@@ -267,6 +561,8 @@
    "year": 2021,
    "date": "2021-08-02",
    "published_as": [],
+   "oa_url": "https://doi.org/10.7554/elife.66551",
+   "oa_pdf": false,
    "section": "Peer-reviewed articles",
    "pmid": "34338632"
   },
@@ -281,6 +577,28 @@
     "Wang X",
     "Bendor D"
    ],
+   "author_details": [
+    {
+     "family": "Cooke",
+     "given": "James E."
+    },
+    {
+     "family": "Lee",
+     "given": "Julie J."
+    },
+    {
+     "family": "Bartlett",
+     "given": "Edward L."
+    },
+    {
+     "family": "Wang",
+     "given": "Xiaoqin"
+    },
+    {
+     "family": "Bendor",
+     "given": "Daniel"
+    }
+   ],
    "venue": "Scientific Reports",
    "volume": "10",
    "issue": "1",
@@ -288,6 +606,8 @@
    "year": 2020,
    "date": "2020-08-17",
    "published_as": [],
+   "oa_url": "https://www.nature.com/articles/s41598-020-70397-0.pdf",
+   "oa_pdf": true,
    "section": "Peer-reviewed articles",
    "pmid": "32807854"
   },
@@ -300,6 +620,20 @@
     "Wang X",
     "Bendor D"
    ],
+   "author_details": [
+    {
+     "family": "Lee",
+     "given": "Jong Hoon"
+    },
+    {
+     "family": "Wang",
+     "given": "Xiaoqin"
+    },
+    {
+     "family": "Bendor",
+     "given": "Daniel"
+    }
+   ],
    "venue": "PLOS Computational Biology",
    "volume": "16",
    "issue": "2",
@@ -307,6 +641,8 @@
    "year": 2020,
    "date": "2020-02-18",
    "published_as": [],
+   "oa_url": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1007627&type=printable",
+   "oa_pdf": true,
    "section": "Peer-reviewed articles",
    "pmid": "32069272"
   },
@@ -318,6 +654,16 @@
     "Lewis PA",
     "Bendor D"
    ],
+   "author_details": [
+    {
+     "family": "Lewis",
+     "given": "Penelope A."
+    },
+    {
+     "family": "Bendor",
+     "given": "Daniel"
+    }
+   ],
    "venue": "Current Biology",
    "volume": "29",
    "issue": "18",
@@ -325,6 +671,8 @@
    "year": 2019,
    "date": "2019-09-01",
    "published_as": [],
+   "oa_url": "http://www.cell.com/article/S0960982219310358/pdf",
+   "oa_pdf": true,
    "section": "Peer-reviewed articles",
    "pmid": "31550479"
   },
@@ -337,6 +685,20 @@
     "Bendor D",
     "Javadi AH"
    ],
+   "author_details": [
+    {
+     "family": "Crowley",
+     "given": "Rebecca"
+    },
+    {
+     "family": "Bendor",
+     "given": "Daniel"
+    },
+    {
+     "family": "Javadi",
+     "given": "Amir-Homayoun"
+    }
+   ],
    "venue": "Progress in Neurobiology",
    "volume": "179",
    "issue": "",
@@ -344,6 +706,8 @@
    "year": 2019,
    "date": "2019-08-01",
    "published_as": [],
+   "oa_url": "https://doi.org/10.31234/osf.io/f2e4g",
+   "oa_pdf": false,
    "section": "Peer-reviewed articles",
    "pmid": "31054931"
   },
@@ -356,6 +720,20 @@
     "de Cothi W",
     "Bendor D"
    ],
+   "author_details": [
+    {
+     "family": "Spiers",
+     "given": "Hugo J."
+    },
+    {
+     "family": "de Cothi",
+     "given": "William"
+    },
+    {
+     "family": "Bendor",
+     "given": "Daniel"
+    }
+   ],
    "venue": "The Hippocampus from Cells to Systems",
    "volume": "",
    "issue": "",
@@ -363,6 +741,8 @@
    "year": 2017,
    "date": "2017-01-01",
    "published_as": [],
+   "oa_url": "https://discovery.ucl.ac.uk/10042402/3/Spiers_BendorChapter-FinalDraft.pdf",
+   "oa_pdf": true,
    "section": "Book chapters",
    "pmid": ""
   },
@@ -374,6 +754,16 @@
     "Petkov CI",
     "Bendor D"
    ],
+   "author_details": [
+    {
+     "family": "Petkov",
+     "given": "Christopher I."
+    },
+    {
+     "family": "Bendor",
+     "given": "Daniel"
+    }
+   ],
    "venue": "Neuron",
    "volume": "91",
    "issue": "4",
@@ -381,6 +771,8 @@
    "year": 2016,
    "date": "2016-08-01",
    "published_as": [],
+   "oa_url": "http://www.cell.com/article/S089662731630469X/pdf",
+   "oa_pdf": true,
    "section": "Commentary",
    "pmid": "27537481"
   },
@@ -398,6 +790,40 @@
     "Goosens KA",
     "Bendor D"
    ],
+   "author_details": [
+    {
+     "family": "Varela",
+     "given": "Carmen"
+    },
+    {
+     "family": "Weiss",
+     "given": "Sarah"
+    },
+    {
+     "family": "Meyer",
+     "given": "Retsina"
+    },
+    {
+     "family": "Halassa",
+     "given": "Michael"
+    },
+    {
+     "family": "Biedenkapp",
+     "given": "Joseph"
+    },
+    {
+     "family": "Wilson",
+     "given": "Matthew A."
+    },
+    {
+     "family": "Goosens",
+     "given": "Ki Ann"
+    },
+    {
+     "family": "Bendor",
+     "given": "Daniel"
+    }
+   ],
    "venue": "PLOS ONE",
    "volume": "11",
    "issue": "5",
@@ -405,6 +831,8 @@
    "year": 2016,
    "date": "2016-05-04",
    "published_as": [],
+   "oa_url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0154374&type=printable",
+   "oa_pdf": true,
    "section": "Peer-reviewed articles",
    "pmid": "27145133"
   },
@@ -416,6 +844,16 @@
     "Bendor D",
     "Spiers HJ"
    ],
+   "author_details": [
+    {
+     "family": "Bendor",
+     "given": "Daniel"
+    },
+    {
+     "family": "Spiers",
+     "given": "Hugo J."
+    }
+   ],
    "venue": "Trends in Cognitive Sciences",
    "volume": "20",
    "issue": "3",
@@ -423,6 +861,8 @@
    "year": 2016,
    "date": "2016-03-01",
    "published_as": [],
+   "oa_url": "http://www.cell.com/article/S1364661316000218/pdf",
+   "oa_pdf": true,
    "section": "Commentary",
    "pmid": "26830730"
   },
@@ -434,6 +874,16 @@
     "Rihel J",
     "Bendor D"
    ],
+   "author_details": [
+    {
+     "family": "Rihel",
+     "given": "Jason"
+    },
+    {
+     "family": "Bendor",
+     "given": "Daniel"
+    }
+   ],
    "venue": "Cell",
    "volume": "161",
    "issue": "7",
@@ -441,6 +891,8 @@
    "year": 2015,
    "date": "2015-06-01",
    "published_as": [],
+   "oa_url": "http://www.cell.com/article/S0092867415006947/pdf",
+   "oa_pdf": true,
    "section": "Commentary",
    "pmid": "26091032"
   },
@@ -451,6 +903,12 @@
    "authors": [
     "Bendor D"
    ],
+   "author_details": [
+    {
+     "family": "Bendor",
+     "given": "Daniel"
+    }
+   ],
    "venue": "PLOS Computational Biology",
    "volume": "11",
    "issue": "4",
@@ -458,6 +916,8 @@
    "year": 2015,
    "date": "2015-04-16",
    "published_as": [],
+   "oa_url": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1004197&type=printable",
+   "oa_pdf": true,
    "section": "Peer-reviewed articles",
    "pmid": "25879843"
   },
@@ -469,6 +929,16 @@
     "Spiers HJ",
     "Bendor D"
    ],
+   "author_details": [
+    {
+     "family": "Spiers",
+     "given": "Hugo J."
+    },
+    {
+     "family": "Bendor",
+     "given": "Daniel"
+    }
+   ],
    "venue": "Brain Research Bulletin",
    "volume": "105",
    "issue": "",
@@ -476,6 +946,8 @@
    "year": 2014,
    "date": "2014-06-01",
    "published_as": [],
+   "oa_url": "https://www.sciencedirect.com/science/article/pii/S0361923013002074/pdf",
+   "oa_pdf": true,
    "section": "Peer-reviewed articles",
    "pmid": "24397964"
   },
@@ -488,6 +960,20 @@
     "Walker KMM",
     "Bendor D"
    ],
+   "author_details": [
+    {
+     "family": "Geiser",
+     "given": "Eveline"
+    },
+    {
+     "family": "Walker",
+     "given": "Kerry M. M."
+    },
+    {
+     "family": "Bendor",
+     "given": "Daniel"
+    }
+   ],
    "venue": "Frontiers in Psychology",
    "volume": "5",
    "issue": "",
@@ -495,6 +981,8 @@
    "year": 2014,
    "date": "2014-01-01",
    "published_as": [],
+   "oa_url": "https://www.frontiersin.org/articles/10.3389/fpsyg.2014.00159/pdf",
+   "oa_pdf": true,
    "section": "Peer-reviewed articles",
    "pmid": "24624101"
   },
@@ -505,6 +993,12 @@
    "authors": [
     "Bendor D"
    ],
+   "author_details": [
+    {
+     "family": "Bendor",
+     "given": "Daniel"
+    }
+   ],
    "venue": "Science",
    "volume": "342",
    "issue": "6158",
@@ -512,6 +1006,8 @@
    "year": 2013,
    "date": "2013-11-01",
    "published_as": [],
+   "oa_url": "",
+   "oa_pdf": false,
    "section": "Commentary",
    "pmid": "24179215"
   },
@@ -524,6 +1020,20 @@
     "Osmanski MS",
     "Wang X"
    ],
+   "author_details": [
+    {
+     "family": "Bendor",
+     "given": "Daniel"
+    },
+    {
+     "family": "Osmanski",
+     "given": "Michael S."
+    },
+    {
+     "family": "Wang",
+     "given": "Xiaoqin"
+    }
+   ],
    "venue": "The Journal of Neuroscience",
    "volume": "32",
    "issue": "46",
@@ -531,6 +1041,8 @@
    "year": 2012,
    "date": "2012-11-14",
    "published_as": [],
+   "oa_url": "https://www.jneurosci.org/content/jneuro/32/46/16149.full.pdf",
+   "oa_pdf": true,
    "section": "Peer-reviewed articles",
    "pmid": ""
   },
@@ -542,6 +1054,16 @@
     "Bendor D",
     "Wilson MA"
    ],
+   "author_details": [
+    {
+     "family": "Bendor",
+     "given": "Daniel"
+    },
+    {
+     "family": "Wilson",
+     "given": "Matthew A"
+    }
+   ],
    "venue": "Nature Neuroscience",
    "volume": "15",
    "issue": "10",
@@ -549,6 +1071,8 @@
    "year": 2012,
    "date": "2012-10-01",
    "published_as": [],
+   "oa_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/4354843",
+   "oa_pdf": false,
    "section": "Peer-reviewed articles",
    "pmid": ""
   },
@@ -559,6 +1083,12 @@
    "authors": [
     "Bendor D"
    ],
+   "author_details": [
+    {
+     "family": "Bendor",
+     "given": "Daniel"
+    }
+   ],
    "venue": "Journal of Neurophysiology",
    "volume": "107",
    "issue": "3",
@@ -566,6 +1096,8 @@
    "year": 2012,
    "date": "2012-02-01",
    "published_as": [],
+   "oa_url": "",
+   "oa_pdf": false,
    "section": "Commentary",
    "pmid": ""
   },
@@ -576,6 +1108,12 @@
    "authors": [
     "Bendor D"
    ],
+   "author_details": [
+    {
+     "family": "Bendor",
+     "given": "Daniel"
+    }
+   ],
    "venue": "The Journal of Neuroscience",
    "volume": "31",
    "issue": "9",
@@ -583,6 +1121,8 @@
    "year": 2011,
    "date": "2011-03-02",
    "published_as": [],
+   "oa_url": "https://www.jneurosci.org/content/jneuro/31/9/3141.full.pdf",
+   "oa_pdf": true,
    "section": "Commentary",
    "pmid": ""
   },
@@ -594,6 +1134,16 @@
     "Bendor D",
     "Wang X"
    ],
+   "author_details": [
+    {
+     "family": "Bendor",
+     "given": "Daniel"
+    },
+    {
+     "family": "Wang",
+     "given": "Xiaoqin"
+    }
+   ],
    "venue": "Journal of Neurophysiology",
    "volume": "103",
    "issue": "4",
@@ -601,6 +1151,8 @@
    "year": 2010,
    "date": "2010-04-01",
    "published_as": [],
+   "oa_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/2853289",
+   "oa_pdf": false,
    "section": "Peer-reviewed articles",
    "pmid": ""
   },
@@ -612,6 +1164,16 @@
     "Wang X",
     "Bendor D"
    ],
+   "author_details": [
+    {
+     "family": "Wang",
+     "given": "Xiaoqin"
+    },
+    {
+     "family": "Bendor",
+     "given": "Daniel"
+    }
+   ],
    "venue": "In: Palmer A, Rees A (eds), The Oxford Handbook of Auditory Science: The Auditory Brain. Oxford University Press",
    "volume": "",
    "issue": "",
@@ -619,6 +1181,8 @@
    "year": 2010,
    "date": "2010-01-21",
    "published_as": [],
+   "oa_url": "",
+   "oa_pdf": false,
    "section": "Book chapters",
    "pmid": ""
   },
@@ -630,6 +1194,16 @@
     "Bendor D",
     "Wang X"
    ],
+   "author_details": [
+    {
+     "family": "Bendor",
+     "given": "Daniel"
+    },
+    {
+     "family": "Wang",
+     "given": "Xiaoqin"
+    }
+   ],
    "venue": "Journal of Neurophysiology",
    "volume": "100",
    "issue": "2",
@@ -637,6 +1211,8 @@
    "year": 2008,
    "date": "2008-08-01",
    "published_as": [],
+   "oa_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/2525707",
+   "oa_pdf": false,
    "section": "Peer-reviewed articles",
    "pmid": ""
   },
@@ -650,6 +1226,24 @@
     "Bendor D",
     "Bartlett E"
    ],
+   "author_details": [
+    {
+     "family": "Wang",
+     "given": "X."
+    },
+    {
+     "family": "Lu",
+     "given": "T."
+    },
+    {
+     "family": "Bendor",
+     "given": "D."
+    },
+    {
+     "family": "Bartlett",
+     "given": "E."
+    }
+   ],
    "venue": "Neuroscience",
    "volume": "154",
    "issue": "1",
@@ -657,6 +1251,8 @@
    "year": 2008,
    "date": "2008-06-01",
    "published_as": [],
+   "oa_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/2751884",
+   "oa_pdf": false,
    "section": "Peer-reviewed articles",
    "pmid": ""
   },
@@ -668,6 +1264,16 @@
     "Bendor D",
     "Wang X"
    ],
+   "author_details": [
+    {
+     "family": "Bendor",
+     "given": "Daniel"
+    },
+    {
+     "family": "Wang",
+     "given": "Xiaoqin"
+    }
+   ],
    "venue": "Nature Neuroscience",
    "volume": "10",
    "issue": "6",
@@ -675,6 +1281,8 @@
    "year": 2007,
    "date": "2007-06-01",
    "published_as": [],
+   "oa_url": "",
+   "oa_pdf": false,
    "section": "Peer-reviewed articles",
    "pmid": ""
   },
@@ -686,6 +1294,16 @@
     "Bendor D",
     "Wang X"
    ],
+   "author_details": [
+    {
+     "family": "Bendor",
+     "given": "Daniel"
+    },
+    {
+     "family": "Wang",
+     "given": "Xiaoqin"
+    }
+   ],
    "venue": "Current Opinion in Neurobiology",
    "volume": "16",
    "issue": "4",
@@ -693,6 +1311,8 @@
    "year": 2006,
    "date": "2006-08-01",
    "published_as": [],
+   "oa_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/4325365",
+   "oa_pdf": false,
    "section": "Peer-reviewed articles",
    "pmid": ""
   },
@@ -704,6 +1324,16 @@
     "Bendor D",
     "Wang X"
    ],
+   "author_details": [
+    {
+     "family": "Bendor",
+     "given": "Daniel"
+    },
+    {
+     "family": "Wang",
+     "given": "Xiaoqin"
+    }
+   ],
    "venue": "Nature",
    "volume": "436",
    "issue": "7054",
@@ -711,6 +1341,8 @@
    "year": 2005,
    "date": "2005-08-01",
    "published_as": [],
+   "oa_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/1780171",
+   "oa_pdf": false,
    "section": "Peer-reviewed articles",
    "pmid": ""
   }
