@@ -135,8 +135,18 @@ a:hover { text-decoration-thickness: 2px; }
   display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
   gap: clamp(2rem, 5vw, 4.5rem); padding-block: 1rem 3.5rem;
 }
-.join { border-top: 2px solid var(--indigo); padding-top: 0.25rem; align-self: start; margin-top: 2.5rem; }
-.join h2 { margin-top: 1rem; }
+.home-side { align-self: start; margin-top: 2.5rem; display: grid; gap: 2.25rem; }
+.news, .join { border-top: 2px solid var(--indigo); padding-top: 0.25rem; }
+.news h2, .join h2 { margin-top: 1rem; }
+.news-list { list-style: none; margin: 0; padding: 0; }
+.news-list li { margin: 0 0 1rem; line-height: 1.5; }
+.news-date {
+  display: block; font-family: var(--sans); font-size: 0.85rem; font-weight: 600;
+  color: var(--indigo); font-variant-numeric: tabular-nums;
+}
+.news-page { margin-top: 1.75rem; }
+.news-page li { display: grid; grid-template-columns: 9rem minmax(0, 1fr); gap: 0 1rem; margin-bottom: 1.25rem; }
+.news-page .news-date { font-size: 0.95rem; padding-top: 0.1rem; }
 .more { font-family: var(--sans); font-weight: 500; }
 
 /* Citations ---------------------------------------------------------- */
@@ -193,6 +203,7 @@ a:hover { text-decoration-thickness: 2px; }
 }
 .person-name { font-family: var(--sans); font-weight: 600; font-size: 1.05rem; margin: 0.75rem 0 0.05rem; line-height: 1.3; }
 .person-role { color: var(--slate); font-size: 0.97rem; margin: 0; }
+.person-award { font-family: var(--sans); font-size: 0.86rem; font-weight: 500; color: var(--indigo); line-height: 1.35; margin: 0.2rem 0 0; }
 .person-interests { font-size: 0.92rem; line-height: 1.45; margin: 0.35rem 0 0; }
 .person-links { display: flex; gap: 0.9rem; font-family: var(--sans); font-size: 0.88rem; margin: 0.35rem 0 0; }
 
@@ -282,13 +293,14 @@ a:hover { text-decoration-thickness: 2px; }
   .hero { grid-template-columns: 1fr; }
   .hero-image { order: -1; }
   .home-grid { grid-template-columns: 1fr; }
-  .join { margin-top: 0; }
+  .home-side { margin-top: 0; }
 }
 @media (max-width: 560px) {
   body { font-size: 1rem; }
   .lede { font-size: 1.1rem; }
   .pub-section .pub { grid-template-columns: 2.9rem minmax(0, 1fr); gap: 0 0.5rem; }
   .pub-year { font-size: 0.92rem; }
+  .news-page li { grid-template-columns: 1fr; }
   .people-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.75rem 1rem; }
   .alumni-list li { grid-template-columns: 1fr; gap: 0.1rem; }
   .alum-years:empty { display: none; }

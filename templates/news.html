@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="wrap narrow">
+  <h1>News</h1>
+  <ul class="news-list news-page">
+    {% for n in news %}
+    <li>
+      <span class="news-date">{{ n.when }}</span>
+      <span class="news-text">{{ n.text }}{% if n.link %} <a href="{{ n.link }}">More</a>{% endif %}</span>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

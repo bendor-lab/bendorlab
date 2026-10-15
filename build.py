@@ -33,7 +33,9 @@ NAV = [
     ("contact", "Contact"),
 ]
 PAGE_TITLES = {"research": "Research", "people": "People", "publications": "Publications",
-               "photos": "Photos", "code": "Code and data", "positions": "Join the lab", "contact": "Contact"}
+               "photos": "Photos", "code": "Code and data", "positions": "Join the lab", "contact": "Contact",
+               "news": "News"}
+HOME_NEWS = 4  # news items shown on the home page
 
 
 def load(name):
@@ -47,6 +49,26 @@ def slugify(s):
 def initials(name):
     parts = [p for p in re.split(r"\s+", name.strip()) if p]
     return (parts[0][0] + (parts[-1][0] if len(parts) > 1 else "")).upper() if parts else ""
+
+
+def prepare_news(news):
+    """News items, newest first, with the date shown as month and year."""
+    items = []
+    for n in news.get("items") or []:
+        if not n or not str(n.get("text") or "").strip():
+            continue
+        d = n.get("date")
+        if isinstance(d, dt.datetime):
+            d = d.date()
+        if not isinstance(d, dt.date):
+            try:
+                d = dt.date.fromisoformat(str(d)[:10])
+            except ValueError:
+                print(f"warning: news item '{n['text'][:40]}' has no valid date (use YYYY-MM-DD)", file=sys.stderr)
+                d = dt.date.min
+        items.append({**n, "sort": d, "when": d.strftime("%B %Y") if d != dt.date.min else ""})
+    items.sort(key=lambda n: n["sort"], reverse=True)
+    return items
 
 
 def long_date(iso):
@@ -152,6 +174,7 @@ def build():
     research = load("research")
     pub_settings = load("publications")
     code = load("code")
+    news = prepare_news(load("news")) if (DATA / "news.yml").exists() else []
     items, sections, by_doi, updated = prepare_publications(pub_settings, lab_people(people))
 
     for m in people.get("members", []):
@@ -211,7 +234,7 @@ def build():
 
     pages = [("index.html", "", {"recent": recent})] + [
         (f"{slug}.html", slug, {}) for slug, _ in NAV
-    ] + [("404.html", "404", {})]
+    ] + ([("news.html", "news", {})] if news else []) + [("404.html", "404", {})]
 
     for template, slug, extra in pages:
         if slug == "404":
@@ -227,12 +250,13 @@ def build():
         ctx = dict(common, root=root, slug=slug if slug != "404" else "", asset=asset,
                    page_title=PAGE_TITLES.get(slug, "Page not found" if slug == "404" else ""),
                    pub_sections=sections, pubs_updated=updated, themes=themes, alumni=alumni,
-                   code=code, code_entries=code_entries, extra_repos=extra_repos, **extra)
+                   code=code, code_entries=code_entries, extra_repos=extra_repos,
+                   news=news, home_news=HOME_NEWS, **extra)
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_text(env.get_template(template).render(**ctx), encoding="utf-8")
 
     # search-engine helpers
-    urls = [f"{site['url']}/"] + [f"{site['url']}/{slug}/" for slug, _ in NAV]
+    urls = [f"{site['url']}/"] + [f"{site['url']}/{slug}/" for slug, _ in NAV] + ([f"{site['url']}/news/"] if news else [])
     (OUT / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
         + "".join(f"  <url><loc>{u}</loc></url>\n" for u in urls) + "</urlset>\n", encoding="utf-8")

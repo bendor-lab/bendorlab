@@ -24,6 +24,7 @@ content:
         fields:
           - { name: name, label: Name, type: string, required: true }
           - { name: role, label: Role, type: string, description: "For example: PhD student, Research fellow" }
+          - { name: fellowship, label: Fellowship or award (optional), type: string, description: "Shown under the role, e.g. RNID Fellowship" }
           - name: photo
             label: Photo
             description: A portrait photo works best (it is cropped to 4:5). Leave empty to show initials.
@@ -53,6 +54,25 @@ content:
             type: select
             options:
               values: [Postdoctoral fellows, Research assistants, PhD students, "MSc, MRes and visiting students"]
+
+  - name: news
+    label: News
+    type: file
+    path: data/news.yml
+    format: yaml
+    fields:
+      - name: items
+        label: News items
+        description: The four most recent appear on the home page; all appear on the News page.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{date}: {text}"
+        fields:
+          - { name: date, label: Date, type: date, required: true, description: Shown as month and year. }
+          - { name: text, label: Text, type: text, required: true, description: "One or two sentences, e.g. Aditi Bishnoi has been awarded a Marie Skłodowska-Curie Postdoctoral Fellowship." }
+          - { name: link, label: Link (optional), type: string }
 
   - name: publications
     label: Publications

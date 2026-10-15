@@ -1,8 +1,8 @@
 # Current lab members appear in this order on the People page.
 # To add someone: copy a block, change the details, and upload a photo to static/images/people/.
 # To move someone to alumni: delete their block here and add them under alumni below.
-# Optional for each person: interests (one line), orcid (the iD only), scholar (full link),
-# link (personal website).
+# Optional for each person: fellowship (named fellowship or award), interests (one line),
+# orcid (the iD only), scholar (full link), link (personal website).
 members:
   - name: Daniel Bendor
     role: Group leader
@@ -13,10 +13,12 @@ members:
     link: ""
   - name: Prez Jarzebowski
     role: Research fellow
+    fellowship: RNID Fellowship
     photo: /static/images/people/prez-jarzebowski.webp
     link: ""
   - name: Aditi Bishnoi
     role: Research fellow
+    fellowship: Marie Skłodowska-Curie Postdoctoral Fellowship
     photo: /static/images/people/aditi-bishnoi.webp
     link: ""
   - name: Masa Takigawa

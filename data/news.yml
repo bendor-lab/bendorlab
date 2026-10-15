@@ -1,0 +1,9 @@
+# Lab news. The four most recent items appear on the home page; all items appear on
+# the News page. "date" is YYYY-MM-DD and is shown as month and year. "link" is optional.
+items:
+  - date: 2026-10-15
+    text: Aditi Bishnoi has been awarded a Marie Skłodowska-Curie Postdoctoral Fellowship.
+    link: ""
+  - date: 2026-10-15
+    text: Prez Jarzebowski has been awarded an RNID Fellowship from the Royal National Institute for Deaf People.
+    link: ""

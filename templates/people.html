@@ -15,6 +15,7 @@
         {% endif %}
         <p class="person-name">{{ m.name }}</p>
         <p class="person-role">{{ m.role or "" }}</p>
+        {% if m.fellowship %}<p class="person-award">{{ m.fellowship }}</p>{% endif %}
         {% if m.interests %}<p class="person-interests">{{ m.interests }}</p>{% endif %}
         {% if m.orcid or m.scholar or m.link %}
         <p class="person-links">

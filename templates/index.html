@@ -36,13 +36,29 @@
     </ol>
     <p><a class="more" href="{{ root }}publications/">All publications</a></p>
   </section>
-  <aside class="join" aria-labelledby="join-h">
-    <h2 id="join-h">Join the lab</h2>
-    {% if positions.openings %}
-      <p>{% for o in positions.openings %}<strong>{{ o.title }}</strong>{% if not loop.last %}; {% endif %}{% endfor %}</p>
+  <div class="home-side">
+    {% if news %}
+    <section class="news" aria-labelledby="news-h">
+      <h2 id="news-h">News</h2>
+      <ul class="news-list">
+        {% for n in news[:home_news] %}
+        <li>
+          <span class="news-date">{{ n.when }}</span>
+          <span class="news-text">{{ n.text }}{% if n.link %} <a href="{{ n.link }}">More</a>{% endif %}</span>
+        </li>
+        {% endfor %}
+      </ul>
+      {% if news | length > home_news %}<p><a class="more" href="{{ root }}news/">All news</a></p>{% endif %}
+    </section>
     {% endif %}
-    <p>{{ positions.intro }}</p>
-    {% if positions.contact_email %}<p class="more">{{ email_link(positions.contact_email) }}</p>{% endif %}
-  </aside>
+    <aside class="join" aria-labelledby="join-h">
+      <h2 id="join-h">Join the lab</h2>
+      {% if positions.openings %}
+        <p>{% for o in positions.openings %}<strong>{{ o.title }}</strong>{% if not loop.last %}; {% endif %}{% endfor %}</p>
+      {% endif %}
+      <p>{{ positions.intro }}</p>
+      {% if positions.contact_email %}<p class="more">{{ email_link(positions.contact_email) }}</p>{% endif %}
+    </aside>
+  </div>
 </div>
 {% endblock %}

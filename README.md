@@ -17,6 +17,7 @@ What runs by itself:
 | To change | Edit |
 |---|---|
 | Lab members and alumni | `data/people.yml` |
+| News on the home page and the News page | `data/news.yml` |
 | Publication settings (always include, hide, section) | `data/publications.yml` |
 | Research text, themes, figures and the home page figure | `data/research.yml` and images in `static/images/research/` |
 | Code and data page | `data/code.yml` |
@@ -85,10 +86,12 @@ If these emails do not arrive, check **Watch** is set to at least "Participating
 ### With forms (easiest)
 1. Go to app.pagescms.org and sign in with GitHub.
 2. Install the Pages CMS app on the `bendorlab` repository when asked.
-3. Open the repository. The sidebar has **People**, **Publications**, **Research**, **Positions**, **Photos** and **Site settings**.
+3. Open the repository. The sidebar has **People**, **News**, **Publications**, **Research**, **Join the lab**, **Code and data**, **Photos** and **Site settings**.
 4. Make changes and click **Save**. The site updates about two minutes later.
 
 Photos can be uploaded straight from a phone (JPEG, PNG or WebP). To add a lab member, open **People**, click **Add an entry** under current members, fill in name and role, and upload a photo. To move someone to alumni, delete their entry from current members and add them under alumni. Drag entries to reorder.
+
+To post news, open **News**, click **Add an entry**, and give a date and one or two sentences. The four most recent items appear on the home page, and the News page lists them all. A named fellowship or award can also go on a member's People card (the **Fellowship or award** field).
 
 To let a lab manager or student edit, add them as a collaborator on the repository (**Settings > Collaborators**).
 
