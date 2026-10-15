@@ -94,7 +94,7 @@ content:
             label: Section
             type: select
             options:
-              values: [Peer-reviewed articles, Preprints, Commentary, Book chapters]
+              values: [Peer-reviewed articles, Reviews, Preprints, Commentary, Book chapters]
           - { name: title, label: Title (optional override), type: string }
           - { name: authors, label: "Authors (optional override, e.g. Bendor D, Wilson MA)", type: string }
           - { name: venue, label: Journal or book (optional override), type: string }
@@ -249,6 +249,7 @@ content:
             type: image
             options: { path: static/images/photos }
           - { name: caption, label: Caption, type: string }
+          - { name: alt, label: Description for screen readers, type: string, description: "For example: Lab members at lunch by a lake, 2025" }
 
   - name: site
     label: Site settings
@@ -270,6 +271,11 @@ content:
         type: image
         options: { path: static/images/photos }
       - { name: hero_alt, label: Home page photo description, type: string }
+      - name: social_image
+        label: Picture for social media previews
+        description: Shown when a link to the site is shared. 1200 x 630 pixels works best.
+        type: image
+        options: { path: static/images }
       - { name: institute_page, label: Institute page link (optional), type: string }
       - { name: github, label: GitHub link (optional), type: string }
       - { name: google_scholar, label: Google Scholar link (optional), type: string }

@@ -11,7 +11,7 @@
     {% if theme.summary %}<p>{{ theme.summary }}</p>{% endif %}
     {% if theme.image %}
     <figure class="theme-figure">
-      <img src="{{ asset(theme.image) }}" alt="{{ theme.image_alt or '' }}" loading="lazy">
+      <img src="{{ asset(theme.image) }}" alt="{{ theme.image_alt or '' }}"{{ dims(theme.image) }} loading="lazy">
       {% if theme.caption or theme.credit %}
       <figcaption>
         {{ theme.caption or '' }}

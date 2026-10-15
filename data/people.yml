@@ -7,9 +7,8 @@ members:
   - name: Daniel Bendor
     role: Group leader
     photo: /static/images/people/daniel-bendor.webp
-    interests: Hippocampal replay, memory consolidation and predictive coding
     orcid: 0000-0001-6621-793X
-    scholar: ""
+    scholar: "https://scholar.google.com/citations?user=cWlY7gwAAAAJ"
     link: ""
   - name: Prez Jarzebowski
     role: Research fellow

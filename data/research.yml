@@ -1,9 +1,8 @@
 intro: >-
-  We use behavioural, computational, electrophysiological, and molecular-genetic
-  tools to study how the neocortex and hippocampus encode information and
-  communicate with each other, with a goal to understand the neural mechanisms
-  responsible for memory, perception, predictive coding and more broadly the
-  functional role of sleep.
+  We use behavioural, computational, electrophysiological and molecular-genetic tools
+  to study how the neocortex and hippocampus encode information and communicate with
+  each other. Our goal is to understand the neural mechanisms of memory, perception
+  and predictive coding, and the functional role of sleep.
 
 # The figure shown on the home page, below the introduction.
 home_figure:
@@ -25,14 +24,14 @@ themes:
   - title: Hippocampal replay
     summary: >-
       During rest and sleep, the hippocampus replays recent experience as brief,
-      time-compressed sequences of place cell activity. We study what these events
-      carry and how reliably they can be identified. Replay reinstates not only the
-      order in which place cells fired but also the firing-rate differences they
-      expressed between two environments. Because replay has no ground truth, we
-      developed a framework that uses two-track experiments to evaluate replay
-      detection methods. Recording from hippocampus and visual cortex together, we
-      find that sleep oscillations coordinate which memory is reactivated in both
-      regions at once.
+      time-compressed sequences of place cell activity. We study what these events carry
+      and how reliably they can be identified. Replay reinstates not only the order in
+      which place cells fired but also the firing-rate differences they expressed
+      between two environments. Because replay has no ground truth, we developed a
+      framework that uses two-track experiments to evaluate replay detection methods.
+      In a recent preprint, recording from the hippocampus and visual cortex together,
+      we report that the interplay of sleep oscillations enhances coordinated memory
+      reactivation in the two regions.
     image: /static/images/research/replay-detection-takigawa-2024.webp
     image_alt: >-
       Schematic of place cells ordered by their positions on two tracks, with decoded
@@ -54,10 +53,11 @@ themes:
       We cannot remember everything we experience, so the brain must select which
       memories to keep, a process often called memory triage. We study how replay
       carries out this selection. In rats, the more laps an animal runs on a track,
-      the more that track is replayed during later sleep, and greater familiarity
-      reduces it. The number of awake replay events during an experience predicts
-      which memories sleep replay favours. Reward value does not set sleep replay;
-      recency does. To study triage in behaviour, we developed a serial novel object
+      the more that track is replayed during later sleep, and greater familiarity with
+      a track reduces its replay. The number of awake replay events during an
+      experience predicts which memories sleep replay favours. In a recent preprint,
+      we report that time, not reward, shapes which experiences are prioritised for
+      replay. To study triage in behaviour, we developed a serial novel object
       recognition task that measures memory capacity and prioritisation in mice.
     image: /static/images/research/memory-triage-huelin-gorriz-2023.webp
     image_alt: >-
@@ -79,13 +79,10 @@ themes:
       Perception depends on comparing what reaches the senses with what the brain
       expects. We study how cortical circuits compute the difference and, in
       particular, its sign: whether something unexpected occurred, or something
-      expected failed to occur. In our Signed Error by Timing Asymmetry (SETA)
-      model, chandelier cells control when layer 2/3 neurons fire, so that positive
-      and negative errors reach their layer 5 targets in opposite windows for
-      synaptic plasticity. We test its predictions with recordings from mouse visual
-      cortex. A related line of work asks how prediction guides navigation: humans
-      and rats searching for a hidden goal in a changing maze behaved most like
-      learning agents that use a predictive map.
+      expected failed to occur. In our Signed Error by Timing Asymmetry (SETA) model,
+      chandelier cells control when layer 2/3 neurons fire, so that positive and
+      negative errors reach their layer 5 targets in opposite windows for synaptic
+      plasticity. We test its predictions with recordings from mouse visual cortex.
     image: /static/images/research/seta-circuit-jarzebowski-bendor-2026.webp
     image_alt: >-
       Left, a cortical circuit in which basket and chandelier cells gate an L2/3
@@ -101,7 +98,6 @@ themes:
     credit_url: https://doi.org/10.64898/2026.06.26.734797
     papers:
       - 10.64898/2026.06.26.734797
-      - 10.1016/j.cub.2022.06.090
       - 10.1016/j.tics.2016.01.003
 
   - title: Auditory cortex and the coding of time and pitch

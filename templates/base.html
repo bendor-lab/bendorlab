@@ -4,11 +4,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if page_title %}{{ page_title }} | {% endif %}{{ site.title }}</title>
-  <meta name="description" content="{{ description or research.intro | truncate(155) }}">
+  {% set page_description = description or research.intro | truncate(155) %}
+  {% set share_image = site.social_image or site.hero_image or '/static/images/logo.webp' %}
+  {% set share_size = image_size(share_image) %}
+  <meta name="description" content="{{ page_description }}">
   <meta property="og:title" content="{% if page_title %}{{ page_title }} | {% endif %}{{ site.title }}">
+  <meta property="og:description" content="{{ page_description }}">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:locale" content="en_GB">
   <meta property="og:url" content="{{ site.url }}/{{ slug and slug ~ '/' or '' }}">
-  <meta property="og:image" content="{{ site.url }}{{ site.hero_image or '/static/images/logo.webp' }}">
+  <meta property="og:image" content="{{ site.url }}{{ share_image }}">
+  {% if share_size %}<meta property="og:image:width" content="{{ share_size[0] }}">
+  <meta property="og:image:height" content="{{ share_size[1] }}">{% endif %}
+  <meta property="og:image:alt" content="{{ site.hero_alt or site.title }}">
+  <meta name="twitter:card" content="summary_large_image">
   {% if site.google_site_verification %}<meta name="google-site-verification" content="{{ site.google_site_verification }}">{% endif %}
   <link rel="canonical" href="{{ site.url }}/{{ slug and slug ~ '/' or '' }}">
   <link rel="icon" href="{{ root }}static/images/favicon.svg" type="image/svg+xml">

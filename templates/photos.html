@@ -7,7 +7,7 @@
     <li>
       <figure>
         <button type="button" class="gallery-open" data-index="{{ loop.index0 }}" aria-label="Enlarge photo{% if ph.caption %}: {{ ph.caption }}{% endif %}">
-          <img src="{{ asset(ph.image) }}" alt="{{ ph.caption or 'Bendor Lab photo' }}" loading="lazy">
+          <img src="{{ asset(ph.image) }}" alt="{{ ph.alt or ph.caption or 'Bendor Lab photo' }}"{{ dims(ph.image) }} loading="lazy">
         </button>
         {% if ph.caption %}<figcaption>{{ ph.caption }}</figcaption>{% endif %}
       </figure>

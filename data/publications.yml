@@ -20,13 +20,13 @@ highlight:
 # Order of sections on the Publications page
 sections:
   - Peer-reviewed articles
+  - Reviews
   - Preprints
   - Commentary
   - Book chapters
 
 include:
   # Peer-reviewed articles
-  - {doi: 10.1016/j.tins.2025.02.006, section: Peer-reviewed articles}
   - {doi: 10.7554/eLife.85635, section: Peer-reviewed articles}
   - {doi: 10.1038/s41467-023-43939-z, section: Peer-reviewed articles}
   - {doi: 10.1038/s41598-023-40976-y, section: Peer-reviewed articles}
@@ -37,11 +37,8 @@ include:
   - {doi: 10.7554/eLife.66551, section: Peer-reviewed articles}
   - {doi: 10.1038/s41598-020-70397-0, section: Peer-reviewed articles}
   - {doi: 10.1371/journal.pcbi.1007627, section: Peer-reviewed articles}
-  - {doi: 10.1016/j.cub.2019.08.019, section: Peer-reviewed articles}
-  - {doi: 10.1016/j.pneurobio.2019.04.004, section: Peer-reviewed articles}
   - {doi: 10.1371/journal.pone.0154374, section: Peer-reviewed articles}
   - {doi: 10.1371/journal.pcbi.1004197, section: Peer-reviewed articles}
-  - {doi: 10.1016/j.brainresbull.2013.12.011, section: Peer-reviewed articles}
   - {doi: 10.3389/fpsyg.2014.00159, section: Peer-reviewed articles}
   - {doi: 10.1038/nn.3203, section: Peer-reviewed articles}
   - {doi: 10.1523/JNEUROSCI.2563-12.2012, section: Peer-reviewed articles}
@@ -49,8 +46,13 @@ include:
   - {doi: 10.1016/j.neuroscience.2008.03.065, section: Peer-reviewed articles}
   - {doi: 10.1152/jn.00884.2007, section: Peer-reviewed articles}
   - {doi: 10.1038/nn1888, section: Peer-reviewed articles}
-  - {doi: 10.1016/j.conb.2006.07.001, section: Peer-reviewed articles}
   - {doi: 10.1038/nature03867, section: Peer-reviewed articles}
+  # Reviews
+  - {doi: 10.1016/j.tins.2025.02.006, section: Reviews}
+  - {doi: 10.1016/j.cub.2019.08.019, section: Reviews}
+  - {doi: 10.1016/j.pneurobio.2019.04.004, section: Reviews}
+  - {doi: 10.1016/j.brainresbull.2013.12.011, section: Reviews}
+  - {doi: 10.1016/j.conb.2006.07.001, section: Reviews}
   # Commentary
   - {doi: 10.1126/science.adv1570, section: Commentary}
   - {doi: 10.1016/j.neuron.2016.08.006, section: Commentary}

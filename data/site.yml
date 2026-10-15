@@ -13,11 +13,13 @@ orcid: 0000-0001-6621-793X
 # Large photo on the home page
 hero_image: /static/images/photos/lab-2025-a.webp
 hero_alt: Members of the Bendor Lab at lunch by a lake, 2025
+# Picture shown when the site is shared on social media (1200 x 630 pixels)
+social_image: /static/images/social-card.jpg
 # Optional links in the footer. Leave blank to hide.
 institute_page: https://www.ibn.ucl.ac.uk/bendor-lab
 github: ""
-google_scholar: ""
-ucl_profile: ""
+google_scholar: "https://scholar.google.com/citations?user=cWlY7gwAAAAJ"
+ucl_profile: "https://profiles.ucl.ac.uk/40594-daniel-bendor"
 bluesky: ""
 # Google Search Console: paste the "content" value of the HTML tag here to verify the site
 google_site_verification: ""

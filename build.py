@@ -37,6 +37,22 @@ PAGE_TITLES = {"research": "Research", "people": "People", "publications": "Publ
                "news": "News"}
 HOME_NEWS = 4  # news items shown on the home page
 
+# Descriptions shown by search engines and in link previews (keep each under about 155 characters).
+DESCRIPTIONS = {
+    "": "The Bendor Lab at UCL studies how neocortex and hippocampus encode information and "
+        "communicate, to understand memory, perception, predictive coding and sleep.",
+    "research": "Research in the Bendor Lab at UCL: hippocampal replay, memory triage, predictive coding, "
+                "and how auditory cortex codes time and pitch.",
+    "people": "Current members and alumni of the Bendor Lab, Institute of Behavioural Neuroscience, UCL.",
+    "publications": "Publications from the Bendor Lab at UCL, updated each week from ORCID, Crossref and PubMed.",
+    "photos": "Photos of the Bendor Lab at UCL.",
+    "code": "Code and data from the Bendor Lab's hippocampal replay papers.",
+    "positions": "How to join the Bendor Lab at UCL, and the UCL programmes students usually join through.",
+    "contact": "Contact details for the Bendor Lab, UCL Department of Experimental Psychology, "
+               "26 Bedford Way, London WC1H 0AP.",
+    "news": "News from the Bendor Lab at UCL.",
+}
+
 
 def load(name):
     return yaml.safe_load((DATA / f"{name}.yml").read_text(encoding="utf-8")) or {}
@@ -69,6 +85,39 @@ def prepare_news(news):
         items.append({**n, "sort": d, "when": d.strftime("%B %Y") if d != dt.date.min else ""})
     items.sort(key=lambda n: n["sort"], reverse=True)
     return items
+
+
+_SIZES = {}
+
+
+def image_size(path):
+    """(width, height) of a local image such as /static/images/x.webp, or None."""
+    path = str(path or "")
+    if not path or re.match(r"^https?://", path):
+        return None
+    if path not in _SIZES:
+        from PIL import Image
+        try:
+            with Image.open(ROOT / path.lstrip("/")) as im:
+                _SIZES[path] = im.size
+        except OSError:
+            _SIZES[path] = None
+    return _SIZES[path]
+
+
+def dims(path):
+    """width and height attributes for an <img>, so the page does not jump as images load."""
+    size = image_size(path)
+    return Markup(f' width="{size[0]}" height="{size[1]}"') if size else ""
+
+
+def tidy_link(url):
+    """Canonical https form of free full-text links (old PubMed Central and cell.com addresses)."""
+    url = (url or "").strip()
+    m = re.match(r"^https?://(?:www\.)?ncbi\.nlm\.nih\.gov/pmc/articles/(?:PMC)?(\d+)/?$", url, re.I)
+    if m:
+        return f"https://pmc.ncbi.nlm.nih.gov/articles/PMC{m.group(1)}/"
+    return re.sub(r"^http://(www\.)?cell\.com", "https://www.cell.com", url)
 
 
 def long_date(iso):
@@ -120,9 +169,13 @@ def is_lab_member(family, given, lab):
 def prepare_publications(settings, lab):
     raw = json.loads((DATA / "publications.json").read_text(encoding="utf-8"))
     highlight = set(settings.get("highlight") or [])
+    # sections set in publications.yml apply straight away, before the next weekly refresh
+    section_of = {str(i.get("doi") or "").lower(): i["section"]
+                  for i in (settings.get("include") or []) if i and i.get("doi") and i.get("section")}
     items = []
     for p in raw["items"]:
         p = dict(p)
+        p["section"] = section_of.get(str(p.get("doi") or "").lower(), p.get("section"))
         authors = p.get("authors") or []
         if isinstance(authors, str):
             authors = [a.strip() for a in authors.split(",") if a.strip()]
@@ -137,7 +190,7 @@ def prepare_publications(settings, lab):
             parts.append(f"<strong>{html.escape(name)}</strong>" if bold else html.escape(name))
         p["authors_html"] = Markup(", ".join(parts))
         p["url"] = f"https://doi.org/{p['doi']}" if p.get("doi") else p.get("url", "")
-        oa = (p.get("oa_url") or "").strip()
+        oa = tidy_link(p.get("oa_url"))
         same_as_doi = bool(p.get("doi")) and oa.lower().rstrip("/").endswith(p["doi"].lower())
         p["oa_link"] = "" if (not oa or same_as_doi) else oa
         p["oa_label"] = "Free PDF" if p.get("oa_pdf") else "Free full text"
@@ -224,6 +277,7 @@ def build():
 
     env = Environment(loader=FileSystemLoader(ROOT / "templates"), autoescape=select_autoescape(["html"]))
     env.filters["slugify"] = slugify
+    env.globals.update(dims=dims, image_size=image_size)
     common = dict(site=site, people=people, photos=photos, positions=positions, research=research,
                   nav=NAV, build_id=dt.datetime.now().strftime("%Y%m%d%H%M"))
 
@@ -248,6 +302,7 @@ def build():
             return path if re.match(r"^https?://", path or "") else _root + str(path or "").lstrip("/")
 
         ctx = dict(common, root=root, slug=slug if slug != "404" else "", asset=asset,
+                   description=DESCRIPTIONS.get(slug, ""),
                    page_title=PAGE_TITLES.get(slug, "Page not found" if slug == "404" else ""),
                    pub_sections=sections, pubs_updated=updated, themes=themes, alumni=alumni,
                    code=code, code_entries=code_entries, extra_repos=extra_repos,
