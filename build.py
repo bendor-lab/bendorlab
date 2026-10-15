@@ -194,7 +194,7 @@ def build():
         skip = {str(x).lower() for x in (code.get("hide_repositories") or [])}
         for r in json.loads(repos_file.read_text(encoding="utf-8")):
             url = (r.get("html_url") or "").rstrip("/")
-            if (not url or r.get("fork") or r.get("archived") or r.get("private")
+            if (not url or r.get("fork") or r.get("archived") or r.get("private") or r.get("size") == 0
                     or url.lower() in listed or r.get("name", "").lower() in skip):
                 continue
             extra_repos.append(r)

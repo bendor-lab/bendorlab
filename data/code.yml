@@ -15,7 +15,8 @@ entries:
       - {label: Data (Dryad), url: "https://doi.org/10.5061/dryad.ksn02v76h"}
   - doi: 10.1038/s41467-023-43939-z
     links:
-      - {label: Analysis code (Zenodo), url: "https://doi.org/10.5281/zenodo.10085294"}
+      - {label: Analysis code, url: "https://github.com/bendor-lab/Nat_Com_Huelin_Gorriz_et_al"}
+      - {label: Archived code (Zenodo), url: "https://doi.org/10.5281/zenodo.10085294"}
     note: Data are available from the corresponding author on reasonable request.
   - doi: 10.7554/elife.86464
     links:

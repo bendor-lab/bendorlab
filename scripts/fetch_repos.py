@@ -3,7 +3,7 @@
 
 Run by the GitHub workflow before each build. The Code and data page shows any
 repository not already linked from data/code.yml. If GitHub cannot be reached, the
-page is built without the extra list.
+page is built without the extra list. Empty repositories are not shown.
 """
 import json
 import os
@@ -33,7 +33,7 @@ def main():
                 batch = json.load(r)
             if not batch:
                 break
-            repos += [{k: x.get(k) for k in ("name", "html_url", "description", "fork", "archived", "private", "pushed_at")}
+            repos += [{k: x.get(k) for k in ("name", "html_url", "description", "fork", "archived", "private", "pushed_at", "size")}
                       for x in batch]
             page += 1
     except Exception as e:  # noqa: BLE001
