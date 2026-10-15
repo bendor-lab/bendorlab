@@ -82,7 +82,8 @@ themes:
       expected failed to occur. In our Signed Error by Timing Asymmetry (SETA) model,
       chandelier cells control when layer 2/3 neurons fire, so that positive and
       negative errors reach their layer 5 targets in opposite windows for synaptic
-      plasticity. We test its predictions with recordings from mouse visual cortex.
+      plasticity. We test its predictions with recordings from the visual and auditory
+      cortex and the hippocampus.
     image: /static/images/research/seta-circuit-jarzebowski-bendor-2026.webp
     image_alt: >-
       Left, a cortical circuit in which basket and chandelier cells gate an L2/3
