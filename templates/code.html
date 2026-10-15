@@ -28,7 +28,7 @@
   </ul>
   {% endif %}
 
-  {% if code.github_org %}
+  {% if code.github_org and code.list_other_repositories %}
   <p class="meta">All lab repositories are on <a href="https://github.com/{{ code.github_org }}">GitHub</a>.</p>
   {% endif %}
 </div>

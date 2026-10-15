@@ -189,6 +189,7 @@ content:
     fields:
       - { name: intro, label: Introduction, type: text }
       - { name: github_org, label: GitHub organisation, type: string }
+      - { name: list_other_repositories, label: Also list the organisation's other public repositories, type: boolean }
       - { name: hide_repositories, label: Repositories not to list automatically, type: string, list: true }
       - name: entries
         label: Papers with code or data

@@ -86,16 +86,19 @@ themes:
       cortex. A related line of work asks how prediction guides navigation: humans
       and rats searching for a hidden goal in a changing maze behaved most like
       learning agents that use a predictive map.
-    image: /static/images/research/predictive-maps-de-cothi-2022.webp
+    image: /static/images/research/seta-circuit-jarzebowski-bendor-2026.webp
     image_alt: >-
-      The Tartarus maze drawn three times, for a rat, a human and a learning agent,
-      during training and after parts of the maze were removed.
+      Left, a cortical circuit in which basket and chandelier cells gate an L2/3
+      pyramidal cell that projects to an L5 ET neuron. Right, simulated conductances
+      and spikes for a positive and a negative prediction error.
     caption: >-
-      The Tartarus maze. Rats, humans in virtual reality and reinforcement learning
-      agents learned to reach a hidden goal (A), then found it again after parts of
-      the maze were removed (B).
-    credit: Adapted from de Cothi et al. (2022), Current Biology 32:3676, CC BY 4.0
-    credit_url: https://doi.org/10.1016/j.cub.2022.06.090
+      The SETA model. Left: an L2/3 pyramidal cell combines sensory input with a
+      prediction, and basket and chandelier cells gate when it fires. Right: with a
+      positive error the L2/3 spike reaches the L5 ET neuron within the window for
+      burst firing and potentiation; with a negative error the chandelier cell delays
+      it beyond that window.
+    credit: Adapted from Jarzebowski and Bendor (2026), preprint
+    credit_url: https://doi.org/10.64898/2026.06.26.734797
     papers:
       - 10.64898/2026.06.26.734797
       - 10.1016/j.cub.2022.06.090

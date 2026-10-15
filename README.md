@@ -10,7 +10,7 @@ What runs by itself:
 - **Every 1 October** a checklist issue reminds you to update people, alumni and photos for the new academic year.
 - **Lab members are shown in bold** in every author list, matched automatically against the People page (current members and alumni).
 - **Free full-text links** appear under each paper when a legal free copy exists, found through Unpaywall.
-- **New public repositories** in the bendor-lab GitHub organisation appear on the Code and data page automatically.
+- **The Code and data page** lists only the entries in `data/code.yml`. Switching on "Also list the organisation's other public repositories" in Pages CMS adds every public repository in the bendor-lab GitHub organisation automatically.
 
 ## What lives where
 

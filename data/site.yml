@@ -15,7 +15,7 @@ hero_image: /static/images/photos/lab-2025-a.webp
 hero_alt: Members of the Bendor Lab at lunch by a lake, 2025
 # Optional links in the footer. Leave blank to hide.
 institute_page: https://www.ibn.ucl.ac.uk/bendor-lab
-github: https://github.com/bendor-lab
+github: ""
 google_scholar: ""
 ucl_profile: ""
 bluesky: ""

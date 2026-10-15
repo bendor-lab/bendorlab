@@ -190,7 +190,7 @@ def build():
     code_entries.sort(key=lambda e: (e["paper"] or {}).get("date", ""), reverse=True)
     extra_repos = []
     repos_file = DATA / "repos.json"
-    if repos_file.exists():
+    if repos_file.exists() and code.get("list_other_repositories"):
         skip = {str(x).lower() for x in (code.get("hide_repositories") or [])}
         for r in json.loads(repos_file.read_text(encoding="utf-8")):
             url = (r.get("html_url") or "").rstrip("/")
