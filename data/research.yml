@@ -41,6 +41,30 @@ themes:
       sequence of decoded positions on track 1 and none on track 2.
     credit: Adapted from Takigawa et al. (2024), eLife 13:e85635, CC BY 4.0
     credit_url: https://doi.org/10.7554/eLife.85635
+    # Further figures for this theme, shown in order after the first one
+    more_figures:
+      - image: /static/images/research/reactivation-v1-hippocampus-takigawa-2026.webp
+        image_alt: >-
+          Four panels: a mouse running through two virtual reality tracks, each shown on
+          one half of the screen; tuning curves of example neurons in left and right
+          visual cortex and the hippocampus on each track; activity in visual cortex and
+          the hippocampus during sleep, with ripples marked; and an enlarged period
+          showing spiking in both regions and the decoded track bias during ripples.
+        caption: >-
+          Cortical and hippocampal reactivation during sleep. Top left: mice ran two
+          virtual reality tracks, each shown in one half of the visual field. Top right:
+          example neurons in left and right primary visual cortex (V1) and the
+          hippocampus (HC) on each track, recorded with Neuropixels 2.0 probes; V1
+          neurons respond to the track in the opposite visual field. Bottom left:
+          activity in both V1 hemispheres and the hippocampus during sleep after the
+          task, with ripples shaded grey. Bottom right: the boxed period enlarged.
+          Ripples are shaded by the track the hippocampus reactivates (blue, Track L;
+          red, Track R), and in these examples the V1 track bias (magenta) follows the
+          hippocampal bias (black).
+        credit: >-
+          Adapted from Takigawa et al. (2026), bioRxiv preprint, Fig. 1, with the
+          authors' permission; mouse drawings from SciDraw.io
+        credit_url: https://doi.org/10.64898/2026.06.12.731367
     papers:
       - 10.64898/2026.06.12.731367
       - 10.1016/j.tins.2025.02.006

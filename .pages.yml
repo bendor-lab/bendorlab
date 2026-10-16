@@ -159,6 +159,20 @@ content:
           - { name: caption, label: Figure caption, type: text }
           - { name: credit, label: Figure credit line, type: string }
           - { name: credit_url, label: Figure credit link (DOI), type: string }
+          - name: more_figures
+            label: More figures (optional)
+            description: Shown in order after the first figure.
+            type: object
+            list: true
+            fields:
+              - name: image
+                label: Figure
+                type: image
+                options: { path: static/images/research }
+              - { name: image_alt, label: Figure description for screen readers, type: text }
+              - { name: caption, label: Figure caption, type: text }
+              - { name: credit, label: Figure credit line, type: string }
+              - { name: credit_url, label: Figure credit link (DOI), type: string }
           - name: papers
             label: Selected papers (DOIs)
             description: Each DOI must also be in the publication list; the full citation is filled in automatically.

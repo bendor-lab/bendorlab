@@ -1,5 +1,16 @@
 {% extends "base.html" %}
 {% from "_macros.html" import citation %}
+{% macro theme_figure(image, alt, caption, credit, credit_url) %}
+    <figure class="theme-figure">
+      <img src="{{ asset(image) }}" alt="{{ alt or '' }}"{{ dims(image) }} loading="lazy">
+      {% if caption or credit %}
+      <figcaption>
+        {{ caption or '' }}
+        {% if credit %}<span class="credit">{% if credit_url %}<a href="{{ credit_url }}">{{ credit }}</a>{% else %}{{ credit }}{% endif %}</span>{% endif %}
+      </figcaption>
+      {% endif %}
+    </figure>
+{%- endmacro %}
 {% block content %}
 <div class="wrap narrow">
   <h1>Research</h1>
@@ -9,17 +20,8 @@
   <section class="theme" aria-labelledby="theme-{{ loop.index }}">
     <h2 id="theme-{{ loop.index }}">{{ theme.title }}</h2>
     {% if theme.summary %}<p>{{ theme.summary }}</p>{% endif %}
-    {% if theme.image %}
-    <figure class="theme-figure">
-      <img src="{{ asset(theme.image) }}" alt="{{ theme.image_alt or '' }}"{{ dims(theme.image) }} loading="lazy">
-      {% if theme.caption or theme.credit %}
-      <figcaption>
-        {{ theme.caption or '' }}
-        {% if theme.credit %}<span class="credit">{% if theme.credit_url %}<a href="{{ theme.credit_url }}">{{ theme.credit }}</a>{% else %}{{ theme.credit }}{% endif %}</span>{% endif %}
-      </figcaption>
-      {% endif %}
-    </figure>
-    {% endif %}
+    {% if theme.image %}{{ theme_figure(theme.image, theme.image_alt, theme.caption, theme.credit, theme.credit_url) }}{% endif %}
+    {% for f in theme.more_figures or [] %}{% if f and f.image %}{{ theme_figure(f.image, f.image_alt, f.caption, f.credit, f.credit_url) }}{% endif %}{% endfor %}
     {% if theme.pubs %}
     <h3 class="theme-papers">Selected papers</h3>
     <ol class="pub-list compact">
