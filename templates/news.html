@@ -6,7 +6,7 @@
     {% for n in news %}
     <li>
       <span class="news-date">{{ n.when }}</span>
-      <span class="news-text">{{ n.text }}{% if n.link %} <a href="{{ n.link }}">More</a>{% endif %}</span>
+      <span class="news-text">{{ n.text }}{% if n.link %} <a href="{{ n.link }}">{{ n.link_text or 'Read more' }}</a>{% endif %}</span>
     </li>
     {% endfor %}
   </ul>

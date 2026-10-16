@@ -64,7 +64,7 @@ document.querySelectorAll("a.email").forEach((a) => {
     index = (i + buttons.length) % buttons.length;
     const thumb = buttons[index].querySelector("img");
     const cap = buttons[index].closest("figure").querySelector("figcaption");
-    img.src = thumb.currentSrc || thumb.src;
+    img.src = thumb.dataset.full || thumb.currentSrc || thumb.src;
     img.alt = thumb.alt;
     caption.textContent = cap ? cap.textContent : "";
   };

@@ -1,5 +1,6 @@
 # Lab news. The four most recent items appear on the home page; all items appear on
-# the News page. "date" is YYYY-MM-DD and is shown as month and year. "link" is optional.
+# the News page. "date" is YYYY-MM-DD and is shown as month and year. "link" is optional;
+# "link_text" is what the link says (default "Read more").
 items:
   - date: 2026-10-15
     text: Aditi Bishnoi has been awarded a Marie Skłodowska-Curie Postdoctoral Fellowship.
@@ -7,15 +8,19 @@ items:
   - date: 2026-06-28
     text: "We posted three preprints on bioRxiv: on chandelier cells and signed prediction errors, on how time and reward shape replay prioritisation, and on sleep oscillations and coordinated memory reactivation between cortex and hippocampus."
     link: /publications/#preprints
+    link_text: See the preprints
   - date: 2025-04-01
     text: "Matthijs van der Meer and Dan Bendor review awake replay in Trends in Neurosciences: ‘Awake replay: off the clock but on the job’."
     link: https://doi.org/10.1016/j.tins.2025.02.006
+    link_text: Read the review
   - date: 2025-01-31
     text: "Masa Takigawa and Dan Bendor write about replay in Science: ‘Replaying off the beaten path’."
     link: https://doi.org/10.1126/science.adv1570
+    link_text: Read the article
   - date: 2024-11-28
     text: "‘Evaluating hippocampal replay without a ground truth’, by Masa Takigawa, Marta Huelin Gorriz, Margot Tirole and Dan Bendor, is published in eLife."
     link: https://doi.org/10.7554/eLife.85635
+    link_text: Read the paper
   - date: 2024-10-01
     text: Prez Jarzebowski has been awarded an RNID Fellowship from the Royal National Institute for Deaf People.
     link: ""

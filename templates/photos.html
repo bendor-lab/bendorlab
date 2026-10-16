@@ -7,7 +7,7 @@
     <li>
       <figure>
         <button type="button" class="gallery-open" data-index="{{ loop.index0 }}" aria-label="Enlarge photo{% if ph.caption %}: {{ ph.caption }}{% endif %}">
-          <img src="{{ asset(ph.image) }}" alt="{{ ph.alt or ph.caption or 'Bendor Lab photo' }}"{{ dims(ph.image) }} loading="lazy">
+          <img src="{{ asset(ph.thumb or ph.image) }}"{% if ph.sources and ph.sources | length > 1 %} srcset="{% for s, w in ph.sources %}{{ asset(s) }} {{ w }}w{% if not loop.last %}, {% endif %}{% endfor %}" sizes="(min-width: 880px) 340px, (min-width: 560px) 50vw, 100vw"{% endif %} data-full="{{ asset(ph.image) }}" alt="{{ ph.alt or ph.caption or 'Bendor Lab photo' }}"{{ dims(ph.image) }} loading="lazy">
         </button>
         {% if ph.caption %}<figcaption>{{ ph.caption }}</figcaption>{% endif %}
       </figure>

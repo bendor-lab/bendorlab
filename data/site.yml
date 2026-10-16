@@ -23,3 +23,6 @@ ucl_profile: "https://profiles.ucl.ac.uk/40594-daniel-bendor"
 bluesky: ""
 # Google Search Console: paste the "content" value of the HTML tag here to verify the site
 google_site_verification: ""
+# GoatCounter visitor counts (free for non-commercial sites, no cookies): the site code chosen at
+# goatcounter.com, e.g. bendorlab for bendorlab.goatcounter.com. Leave blank to switch counting off.
+goatcounter: ""

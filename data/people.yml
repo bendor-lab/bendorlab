@@ -14,6 +14,7 @@ members:
     role: Research fellow
     fellowship: RNID Fellowship
     photo: /static/images/people/prez-jarzebowski.webp
+    orcid: 0000-0001-6333-222X
     link: ""
   - name: Aditi Bishnoi
     role: Research fellow
@@ -23,6 +24,7 @@ members:
   - name: Masa Takigawa
     role: Research fellow
     photo: /static/images/people/masa-takigawa.webp
+    orcid: 0000-0002-0162-9017
     link: ""
   - name: Jo Holeniewska
     role: Lab manager

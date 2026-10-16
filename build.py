@@ -111,6 +111,59 @@ def dims(path):
     return Markup(f' width="{size[0]}" height="{size[1]}"') if size else ""
 
 
+THUMB_WIDTHS = (600, 1000)  # gallery thumbnails; the photo viewer opens the full image
+
+
+def make_thumbnails(photos):
+    """Write smaller copies of each gallery photo into _site and list them for srcset."""
+    from PIL import Image
+    for ph in photos:
+        src = ROOT / ph["image"].lstrip("/")
+        ph["sources"] = []
+        try:
+            with Image.open(src) as im:
+                im.load()
+                width = im.width
+                for w in THUMB_WIDTHS:
+                    if w >= width:
+                        continue
+                    rel = f"/static/images/photos/thumbs/{src.stem}-{w}.webp"
+                    dest = OUT / rel.lstrip("/")
+                    dest.parent.mkdir(parents=True, exist_ok=True)
+                    im.resize((w, round(im.height * w / width)), Image.LANCZOS).save(dest, "WEBP", quality=82, method=6)
+                    ph["sources"].append((rel, w))
+        except OSError as e:
+            print(f"warning: no thumbnails for {ph['image']} ({e})", file=sys.stderr)
+            continue
+        ph["sources"].append((ph["image"], width))
+        ph["thumb"] = ph["sources"][0][0]
+
+
+def structured_data(site, people):
+    """Schema.org description of the lab for search engines (home page only)."""
+    url = site.get("url", "").rstrip("/")
+    lines = list(site.get("address") or [])
+    address = {"@type": "PostalAddress", "addressCountry": "GB"}
+    if len(lines) >= 2:
+        address["streetAddress"] = lines[-2]
+        town, _, postcode = lines[-1].partition(" ")
+        address.update(addressLocality=town, postalCode=postcode)
+    lead = next((m for m in people.get("members") or [] if m.get("orcid") == site.get("orcid")), None)
+    same = [f"https://orcid.org/{site['orcid']}"] if site.get("orcid") else []
+    same += [site[k] for k in ("google_scholar", "ucl_profile") if site.get(k)]
+    data = {
+        "@context": "https://schema.org", "@type": "ResearchOrganization",
+        "name": site.get("title"), "url": url + "/", "logo": url + "/static/images/logo.webp",
+        "description": DESCRIPTIONS[""], "address": address,
+        "parentOrganization": {"@type": "CollegeOrUniversity", "name": site.get("university"), "url": "https://www.ucl.ac.uk/"},
+    }
+    if site.get("institute_page"):
+        data["sameAs"] = [site["institute_page"]]
+    if lead:
+        data["founder"] = {"@type": "Person", "name": lead["name"], "sameAs": same}
+    return Markup(json.dumps(data, ensure_ascii=False, indent=1).replace("</", "<\\/"))
+
+
 def tidy_link(url):
     """Canonical https form of free full-text links (old PubMed Central and cell.com addresses)."""
     url = (url or "").strip()
@@ -285,6 +338,10 @@ def build():
         shutil.rmtree(OUT)
     OUT.mkdir()
     shutil.copytree(ROOT / "static", OUT / "static")
+    for icon in ("apple-touch-icon.png", "favicon.ico"):  # browsers also look for these at the site root
+        if (ROOT / "static" / "images" / icon).exists():
+            shutil.copy(ROOT / "static" / "images" / icon, OUT / icon)
+    make_thumbnails(photos["photos"])
 
     pages = [("index.html", "", {"recent": recent})] + [
         (f"{slug}.html", slug, {}) for slug, _ in NAV
@@ -303,6 +360,7 @@ def build():
 
         ctx = dict(common, root=root, slug=slug if slug != "404" else "", asset=asset,
                    description=DESCRIPTIONS.get(slug, ""),
+                   structured_data=structured_data(site, people) if slug == "" else "",
                    page_title=PAGE_TITLES.get(slug, "Page not found" if slug == "404" else ""),
                    pub_sections=sections, pubs_updated=updated, themes=themes, alumni=alumni,
                    code=code, code_entries=code_entries, extra_repos=extra_repos,

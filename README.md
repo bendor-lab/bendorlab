@@ -131,6 +131,16 @@ The Research page and home page use figures from the lab's papers published unde
 4. In Pages CMS, open **Site settings**, paste it into **Google Search Console code**, and save. Wait two minutes for the site to rebuild, then click **Verify**.
 5. In Search Console, open **Sitemaps** and submit `sitemap.xml`.
 
+## Visitor counts
+
+The site can count visits with GoatCounter, which is free for non-commercial sites and sets no cookies, so no cookie banner is needed.
+
+1. Go to goatcounter.com and click **Sign up**. Choose a site code (for example `bendorlab`), enter your email and a password, and confirm the email.
+2. In Pages CMS, open **Site settings**, enter the code under **GoatCounter site code**, and save. Counting starts when the site rebuilds, about two minutes later, and the Contact page gains a one-line privacy note.
+3. See the numbers at `https://CODE.goatcounter.com`, for example `https://bendorlab.goatcounter.com`.
+
+To stop counting, clear the code and save.
+
 ## Keeping it running long term
 
 - **Give someone else access.** If the repository lives only in one personal account, the site depends on that account. Consider creating a free GitHub organization (for example `bendorlab`), moving the repository into it, and making the lab manager a second owner.

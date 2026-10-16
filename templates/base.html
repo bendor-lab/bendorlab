@@ -22,6 +22,8 @@
   {% if site.google_site_verification %}<meta name="google-site-verification" content="{{ site.google_site_verification }}">{% endif %}
   <link rel="canonical" href="{{ site.url }}/{{ slug and slug ~ '/' or '' }}">
   <link rel="icon" href="{{ root }}static/images/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="{{ root }}static/images/apple-touch-icon.png">
+  {% if structured_data %}<script type="application/ld+json">{{ structured_data }}</script>{% endif %}
   <link rel="preload" href="{{ root }}static/fonts/literata-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="{{ root }}static/fonts/instrument-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="{{ root }}static/css/style.css?v={{ build_id }}">
@@ -67,5 +69,6 @@
     </div>
   </footer>
   <script src="{{ root }}static/js/site.js?v={{ build_id }}" defer></script>
+  {% if site.goatcounter %}<script data-goatcounter="https://{{ site.goatcounter }}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>{% endif %}
 </body>
 </html>

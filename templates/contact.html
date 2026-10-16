@@ -11,6 +11,10 @@
       <address>{% for line in site.address %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}</address>
       <a href="https://www.openstreetmap.org/search?query={{ site.address | join(', ') | urlencode }}">Open in a map</a>
     </dd>
+    {% if site.goatcounter %}
+    <dt>Privacy</dt>
+    <dd>Visits to this site are counted with GoatCounter, which sets no cookies and does not store personal data.</dd>
+    {% endif %}
   </dl>
 </div>
 {% endblock %}
