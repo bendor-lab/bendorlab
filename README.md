@@ -136,7 +136,7 @@ The Research page and home page use figures from the lab's papers published unde
 The site can count visits with GoatCounter, which is free for non-commercial sites and sets no cookies, so no cookie banner is needed.
 
 1. Go to goatcounter.com and click **Sign up**. Choose a site code (for example `bendorlab`), enter your email and a password, and confirm the email.
-2. In Pages CMS, open **Site settings**, enter the code under **GoatCounter site code**, and save. Counting starts when the site rebuilds, about two minutes later, and the Contact page gains a one-line privacy note.
+2. In Pages CMS, open **Site settings**, enter the code under **GoatCounter site code**, and save. Counting starts when the site rebuilds, about two minutes later.
 3. See the numbers at `https://CODE.goatcounter.com`, for example `https://bendorlab.goatcounter.com`.
 
 To stop counting, clear the code and save.
