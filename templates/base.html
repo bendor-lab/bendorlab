@@ -20,7 +20,7 @@
   <meta property="og:image:alt" content="{{ site.hero_alt or site.title }}">
   <meta name="twitter:card" content="summary_large_image">
   {% if site.google_site_verification %}<meta name="google-site-verification" content="{{ site.google_site_verification }}">{% endif %}
-  <link rel="canonical" href="{{ site.url }}/{{ slug and slug ~ '/' or '' }}">
+  {% if page_title == 'Page not found' %}<meta name="robots" content="noindex">{% else %}<link rel="canonical" href="{{ site.url }}/{{ slug and slug ~ '/' or '' }}">{% endif %}
   <link rel="icon" href="{{ root }}static/images/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="{{ root }}static/images/apple-touch-icon.png">
   {% if structured_data %}<script type="application/ld+json">{{ structured_data }}</script>{% endif %}
