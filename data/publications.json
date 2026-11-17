@@ -1,6 +1,34 @@
 {
- "updated": "2026-11-16",
+ "updated": "2026-11-17",
  "items": [
+  {
+   "title": "Adaptation can explain cortical responses to sound deviance without requiring prediction",
+   "authors": [
+    "Jarzebowski P",
+    "Bishnoi A",
+    "Bendor D"
+   ],
+   "author_details": [
+    {
+     "family": "Jarzebowski",
+     "given": "Przemyslaw"
+    },
+    {
+     "family": "Bishnoi",
+     "given": "Aditi"
+    },
+    {
+     "family": "Bendor",
+     "given": "Daniel"
+    }
+   ],
+   "venue": "bioRxiv",
+   "year": 2026,
+   "date": "2026-11-17",
+   "section": "Preprints",
+   "url": "https://www.biorxiv.org/content/10.64898/2026.11.14.766627v1",
+   "doi": ""
+  },
   {
    "doi": "10.64898/2026.06.26.734797",
    "type": "posted-content",

@@ -26,6 +26,19 @@ sections:
   - Book chapters
 
 include:
+  # Preprints. This one has no DOI entry yet because Crossref had not registered it when it was added;
+  # once it has, the weekly refresh lists it automatically and this entry is dropped as a duplicate.
+  - title: Adaptation can explain cortical responses to sound deviance without requiring prediction
+    authors: [Jarzebowski P, Bishnoi A, Bendor D]
+    author_details:
+      - {family: Jarzebowski, given: Przemyslaw}
+      - {family: Bishnoi, given: Aditi}
+      - {family: Bendor, given: Daniel}
+    venue: bioRxiv
+    year: 2026
+    date: "2026-11-17"
+    section: Preprints
+    url: https://www.biorxiv.org/content/10.64898/2026.11.14.766627v1
   # Peer-reviewed articles
   - {doi: 10.7554/eLife.85635, section: Peer-reviewed articles}
   - {doi: 10.1038/s41467-023-43939-z, section: Peer-reviewed articles}

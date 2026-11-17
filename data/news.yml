@@ -2,6 +2,10 @@
 # the News page. "date" is YYYY-MM-DD and is shown as month and year. "link" is optional;
 # "link_text" is what the link says (default "Read more").
 items:
+  - date: 2026-11-17
+    text: "Prez Jarzebowski, Aditi Bishnoi and Dan Bendor posted a preprint on bioRxiv: ‘Adaptation can explain cortical responses to sound deviance without requiring prediction’."
+    link: https://www.biorxiv.org/content/10.64898/2026.11.14.766627v1
+    link_text: Read the preprint
   - date: 2026-10-15
     text: Aditi Bishnoi has been awarded a Marie Skłodowska-Curie Postdoctoral Fellowship.
     link: ""
